@@ -145,6 +145,12 @@ jQuery('.mobile-menu-container .menu-item-has-children').click(function(event) {
 jQuery(document.body).on('show_mobile_menu', function(e, data){
   jQuery('.mobile-menu-holder').addClass('shown');
 })
+
+jQuery('.faq-item').click(function(event) {
+  jQuery(this).toggleClass('expanded');
+  jQuery(this).find('.faq-item__body').slideToggle()
+  jQuery(this).siblings('div.faq-item').removeClass('expanded').find('div.faq-item__body').slideUp();
+});
 var Cookie =
 {
    set: function(name, value, days)

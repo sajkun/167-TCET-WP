@@ -1,4 +1,4 @@
-.mobile-menu-holder, .carousel-ctrl {
+.mobile-menu-holder, .faq-item .marker:before, .faq-item .marker:after, .carousel-ctrl {
   position: absolute;
   left: 0;
   right: 0;
@@ -7408,6 +7408,19 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+.dib {
+  display: inline-block;
+}
+
+.inline-images {
+  text-align: center;
+}
+
+.inline-images .wpb_single_image {
+  display: inline-block;
+  margin: 0 10px 20px;
+}
+
 .slider-title {
   color: #fff;
   font-family: "Muli", sans-serif;
@@ -7432,6 +7445,120 @@ h1, h2, h3, h4, h5, h6 {
 
 .bold {
   font-weight: 700;
+}
+
+.faq-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.faq-item .marker {
+  display: block;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  transition: all .3s;
+  left: 10px;
+}
+
+@media (min-width: 552px) {
+  .faq-item .marker {
+    left: 70px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .faq-item .marker {
+    left: 130px;
+  }
+}
+
+.faq-item .marker:before, .faq-item .marker:after {
+  content: '';
+  width: 34px;
+  height: 6px;
+  display: block;
+  margin: auto;
+  background-color: #5cb8b2;
+}
+
+.faq-item .marker:after {
+  transform: rotateZ(90deg);
+}
+
+.faq-item.expanded .marker {
+  transform: rotateZ(180deg);
+}
+
+.faq-item.expanded .marker:after {
+  transform: rotateZ(-180deg);
+}
+
+.faq-item__head {
+  background: #f5fbfa;
+  font-size: 20px;
+  color: #030303;
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  position: relative;
+  padding: 15px 10px 22px 40px;
+}
+
+.faq-item__head-title {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 552px) {
+  .faq-item__head {
+    padding-left: 140px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .faq-item__head {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
+.faq-item__body {
+  display: none;
+  padding: 15px 10px 22px 40px;
+  color: #000000;
+  font-family: "Muli", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@media (min-width: 552px) {
+  .faq-item__body {
+    padding-left: 140px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .faq-item__body {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
+.button-center {
+  display: -moz-flex !important;
+  display: -ms-flex !important;
+  display: -o-flex !important;
+  display: flex !important;
+  justify-content: center;
+}
+
+.button-center button {
+  margin: 0 auto !important;
 }
 
 .event-preview {
