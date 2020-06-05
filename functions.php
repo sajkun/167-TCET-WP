@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 class velesh_orgafresh_child{
 
   /**
@@ -13,6 +9,7 @@ class velesh_orgafresh_child{
     $this->include();
     $this->add_actions();
     $this->add_filters();
+    $this->define_image_sizes();
   }
 
 
@@ -26,6 +23,10 @@ class velesh_orgafresh_child{
     define('THEME_DEBUG', true);
     define('SERVICE_POST_NAME', 'theme_services');
     define('FAQ_POST_NAME', 'faq_post');
+  }
+
+  public function define_image_sizes(){
+    add_image_size('event_data', 560, 250, true);
   }
 
 
@@ -56,6 +57,15 @@ class velesh_orgafresh_child{
         remove_action( 'orgafresh_after_body_open', 'orgafresh_header_mobile_navigation', 10 );
       }
     });
+
+    add_action('wp_footer', 'exec_clog');
+
+    add_filter('tribe_events_google_maps_api', array($this, 'modify_google_api'));
+  }
+
+  public static function modify_google_api($url){
+    clog($url);
+    return '';
   }
 
 

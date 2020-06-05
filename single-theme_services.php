@@ -23,37 +23,138 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     ?>
       <style>
         .service-content ul li:before{
-          color: <?php echo $color; ?>
+          color: <?php echo $color; ?>;
+        }
+        .fullwidth-title{
+          background-color: <?php echo $color; ?>;
+        }
+        .event-data__more,
+        .event-data__icon,
+        .event-data__decoration,
+        .event-data__overlay{
+          background-color: <?php echo $color; ?>;
         }
       </style>
     <?php
   }
-
-
-
-  clog($color);
 ?>
 <section id="content" class="site-content <?php echo esc_attr($content_class['main_class']); ?>">
 
   <div class="container service-content">
-
-
   <?php
     echo the_content();
-
-
-  // logos
-
-  // content
-
-  // elegibility
-
-  // related events
-
-  // locations
-
    ?>
   </div>
+
+  <div class="spacer-h-20"></div>
+
+  <?php // print eligibility content ?>
+  <?php
+    $eligibility = get_field('eligibility');
+
+    if ($eligibility) {
+      ?>
+      <section class="fullwidth-title">
+        <div class="container">
+          <?php _e('Eligibility','theme-translations');?>
+        </div>
+      </section>
+    <div class="spacer-h-20"></div>
+    <div class="container service-content">
+      <?php echo apply_filters( 'the_content', $eligibility ); ?>
+    </div>
+
+    <?php
+    }
+  ?>
+
+  <div class="spacer-h-20"></div>
+
+  <?php
+    $related_events = get_field('related_events');
+
+    if ($related_events) {
+      ?><div class="container">
+        <?php
+      printf("<h2>%s</h2>",__('Upcoming Events & Workshops', 'theme-translations'));
+
+      ?><div class="spacer-h-40"></div>
+        <?php
+      foreach ($related_events as $event_id) {
+        $event = get_post($event_id);
+        $image_id = get_post_thumbnail_id($event_id);
+        $start  = get_post_meta($event_id, '_EventStartDate', true);
+        $start  = get_post_meta($event_id, '_EventEndDate', true);
+        $start   = new DateTime($start);
+        $end   = new DateTime($end);
+
+        $venue_id = (int)get_post_meta($event_id, '_EventVenueID',true);
+
+        $address = array(
+          get_post_meta($venue_id,'_VenueZip', true),
+          get_post_meta($venue_id,'_VenueCity', true),
+          get_post_meta($venue_id,'_VenueProvince', true),
+          get_post_meta($venue_id,'_VenueAddress', true),
+        );
+
+        $args = array(
+          'title' => $event->post_title,
+          'image_url'   => wp_get_attachment_image_url( $image_id, 'event_data', false ),
+          'permalink'   => get_permalink($event),
+          'date_start'  =>  $start->format('l, F d, Y'),
+          'time_start'  =>  $start->format('h:i a'),
+          'time_end'    =>  $end->format('h:i a'),
+          'address' => implode(', ', $address),
+          'topics' => get_field('event_topic', $event_id),
+        );
+
+        print_theme_template_part('preview', 'events', $args);
+
+      }
+
+       ?></div><?php
+    }
+  ?>
+
+  <div class="spacer-h-20"></div>
+  <div class="spacer-h-20"></div>
+
+  <?php  $locations = get_field('locations');
+    if ($locations):
+     ?>
+      <section class="fullwidth-title">
+        <div class="container">
+          <?php _e('Locations','theme-translations');?>
+        </div>
+      </section>
+      <div class="spacer-h-50"></div>
+
+      <div class="container">
+
+
+        <div class="row">
+
+      <?php
+         foreach ($locations as $key => $location_id) {
+          ?>
+          <div class="col-md-6">
+          <?php
+            $args = array(
+              'latitude' => get_field('latitude', $location_id),
+              'longitude' => get_field('longitude', $location_id),
+              'block_id' => 'theme_map_holder_'.$key,
+            );
+
+            echo  print_theme_template_part('location-map', 'events', $args);
+          ?>
+          </div>
+         <?php  }; ?>
+        </div>
+        </div>
+        <div class="spacer-h-50"></div>
+
+    <?php endif; ?>
+
 
 
  </section><!-- #content -->
