@@ -42,6 +42,9 @@ class velesh_orgafresh_child{
   */
   public function add_actions(){
     // add_action('get_footer', array'change_footer_template' );
+    global $wp_styles;
+
+
     add_action( 'wp_enqueue_scripts', array($this,'orgafresh_child_enqueue_styles'), 10 );
 
     add_action( 'wp_enqueue_scripts', array($this,'unregister_styles'), PHP_INT_MAX );
@@ -77,6 +80,7 @@ class velesh_orgafresh_child{
     wp_enqueue_script('owl-carousel-script', THEME_URL.'/assets/owlcarousel/js/owl.carousel.min.js', array('jquery'), '1.0', true);
 
     wp_enqueue_script('velesh-theme-script', THEME_URL.'/assets/script/main.js', array('jquery'), '1.0', true);
+
   }
 
 
