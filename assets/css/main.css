@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .mobile-menu-holder, .faq-item .marker:before, .faq-item .marker:after, .carousel-ctrl {
   position: absolute;
   left: 0;
@@ -7665,6 +7666,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 767px) {
+  .container {
+    max-width: 100% !important;
+  }
+}
+
 .event-preview {
   display: inline-block;
   text-decoration: none;
@@ -7933,4 +7940,65 @@ h1, h2, h3, h4, h5, h6 {
 
 .wpb-js-composer .faq-tabs-home.vc_tta.vc_general .vc_tta-tabs-container .vc_tta-tabs-list li.vc_active:before {
   opacity: 1;
+}
+
+.service-content rs-fullwidth-wrap:first-child {
+  margin-bottom: 30px !important;
+}
+
+@media (min-width: 992px) {
+  .service-content rs-fullwidth-wrap:first-child {
+    margin-bottom: 60px !important;
+  }
+}
+
+.service-content, .service-content p, .service-content h1, .service-content h2, .service-content h3, .service-content h4, .service-content h5, .service-content h6, .service-content ol, .service-content ul {
+  color: #030303;
+  font-family: "Muli", sans-serif;
+}
+
+.service-content h1, .service-content h2, .service-content h3, .service-content h4, .service-content h5, .service-content h6 {
+  font-weight: 700;
+}
+
+.service-content h2 {
+  font-size: 33px;
+}
+
+.service-content h3 {
+  font-size: 26px;
+}
+
+.service-content p, .service-content ol, .service-content ul {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.service-content ol, .service-content ul {
+  padding-left: 20px;
+}
+
+.service-content li {
+  position: relative;
+  list-style-type: none;
+}
+
+.service-content li:before {
+  content: '•';
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 0px;
+}
+
+.fullwidth-title {
+  background-color: #999;
+  width: 100%;
+  padding: 17px 0 18px;
+}
+
+.fullwidth-title,
+.fullwidth-title * {
+  color: #fff;
+  font-size: 33px;
 }
