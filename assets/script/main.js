@@ -1,4 +1,158 @@
 
+function clog(data){
+  if(typeof(THEME_DEBUG) !== 'undefined' && THEME_DEBUG == 'yes'){
+    console.log(data);
+  }
+}
+function  do_google_map(id, lat, lng, marker_url) {
+  clog(id);
+  clog(lng);
+  clog(lat);
+  clog(marker_url);
+
+  // Create a new StyledMapType object, passing it an array of styles,
+  // and the name to be displayed on the map type control.
+  var styledMapType = new google.maps.StyledMapType(
+      [
+        {elementType: 'geometry', stylers: [{color: '#f2f2f2'}]},
+        {elementType: 'labels.text.fill', stylers: [{color: '#414141'}]},
+        {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
+        {
+          featureType: 'administrative',
+          elementType: 'geometry.stroke',
+          stylers: [{color: '#c9b2a6'}]
+        },
+        {
+          featureType: 'administrative.land_parcel',
+          elementType: 'geometry.stroke',
+          stylers: [{color: '#dcd2be'}]
+        },
+        {
+          featureType: 'administrative.land_parcel',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#a7a7a7'}]
+        },
+        {
+          featureType: 'landscape.natural',
+          elementType: 'geometry',
+          stylers: [{color: '#dfd2ae'}]
+        },
+        {
+          featureType: 'poi',
+          elementType: 'geometry',
+          stylers: [{color: '#dfd2ae'}]
+        },
+        {
+          featureType: 'poi',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#a7a7a7'}]
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'geometry.fill',
+          stylers: [{color: '#a5b076'}]
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#a7a7a7'}]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry',
+          stylers: [{color: '#f5f1e6'}]
+        },
+        {
+          featureType: 'road.arterial',
+          elementType: 'geometry',
+          stylers: [{color: '#fdfcf8'}]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry',
+          stylers: [{color: '#f8c967'}]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'geometry.stroke',
+          stylers: [{color: '#e9bc62'}]
+        },
+        {
+          featureType: 'road.highway.controlled_access',
+          elementType: 'geometry',
+          stylers: [{color: '#e98d58'}]
+        },
+        {
+          featureType: 'road.highway.controlled_access',
+          elementType: 'geometry.stroke',
+          stylers: [{color: '#db8555'}]
+        },
+        {
+          featureType: 'road.local',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#a7a7a7'}]
+        },
+        {
+          featureType: 'transit.line',
+          elementType: 'geometry',
+          stylers: [{color: '#dfd2ae'}]
+        },
+        {
+          featureType: 'transit.line',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#a7a7a7'}]
+        },
+        // {
+        //   featureType: 'transit.line',
+        //   elementType: 'labels.text.stroke',
+        //   stylers: [{color: '#ebe3cd'}]
+        // },
+        {
+          featureType: 'transit.station',
+          elementType: 'geometry',
+          stylers: [{color: '#dfd2ae'}]
+        },
+        {
+          featureType: 'water',
+          elementType: 'geometry.fill',
+          stylers: [{color: '#9d9d9f'}]
+        },
+        {
+          featureType: 'water',
+          elementType: 'labels.text.fill',
+          stylers: [{color: '#a7a7a7'}]
+        }
+      ],
+      {name: 'Styled Map'});
+
+  // Create a map object, and include the MapTypeId to add
+  // to the map type control.
+  var map = new google.maps.Map(document.getElementById(id), {
+    center: {lat: parseFloat(lat), lng: parseFloat(lng)},
+    zoom: 14,
+    mapTypeControlOptions: {
+      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+              'styled_map']
+    }
+  });
+
+  var marker_args =  {
+    position: {lat: parseFloat(lat), lng: parseFloat(lng)},
+    map:       map,
+  };
+
+  if('undefined' !== typeof('marker_url')){
+    marker_args.icon = marker_url;
+  }
+
+  var marker = new google.maps.Marker(marker_args);
+
+  //Associate the styled map with the MapTypeId and set it to display.
+  map.mapTypes.set('styled_map', styledMapType);
+  map.setMapTypeId('styled_map');
+}
+
+
 function init_events_carousel(){
   jQuery('.upcomming-events.owl-carousel').each(function(ind,el){
     let owl = jQuery(el);
@@ -153,146 +307,46 @@ jQuery('.faq-item').click(function(event) {
 });
 
 
-jQuery(document.body).on('theme.init.map',function(event, id, long, lat){
-  do_google_map(id, long, lat);
+// load more venues and init maps
+jQuery('.load-more-venues').click(function(e){
+  e.preventDefault();
+  clog('show more venues');
+
+  var counter = 0;
+
+  jQuery('div.venues-preview').find('.venue-preview.hidden').each(function(ind, el){
+
+    if(counter < 6){
+      var map = jQuery(el).find('div.google-map-preview');
+
+      var block_id = map.attr('id');
+      var lat      = map.data('lat');
+      var lng      = map.data('lng');
+      var marker   = map.data('marker');
+
+      jQuery(el)
+        .css({opacity:0})
+        .removeClass('hidden');
+       do_google_map(block_id, lat, lng,  marker);
+    }
+    counter++;
+  });
+
+   setTimeout(function(){
+     jQuery('div.venues-preview').find('div.venue-preview').css({opacity:1})
+   }, 100);
+
+   if(! jQuery('div.venues-preview').find('.venue-preview.hidden').length){
+
+     jQuery('.load-more-venues').remove();
+   }
+
 })
 
 
-function  do_google_map(id, long, lat) {
-  console.log(id)
-  console.log(long)
-  console.log(lat)
-
-  // Create a new StyledMapType object, passing it an array of styles,
-  // and the name to be displayed on the map type control.
-  var styledMapType = new google.maps.StyledMapType(
-      [
-        {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
-        {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
-        {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
-        {
-          featureType: 'administrative',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#c9b2a6'}]
-        },
-        {
-          featureType: 'administrative.land_parcel',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#dcd2be'}]
-        },
-        {
-          featureType: 'administrative.land_parcel',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#ae9e90'}]
-        },
-        {
-          featureType: 'landscape.natural',
-          elementType: 'geometry',
-          stylers: [{color: '#dfd2ae'}]
-        },
-        {
-          featureType: 'poi',
-          elementType: 'geometry',
-          stylers: [{color: '#dfd2ae'}]
-        },
-        {
-          featureType: 'poi',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#93817c'}]
-        },
-        {
-          featureType: 'poi.park',
-          elementType: 'geometry.fill',
-          stylers: [{color: '#a5b076'}]
-        },
-        {
-          featureType: 'poi.park',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#447530'}]
-        },
-        {
-          featureType: 'road',
-          elementType: 'geometry',
-          stylers: [{color: '#f5f1e6'}]
-        },
-        {
-          featureType: 'road.arterial',
-          elementType: 'geometry',
-          stylers: [{color: '#fdfcf8'}]
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry',
-          stylers: [{color: '#f8c967'}]
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#e9bc62'}]
-        },
-        {
-          featureType: 'road.highway.controlled_access',
-          elementType: 'geometry',
-          stylers: [{color: '#e98d58'}]
-        },
-        {
-          featureType: 'road.highway.controlled_access',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#db8555'}]
-        },
-        {
-          featureType: 'road.local',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#806b63'}]
-        },
-        {
-          featureType: 'transit.line',
-          elementType: 'geometry',
-          stylers: [{color: '#dfd2ae'}]
-        },
-        {
-          featureType: 'transit.line',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#8f7d77'}]
-        },
-        {
-          featureType: 'transit.line',
-          elementType: 'labels.text.stroke',
-          stylers: [{color: '#ebe3cd'}]
-        },
-        {
-          featureType: 'transit.station',
-          elementType: 'geometry',
-          stylers: [{color: '#dfd2ae'}]
-        },
-        {
-          featureType: 'water',
-          elementType: 'geometry.fill',
-          stylers: [{color: '#b9d3c2'}]
-        },
-        {
-          featureType: 'water',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#92998d'}]
-        }
-      ],
-      {name: 'Styled Map'});
-
-  // Create a map object, and include the MapTypeId to add
-  // to the map type control.
-  var map = new google.maps.Map(document.getElementById(id), {
-    center: {lat: parseFloat(lat), lng: parseFloat(long)},
-    zoom: 11,
-    mapTypeControlOptions: {
-      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
-              'styled_map']
-    }
-  });
-
-  //Associate the styled map with the MapTypeId and set it to display.
-  map.mapTypes.set('styled_map', styledMapType);
-  map.setMapTypeId('styled_map');
-}
+jQuery(document.body).on('theme.init.map',function(event, id, lng, lat, $marker_url){
+  do_google_map(id, lng, lat, $marker_url);
+})
 var Cookie =
 {
    set: function(name, value, days)

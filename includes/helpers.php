@@ -19,7 +19,7 @@ if(!function_exists('clog')){
  * @param mixed $content - obj|array|string
  */
   function clog($content, $color = false){
-    if(!$content) return;
+    // if(!$content) return;
 
     global $clog_data;
     $clog_data = (!$clog_data)? array() : $clog_data;

@@ -16,21 +16,32 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   $color = false;
 
   if($terms){
-    $color = get_term_meta($terms[0], 'events_color', true);
+    $color     = get_term_meta($terms[0], 'events_color', true);
+    $marker_id = get_term_meta($terms[0], 'marker_google_map_term', true);
+
+    global $marker_url_term;
+    $marker_url_term = wp_get_attachment_image_url($marker_id, 'full');
   }
 
+
+   // stylings depending on category
   if($color){
     ?>
       <style>
+
+        .venue-preview__contacts li:before,
         .service-content ul li:before{
           color: <?php echo $color; ?>;
         }
         .fullwidth-title{
           background-color: <?php echo $color; ?>;
         }
+
+        .service-content a[download],
         .event-data__more,
         .event-data__icon,
         .event-data__decoration,
+        .load-more-venues,
         .event-data__overlay{
           background-color: <?php echo $color; ?>;
         }
@@ -71,22 +82,39 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   <div class="spacer-h-20"></div>
 
   <?php
-    $related_events = get_field('related_events');
 
-    if ($related_events) {
-      ?><div class="container">
+    $future_events_category = get_field('future_events_category');
+    $future_events = tribe_get_events( [
+       'posts_per_page' => -1,
+       'start_date'     => new DateTime('today'),
+       'fields' => 'ids',
+       'tax_query' => array(
+        array(
+          'taxonomy' => "tribe_events_cat",
+          'field' => 'id',
+          'terms' =>  $future_events_category->term_id
+        )
+      )
+    ]);
+     glog('event', true);
+     clog($future_events);
+
+    glog(false);
+
+    if ($future_events) {
+      ?><div class="container no-paddings">
         <?php
       printf("<h2>%s</h2>",__('Upcoming Events & Workshops', 'theme-translations'));
 
       ?><div class="spacer-h-40"></div>
         <?php
-      foreach ($related_events as $event_id) {
+      foreach ($future_events as $event_id) {
         $event = get_post($event_id);
         $image_id = get_post_thumbnail_id($event_id);
         $start  = get_post_meta($event_id, '_EventStartDate', true);
-        $start  = get_post_meta($event_id, '_EventEndDate', true);
         $start   = new DateTime($start);
-        $end   = new DateTime($end);
+        $end    = get_post_meta($event_id, '_EventEndDate', true);
+        $end    = new DateTime($end);
 
         $venue_id = (int)get_post_meta($event_id, '_EventVenueID',true);
 
@@ -96,6 +124,13 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
           get_post_meta($venue_id,'_VenueProvince', true),
           get_post_meta($venue_id,'_VenueAddress', true),
         );
+        $address_formatted = array();
+        foreach ($address as $key => $a) {
+          if($a){
+            array_push($address_formatted, $a);
+          }
+          # code...
+        }
 
         $args = array(
           'title' => $event->post_title,
@@ -104,7 +139,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
           'date_start'  =>  $start->format('l, F d, Y'),
           'time_start'  =>  $start->format('h:i a'),
           'time_end'    =>  $end->format('h:i a'),
-          'address' => implode(', ', $address),
+          'address' => implode(', ', $address_formatted),
           'topics' => get_field('event_topic', $event_id),
         );
 
@@ -119,41 +154,33 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   <div class="spacer-h-20"></div>
   <div class="spacer-h-20"></div>
 
-  <?php  $locations = get_field('locations');
-    if ($locations):
-     ?>
-      <section class="fullwidth-title">
-        <div class="container">
-          <?php _e('Locations','theme-translations');?>
-        </div>
-      </section>
-      <div class="spacer-h-50"></div>
-
-      <div class="container">
+   <?php
+   /**
+   * prints venues for event
+   */
 
 
-        <div class="row">
-
-      <?php
-         foreach ($locations as $key => $location_id) {
-          ?>
-          <div class="col-md-6">
-          <?php
-            $args = array(
-              'latitude' => get_field('latitude', $location_id),
-              'longitude' => get_field('longitude', $location_id),
-              'block_id' => 'theme_map_holder_'.$key,
-            );
-
-            echo  print_theme_template_part('location-map', 'events', $args);
-          ?>
+  // get stored venues
+  $venues = get_field('locations');
+    if ($venues):
+      ?>
+        <section class="fullwidth-title">
+          <div class="container">
+            <?php _e('Locations','theme-translations');?>
           </div>
-         <?php  }; ?>
-        </div>
-        </div>
+        </section>
         <div class="spacer-h-50"></div>
 
-    <?php endif; ?>
+        <div class="row-xs">
+
+      <?php
+      /**
+      * @see includes/venue_list.php
+      */
+      show_venu_list($venues);
+        ?> </div> <?php
+
+    endif; ?>
 
 
 
