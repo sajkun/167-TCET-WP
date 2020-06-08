@@ -98,8 +98,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     ]);
      glog('event', true);
      clog($future_events);
-
-    glog(false);
+     glog(false);
 
     if ($future_events) {
       ?><div class="container no-paddings">

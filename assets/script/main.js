@@ -4,6 +4,7 @@ function clog(data){
     console.log(data);
   }
 }
+
 function  do_google_map(id, lat, lng, marker_url) {
   clog(id);
   clog(lng);
@@ -150,6 +151,35 @@ function  do_google_map(id, lat, lng, marker_url) {
   //Associate the styled map with the MapTypeId and set it to display.
   map.mapTypes.set('styled_map', styledMapType);
   map.setMapTypeId('styled_map');
+}
+
+var search_map_object;
+
+function add_search_marker(lat, lng, marker_url){
+  var marker_args =  {
+    position: {lat: parseFloat(lat), lng: parseFloat(lng)},
+    map:       search_map_object,
+  };
+
+
+
+  if('undefined' !== typeof('marker_url')){
+    marker_args.icon = marker_url;
+  }
+
+  new google.maps.Marker(marker_args);
+}
+
+
+function do_search_map(id, lat, lng, zoom){
+  search_map_object = new google.maps.Map(document.getElementById(id), {
+    center: {lat: parseFloat(lat), lng: parseFloat(lng)},
+    zoom: parseInt(zoom),
+    mapTypeControlOptions: {
+      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+              'styled_map']
+    }
+  });
 }
 
 
@@ -346,6 +376,30 @@ jQuery('.load-more-venues').click(function(e){
 
 jQuery(document.body).on('theme.init.map',function(event, id, lng, lat, $marker_url){
   do_google_map(id, lng, lat, $marker_url);
+})
+
+jQuery(document.body).on('theme.init.map.search',function(event, id, lat, lng, zoom){
+  do_search_map(id, lat, lng, zoom);
+})
+
+
+
+jQuery(document.body).on('theme.add.map.search.marker',function(event,  lat, lng, marker){
+  add_search_marker(lat, lng, marker);
+})
+
+
+jQuery('.venues-filter__item-title').click(function(){
+  $action_expand =  !jQuery(this).closest('.venues-filter__item').hasClass('expanded');
+
+  if($action_expand){
+    jQuery(this).closest('.venues-filter__item').addClass('expanded');
+    jQuery(this).siblings('.venues-filter__item-body').slideDown();
+  }else{
+    jQuery(this).closest('.venues-filter__item').removeClass('expanded');
+    jQuery(this).siblings('.venues-filter__item-body').slideUp();
+
+  }
 })
 var Cookie =
 {
