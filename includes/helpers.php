@@ -181,6 +181,9 @@ if(!function_exists('print_theme_template_part')){
 }
 
 
+
+
+
 if(!function_exists('include_php_from_dir')){
 
   /**
@@ -219,3 +222,12 @@ if(!function_exists('test_filter')){
   }
 }
 
+/**
+ * prints passed data to a file
+ *
+ * @param $log - mixed string|bool|integer|object
+ */
+function print_theme_log($log){
+  $log = print_r($log, true);
+  file_put_contents(THEME_PATH.'/logs/post_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+}
