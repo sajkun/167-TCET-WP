@@ -23,6 +23,7 @@ class velesh_orgafresh_child{
     define('THEME_DEBUG', true);
     define('SERVICE_POST_NAME', 'theme_services');
     define('FAQ_POST_NAME', 'faq_post');
+    define('LOCATIONS_POST', 'tribe_venue');
   }
 
   public function define_image_sizes(){

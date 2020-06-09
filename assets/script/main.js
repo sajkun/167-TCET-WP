@@ -5,14 +5,10 @@ function clog(data){
   }
 }
 
-function  do_google_map(id, lat, lng, marker_url) {
-  clog(id);
-  clog(lng);
-  clog(lat);
-  clog(marker_url);
+var maps = {};
 
-  // Create a new StyledMapType object, passing it an array of styles,
-  // and the name to be displayed on the map type control.
+function  do_google_map(map_id, lat, lng, marker_url) {
+  clog('do_google_map')
   var styledMapType = new google.maps.StyledMapType(
       [
         {elementType: 'geometry', stylers: [{color: '#f2f2f2'}]},
@@ -124,11 +120,12 @@ function  do_google_map(id, lat, lng, marker_url) {
           stylers: [{color: '#a7a7a7'}]
         }
       ],
-      {name: 'Styled Map'});
+      {name: 'Styled Map'}
+      );
 
   // Create a map object, and include the MapTypeId to add
   // to the map type control.
-  var map = new google.maps.Map(document.getElementById(id), {
+   maps[map_id] = new google.maps.Map(document.getElementById(map_id), {
     center: {lat: parseFloat(lat), lng: parseFloat(lng)},
     zoom: 14,
     mapTypeControlOptions: {
@@ -139,36 +136,71 @@ function  do_google_map(id, lat, lng, marker_url) {
 
   var marker_args =  {
     position: {lat: parseFloat(lat), lng: parseFloat(lng)},
-    map:       map,
+    map:       maps[map_id],
   };
 
   if('undefined' !== typeof('marker_url')){
     marker_args.icon = marker_url;
   }
 
-  var marker = new google.maps.Marker(marker_args);
+   new google.maps.Marker(marker_args);
 
   //Associate the styled map with the MapTypeId and set it to display.
-  map.mapTypes.set('styled_map', styledMapType);
-  map.setMapTypeId('styled_map');
+  // maps[map_id].mapTypes.set('styled_map', styledMapType);
+  // maps[map_id].setMapTypeId('styled_map');
 }
 
 var search_map_object;
 
-function add_search_marker(lat, lng, marker_url){
+var markers = {};
+
+
+
+function add_search_marker(lat, lng, marker_url, title){
+  clog('add_search_marker');
   var marker_args =  {
     position: {lat: parseFloat(lat), lng: parseFloat(lng)},
-    map:       search_map_object,
+    map:   search_map_object,
+    title: title,
   };
-
-
 
   if('undefined' !== typeof('marker_url')){
     marker_args.icon = marker_url;
   }
 
-  new google.maps.Marker(marker_args);
+  var regexp = new RegExp('\\s{1,}', 'g');
+
+  var index = title.replace(regexp, '_');
+
+  markers[index]  = new google.maps.Marker(marker_args);
+
+  markers[index].addListener('click',function(){
+    search_map_object.panTo( markers[index].getPosition());
+
+    var zoom = parseInt(jQuery('#search-map').data('zoom'));
+    search_map_object.setZoom(zoom);
+
+    jQuery(document.body).trigger('search.map.location', [title])
+  })
 }
+
+
+
+
+function center_search_map(newLat, newLng){
+
+  try{
+    search_map_object.panTo({
+    lat : parseFloat(newLat),
+    lng : parseFloat(newLng)
+  });
+
+
+   search_map_object.setZoom(15);
+   jQuery('html, body').animate({'scrollTop': 0})
+  } catch{}
+}
+
 
 
 function do_search_map(id, lat, lng, zoom){
@@ -181,6 +213,7 @@ function do_search_map(id, lat, lng, zoom){
     }
   });
 }
+
 
 
 function init_events_carousel(){
@@ -378,14 +411,47 @@ jQuery(document.body).on('theme.init.map',function(event, id, lng, lat, $marker_
   do_google_map(id, lng, lat, $marker_url);
 })
 
-jQuery(document.body).on('theme.init.map.search',function(event, id, lat, lng, zoom){
+
+
+jQuery(document.body).on('theme.init.search',function(event, id, lat, lng, zoom){
+
+  var obj = jQuery('#'+id);
+  var margin = obj.closest('div.container').css('margin-right');
+
+  obj.css({'padding-right': margin});
   do_search_map(id, lat, lng, zoom);
 })
 
 
 
-jQuery(document.body).on('theme.add.map.search.marker',function(event,  lat, lng, marker){
-  add_search_marker(lat, lng, marker);
+jQuery(window).resize(function(){
+  var obj = jQuery('#search-map');
+  var margin = obj.closest('div.container').css('margin-right');
+
+  obj.css({'padding-right': margin});
+})
+
+
+
+jQuery(document.body).on('theme.add.map.search.marker',function(event,  lat, lng, marker, title){
+  add_search_marker(lat, lng, marker, title);
+})
+
+
+
+jQuery(document.body).on('search.map.center', function(event, lat, lng){
+  center_search_map(lat, lng);
+})
+
+
+
+jQuery(document.body).on('search.map.location',function(event, title){
+  jQuery('.location-item').removeClass('active');
+  jQuery('.location-item[data-title="'+title+'"]').addClass('active');
+
+  var pos = jQuery('.location-item[data-title="'+title+'"]').offset().top - 100;
+
+  jQuery('html, body').animate({'scrollTop': pos});
 })
 
 
@@ -400,6 +466,126 @@ jQuery('.venues-filter__item-title').click(function(){
     jQuery(this).siblings('.venues-filter__item-body').slideUp();
 
   }
+})
+
+
+jQuery('.location-item').click(function(event) {
+  var lng = parseFloat(jQuery(this).data('lng'));
+  var lat = parseFloat(jQuery(this).data('lat'));
+  jQuery('.location-item').removeClass('active');
+
+  jQuery(document.body).trigger('search.map.center', [lat, lng]);
+});
+
+var timeout_loc;
+
+jQuery('.search-locations-wrapper .field').on('input',function(){
+  var val = jQuery(this).val().toLowerCase();
+
+  // var searches = val.split(' ');
+  // console.log(searches);
+
+  var locations = jQuery('.location-item');
+
+  jQuery('.venues-filter__list input').each(function(ind, el){
+    jQuery(el).prop({'checked': 0})
+  })
+
+  if(val.length  < 3){
+    locations.each(function(ind, el){
+      jQuery(el).closest('div.js-parent').slideDown();
+    })
+  }
+
+  if(timeout_loc ){
+    clearTimeout(timeout_loc);
+  }
+
+  timeout_loc = setTimeout(function(){
+    locations.each(function(ind, el){
+      var search = jQuery(el).data('search').toLowerCase();
+
+      if(search.indexOf(val) < 0){
+        if(jQuery(el).is(':visible')){
+          jQuery(el).closest('div.js-parent').slideUp();
+        }
+      }else{
+        if(!jQuery(el).is(':visible')){
+          jQuery(el).closest('div.js-parent').slideDown();
+        }
+      }
+    })
+  }, 500);
+})
+var locations_selected = {
+  // title: [],
+  // category:  []
+}
+var selected_services = [];
+
+jQuery('.venues-filter__list input').on('click, change',function(){
+  var name  = jQuery(this).attr('name');
+  var val   = jQuery(this).val();
+  var state = jQuery(this).prop('checked');
+
+  if('undefined' == typeof(locations_selected[name])){
+    locations_selected[name] = [];
+  }
+
+  if(state){
+    var ind = locations_selected[name].indexOf(val);
+
+    if(ind < 0){
+      locations_selected[name].push(val);
+    }
+
+  }else{
+    var ind = locations_selected[name].indexOf(val);
+
+    if(ind >= 0){
+      locations_selected[name].splice(ind, 1);
+    }
+  }
+
+  jQuery(document.body).trigger('filter_locations', [locations_selected])
+
+})
+
+jQuery(document.body).on('filter_locations', function(e,locations_selected){
+  var locations = jQuery('.location-item');
+  var show_all = true;
+
+  for(id in locations_selected){
+    show_all = locations_selected[id].length > 0? false: show_all;
+  }
+
+  if(show_all){
+    locations.each(function(ind, el){
+       jQuery(el).closest('div.js-parent').slideDown();
+    })
+    return;
+  }
+
+  locations.each(function(ind,el){
+    var title    = jQuery(el).data('title');
+    var category = jQuery(el).data('category');
+
+    var show_element = true;
+
+
+    for(var id in locations_selected){
+      var param = locations_selected[id];
+      var compare_value = jQuery(el).data(id);
+      show_element = (param.length > 0 && param.indexOf(compare_value) < 0) ? false : show_element;
+    }
+
+
+    if(show_element){
+      jQuery(el).closest('div.js-parent').slideDown();
+    }else{
+      jQuery(el).closest('div.js-parent').slideUp();
+    }
+  })
 })
 var Cookie =
 {

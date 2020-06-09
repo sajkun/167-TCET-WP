@@ -10,10 +10,22 @@ class WPBakeryShortCode_theme_venues_filter extends WPBakeryShortCode {
 
     $args_venues = array(
       'posts_per_page' => -1,
-      'post_type'      => 'tribe_venue',
+      'post_type'      => LOCATIONS_POST,
+       'meta_query' => array(
+           array(
+               'key' => 'show_in_locations',
+               'value' => 'yes',
+               'compare' => '=',
+           )
+       )
     );
 
     $venues = get_posts($args_venues );
+
+    if(!$venues){
+      return;
+    }
+
 
      foreach ($venues as $key => $venue){
 
@@ -34,7 +46,7 @@ class WPBakeryShortCode_theme_venues_filter extends WPBakeryShortCode {
        $names[] = $v['title'];
      }
 
-     array_unique($categories);
+   $categories =   array_unique($categories);
 
     $args = array(
       'names' => $names,

@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <li>
           <label class="radio-imitation">
-            <input type="checkbox" name="location" value="<?php echo $name ?>">
+            <input type="checkbox" name="title" value="<?php echo $name ?>">
             <span class="radio-imitation__view"></span>
             <span class="radio-imitation__text"><?php echo $name ?></span>
           </label>
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <li>
           <label class="radio-imitation">
-            <input type="checkbox" name="service" value="<?php echo $name ?>">
+            <input type="checkbox" name="category" value="<?php echo $name ?>">
             <span class="radio-imitation__view"></span>
             <span class="radio-imitation__text"><?php echo $name ?></span>
           </label>
