@@ -7422,6 +7422,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 10px 20px;
 }
 
+p {
+  font-family: "Muli", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 100;
+}
+
 .button-ctrl button {
   text-decoration: none;
   color: #fff;
