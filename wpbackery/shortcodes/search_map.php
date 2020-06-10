@@ -90,7 +90,7 @@ vc_map( array(
         'type' => 'textfield',
         "heading" => __('Initial zoom', 'theme-translation'),
         'param_name' => 'zoom',
-        'description' => __('this number should be between 1 and 14'),
+        'description' => __('this number should be between 1 and 16'),
         'value' => 12,
       ),
     ),

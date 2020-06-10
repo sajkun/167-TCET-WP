@@ -215,6 +215,27 @@ function do_search_map(id, lat, lng, zoom){
 }
 
 
+function do_large_map(id, lat, lng, zoom, title){
+  var large_map = new google.maps.Map(document.getElementById(id), {
+    center: {lat: parseFloat(lat), lng: parseFloat(lng)},
+    zoom: parseInt(zoom),
+    mapTypeControlOptions: {
+      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+              'styled_map']
+    }
+  });
+
+  var marker_args =  {
+    position: {lat: parseFloat(lat), lng: parseFloat(lng)},
+    map:   large_map,
+    title: title,
+  };
+
+  new google.maps.Marker(marker_args);
+
+}
+
+
 
 function init_events_carousel(){
   jQuery('.upcomming-events.owl-carousel').each(function(ind,el){
@@ -403,7 +424,20 @@ jQuery('.load-more-venues').click(function(e){
 
      jQuery('.load-more-venues').remove();
    }
+})
 
+jQuery('.go-up-button').click(function(){
+  jQuery('html, body').animate({scrollTop: 0});
+})
+
+jQuery(window).scroll(function(){
+  var pos = jQuery(window).scrollTop()
+
+  if(pos > 300){
+    jQuery('.go-up-button').addClass('shown');
+  }else{
+    jQuery('.go-up-button').removeClass('shown');
+  }
 })
 
 
@@ -423,9 +457,19 @@ jQuery(document.body).on('theme.init.search',function(event, id, lat, lng, zoom)
 })
 
 
+jQuery(document.body).on('theme.init.largemap',function(event, id, lat, lng, zoom, title){
+
+  var obj = jQuery('#'+id);
+  var margin = obj.closest('div.container').css('margin-right');
+
+  obj.css({'padding-right': margin});
+  do_large_map(id, lat, lng, zoom, title);
+})
+
+
 
 jQuery(window).resize(function(){
-  var obj = jQuery('#search-map');
+  var obj = jQuery('.search-map');
   var margin = obj.closest('div.container').css('margin-right');
 
   obj.css({'padding-right': margin});
@@ -470,11 +514,13 @@ jQuery('.venues-filter__item-title').click(function(){
 
 
 jQuery('.location-item').click(function(event) {
-  var lng = parseFloat(jQuery(this).data('lng'));
-  var lat = parseFloat(jQuery(this).data('lat'));
-  jQuery('.location-item').removeClass('active');
+  if(!jQuery(event.target).closest('a.location-item__more').length){
+    var lng = parseFloat(jQuery(this).data('lng'));
+    var lat = parseFloat(jQuery(this).data('lat'));
+    jQuery('.location-item').removeClass('active');
 
-  jQuery(document.body).trigger('search.map.center', [lat, lng]);
+    jQuery(document.body).trigger('search.map.center', [lat, lng]);
+  }
 });
 
 var timeout_loc;

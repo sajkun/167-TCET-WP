@@ -62,6 +62,9 @@ class velesh_orgafresh_child{
         add_action('wp_footer', 'exec_clog', PHP_INT_MAX);
      }
 
+    add_action('admin_init', array($this,'add_reading_settings'));
+
+    add_action('admin_menu', array($this,'add_option_pages'));
   }
 
 
@@ -97,7 +100,6 @@ class velesh_orgafresh_child{
     if (THEME_DEBUG) {
       wp_localize_script( 'velesh-theme-script', 'THEME_DEBUG' , 'yes' );
     }
-
   }
 
 
@@ -122,6 +124,87 @@ class velesh_orgafresh_child{
     $mimes['svg'] = 'image/svg+xml';
     $mimes['webp'] = 'image/webp';
     return $mimes;
+  }
+
+
+  /**
+  * adds additional settings section
+  */
+  public function add_reading_settings(){
+    add_settings_section('theme-pages-section', __('Custom page settings', 'theme-translations '), array($this, 'add_additional_page_settings'), 'reading');
+  }
+
+
+  /**
+  * callback for settings section
+  *
+  * @data - array;
+  *
+  * @see $this->add_reading_settings()
+  */
+  public function add_additional_page_settings($data){
+  }
+
+  /**
+  * adds options to reading sections
+  * allow admin to define special pages
+  */
+  public function add_option_pages(){
+    $options = array(
+      'success_stories'        => __('Success Stories', 'theme-translations'),
+    );
+
+    foreach ($options as $key => $name) {
+      $option_name = 'theme_page_'.$key;
+
+      register_setting( 'reading', $option_name );
+
+      add_settings_field(
+       'theme_setting_'.$key,
+        $name,
+
+        array(__CLASS__, 'page_select_callback'),
+
+        'reading',
+        'theme-pages-section',
+
+        array(
+          'id' => 'theme_setting_'.$key,
+          'option_name' => $option_name,
+        )
+      );
+    }
+  }
+
+  /**
+   * callback to display a select option for page select
+   *
+   * @param $val - arrray
+   *
+   * @see $this->add_reading_settings()
+   */
+  public static function page_select_callback( $val ){
+    $id = $val['id'];
+    $option_name = $val['option_name'];
+    $args = array(
+      'posts_per_page' => -1,
+      'limit'          => -1,
+    );
+    $pages = get_pages($args);
+    echo ' <select name="'.$option_name .'">';
+    echo '<option value="-1">— Select —</option>';
+
+    foreach ($pages  as $id => $page) {
+      $selected = (esc_attr( get_option($option_name) ) == $page->ID )? 'selected = "selected"' : '';
+      ?>
+        <option <?php echo $selected; ?> value="<?php echo $page->ID ?>"> <?php echo $page->post_title; ?></option>
+      <?php
+    }
+    echo '</select>';
+  }
+
+  public static function add_cors_http_header(){
+    // header("Access-Control-Allow-Origin: *");
   }
 }
 
