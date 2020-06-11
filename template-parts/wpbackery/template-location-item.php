@@ -35,5 +35,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     <?php if ($hours): ?>
     <p class="location-item__info pre"><?php _e('Hours of Operation','theme-translations');?> <br><?php echo $hours; ?> </p>
     <?php endif; ?>
+
+    <?php if ($parking_url && $show_parkings): ?>
+      <a href="<?php echo $parking_url ?>" class="location-item__more"><?php _e('Parking Info', 'theme-translations'); ?></a>
+    <?php endif ?>
   </div>
 </div>

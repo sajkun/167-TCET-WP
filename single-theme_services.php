@@ -16,15 +16,28 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   $color = false;
 
   if($terms){
-    $color     = get_term_meta($terms[0], 'events_color', true);
-    $marker_id = get_term_meta($terms[0], 'marker_google_map_term', true);
+    $color               = get_term_meta($terms[0], 'events_color', true);
+    $secondary_color     = get_term_meta($terms[0], 'secondary_color', true);
+    $marker_id           = get_term_meta($terms[0], 'marker_google_map_term', true);
 
     global $marker_url_term;
     $marker_url_term = wp_get_attachment_image_url($marker_id, 'full');
   }
 
+  clog($secondary_color );
+
 
    // stylings depending on category
+  if($secondary_color){
+    ?>
+      <style>
+     .featured-program{
+       background-color: <?php echo $secondary_color; ?>;
+      }
+
+      </style>
+    <?php
+  }
   if($color){
     ?>
       <style>
@@ -40,6 +53,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
         .service-content a[download],
         .event-data__more,
         .event-data__icon,
+        .featured-program__more,
         .event-data__decoration,
         .load-more-venues,
         .event-data__overlay{
@@ -79,7 +93,38 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     }
   ?>
 
-  <div class="spacer-h-20"></div>
+  <div class="spacer-h-30 spacer-h-lg-60"></div>
+
+  <?php
+
+  $limit = 2;
+
+  for($i = 1; $i <= $limit; $i++){
+
+    $data = get_field('program_'.$i);
+
+    if(!$data['show']){
+      continue;
+    }
+
+    $args = array(
+      'title' => $data['title'],
+      'text' => $data['text'],
+      'button_text' => $data['button_text']? $data['button_text'] : __('Read More', 'theme-translations'),
+      'button_url' => $data['button_url'],
+    );
+
+
+    print_theme_template_part('featured-program', 'wpbackery', $args);
+
+    if($i!== $limit){
+
+      echo '<div class="spacer-h-30 spacer-h-lg-70"></div>';
+    }
+  }
+
+  ?>
+  <div class="spacer-h-30 spacer-h-lg-60"></div>
 
   <?php
 
