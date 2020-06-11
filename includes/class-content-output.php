@@ -2,7 +2,10 @@
 class theme_content_output{
   public function __construct(){
     add_action('wp_footer', array($this, 'print_up_button'));
+<<<<<<< HEAD
     add_action('wp_footer', array($this, 'add_page_color_styles'));
+=======
+>>>>>>> 035391a8d273cfe41e2d744e4c7bd6b03f53f2c8
   }
 
   public static function print_up_button(){
@@ -12,6 +15,7 @@ class theme_content_output{
     </div>
     ';
   }
+<<<<<<< HEAD
 
   public static function add_page_color_styles(){
     $obj = get_queried_object();
@@ -86,6 +90,8 @@ class theme_content_output{
       <?php
     }
   }
+=======
+>>>>>>> 035391a8d273cfe41e2d744e4c7bd6b03f53f2c8
 }
 
 new theme_content_output();
