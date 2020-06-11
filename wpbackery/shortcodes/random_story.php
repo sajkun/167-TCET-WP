@@ -27,11 +27,8 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
 
     $stories = get_posts($args);
 
-<<<<<<< HEAD
     if(! $stories) return;
 
-=======
->>>>>>> 035391a8d273cfe41e2d744e4c7bd6b03f53f2c8
     $end = count( $stories ) - 1;
 
     $index = random_int(0,  $end);
