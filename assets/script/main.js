@@ -445,6 +445,13 @@ jQuery('.theme-accordeon__head').click(function(event) {
   jQuery(this).closest('div.theme-accordeon').toggleClass('expanded');
 });
 
+jQuery('.theme-accordeon-mob__head').click(function(event) {
+  if (jQuery(window).width() < 992) {
+    jQuery(this).siblings('.theme-accordeon-mob__body').slideToggle();
+    jQuery(this).closest('div.theme-accordeon-mob').toggleClass('expanded');
+  }
+});
+
 
 jQuery(document.body).on('theme.init.map',function(event, id, lng, lat, $marker_url){
   do_google_map(id, lng, lat, $marker_url);

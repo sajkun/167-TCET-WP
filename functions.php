@@ -20,7 +20,7 @@ class velesh_orgafresh_child{
     define('THEME_PATH', get_stylesheet_directory());
     define('THEME_URL', get_stylesheet_directory_uri());
     define('HOME_URL', get_home_url());
-    define('THEME_DEBUG', true);
+    define('THEME_DEBUG', false);
     define('SERVICE_POST_NAME', 'theme_services');
     define('FAQ_POST_NAME', 'faq_post');
     define('LOCATIONS_POST', 'tribe_venue');
@@ -28,6 +28,7 @@ class velesh_orgafresh_child{
 
   public function define_image_sizes(){
     add_image_size('event_data', 560, 250, true);
+    add_image_size('photo_team', 384, 454, true);
   }
 
 
@@ -151,6 +152,7 @@ class velesh_orgafresh_child{
   public function add_option_pages(){
     $options = array(
       'success_stories'        => __('Success Stories', 'theme-translations'),
+      'team'                   => __('Team Page', 'theme-translations'),
     );
 
     foreach ($options as $key => $name) {
