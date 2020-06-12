@@ -68,7 +68,7 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
       }
 
       $term_id = get_field('service', $venue->ID);
-      $term    = get_term( $term_id, "tribe_events_cat" );
+      $term    = get_term( $term_id, "services_term" );
 
       $search = array(
          $venue->post_title,

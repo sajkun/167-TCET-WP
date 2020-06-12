@@ -30,8 +30,7 @@ class WPBakeryShortCode_theme_venues_filter extends WPBakeryShortCode {
      foreach ($venues as $key => $venue){
 
       $term_id = get_field('service', $venue->ID);
-      $term    = get_term($term_id, "tribe_events_cat");
-
+      $term    = get_term($term_id, "services_term");
       $venues_formatted[] = array(
         'title'     => $venue->post_title,
         'category'  => $term->name,

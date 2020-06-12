@@ -110,6 +110,7 @@ class velesh_orgafresh_child{
     global $wp_styles;
     wp_dequeue_style('orgafresh-default');
     wp_deregister_style('orgafresh-default');
+    wp_dequeue_script('gmap-api');
   }
 
 
@@ -153,6 +154,7 @@ class velesh_orgafresh_child{
     $options = array(
       'success_stories'        => __('Success Stories', 'theme-translations'),
       'team'                   => __('Team Page', 'theme-translations'),
+      'events'                 => __('Events Page', 'theme-translations'),
     );
 
     foreach ($options as $key => $name) {
