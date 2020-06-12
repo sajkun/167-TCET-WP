@@ -30,9 +30,22 @@ $event_date_attr = $event->dates->start->format( Dates::DBDATEFORMAT );
 			<?php esc_html_e( 'All day', 'the-events-calendar' ); ?>
 		</time>
 	<?php else : ?>
-		<time datetime="<?php echo esc_attr( $event_date_attr ); ?>">
-			<?php echo $event->schedule_details->value(); ?>
-		</time>
+<?php if ($event->dates->start->format('d-m-y')  === $event->dates->end->format('d-m-y')): ?>
+
+   <time class="event-mobile__date">
+     <?php echo $event->dates->start->format('F d, Y') ?>
+   </time>
+   <time class="event-mobile__time">
+     <?php echo $event->dates->start->format('H:ia') ?> -
+     <?php echo $event->dates->end->format('H:ia') ?>
+   </time>
+
+  <?php else: ?>
+   <time class="event-mobile__date">
+     <?php echo $event->dates->start->format('F d, Y') ?>  <span class="event-mobile__time">  <?php echo $event->dates->start->format('H:ia') ?> - </span><br>
+     <?php echo $event->dates->end->format('F d, Y') ?> <span class="event-mobile__time">  <?php echo $event->dates->end->format('H:ia') ?></span>&nbsp;&nbsp;
+   </time>
+<?php endif ?>
 	<?php endif; ?>
 	<?php $this->template( 'month/mobile-events/mobile-day/mobile-event/date/meta', [ 'event' => $event ] ); ?>
 </div>

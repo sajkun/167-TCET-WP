@@ -231,3 +231,13 @@ function print_theme_log($log){
   $log = print_r($log, true);
   file_put_contents(THEME_PATH.'/logs/post_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
 }
+
+
+function print_events_header(){
+  $events_page_id = (int)get_option('theme_page_events');
+
+  if ($events_page_id) {
+    $page = get_post($events_page_id);
+    echo apply_filters('the_content', $page->post_content);
+  }
+}

@@ -15,5 +15,6 @@
 use Tribe\Events\Views\V2\Template_Bootstrap;
 
 get_header();
+do_action('tribe_before_content');
 echo tribe( Template_Bootstrap::class )->get_view_html();
 get_footer();

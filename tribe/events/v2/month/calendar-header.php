@@ -33,7 +33,7 @@ global $wp_locale;
 						<?php echo esc_html( $wp_locale->get_weekday_initial( $day ) ); ?>
 					</span>
 					<span class="tribe-events-calendar-month__header-column-title-desktop tribe-common-a11y-hidden">
-						<?php echo esc_html( $wp_locale->get_weekday_abbrev( $day ) ); ?>
+						<?php echo esc_html( $day  ); ?>
 					</span>
 				</h3>
 			</div>

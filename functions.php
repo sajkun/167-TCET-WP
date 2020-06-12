@@ -21,6 +21,7 @@ class velesh_orgafresh_child{
     define('THEME_URL', get_stylesheet_directory_uri());
     define('HOME_URL', get_home_url());
     define('THEME_DEBUG', false);
+    define('US_SERVICE_COLOR', false);
     define('SERVICE_POST_NAME', 'theme_services');
     define('FAQ_POST_NAME', 'faq_post');
     define('LOCATIONS_POST', 'tribe_venue');
@@ -66,6 +67,8 @@ class velesh_orgafresh_child{
     add_action('admin_init', array($this,'add_reading_settings'));
 
     add_action('admin_menu', array($this,'add_option_pages'));
+
+    add_action('tribe_before_content', 'print_events_header');
   }
 
   /**

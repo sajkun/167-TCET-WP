@@ -24,8 +24,6 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     $marker_url_term = wp_get_attachment_image_url($marker_id, 'full');
   }
 
-  clog($secondary_color );
-
 
    // stylings depending on category
   if($secondary_color){

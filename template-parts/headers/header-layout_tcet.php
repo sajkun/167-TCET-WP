@@ -4,7 +4,6 @@
  *
  */
 ?>
-
 <div class="header-alus <?php echo (wp_is_mobile())? 'header-mobile' : ''; ?> header-<?php echo esc_attr(orgafresh_get_opt('alus_header_layout')); ?>">
   <?php if( orgafresh_get_opt('alus_header_top_bar') ) : ?>
     <div class="site-header__top-row">
@@ -15,7 +14,7 @@
           <?php endif; ?>
 
           <?php if( orgafresh_get_opt('alus_donate_url') ): ?>
-            <a href="<?php echo orgafresh_get_opt('alus_donate_url') ?>" class="header-donate-link" target="_blank"><?php _e('Donate','theme-translation'); ?></a>
+            <a href="<?php echo orgafresh_get_opt('alus_donate_url') ?>" class="header-donate-link"><?php _e('Donate','theme-translation'); ?></a>
           <?php endif; ?>
 
           <?php if( orgafresh_get_opt('alus_enable_search') ): ?>

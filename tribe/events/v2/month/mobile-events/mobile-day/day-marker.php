@@ -22,7 +22,7 @@ if ( ! isset( $day_date ) ) {
 
 $day_date_datetime = Dates::build_date_object( $day_date )->getTimestamp()
 ?>
-<div class="tribe-events-c-day-marker tribe-events-calendar-month-mobile-events__day-marker">
+<div class="list-events-separator-month">
 	<time
 		class="tribe-events-c-day-marker__date tribe-common-h7 tribe-common-h--alt"
 		datetime="<?php echo esc_attr( date_i18n( Dates::DBDATEFORMAT, $day_date_datetime ) ); ?>"
