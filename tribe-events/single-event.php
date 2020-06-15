@@ -51,6 +51,7 @@ $invitation_only_text = get_post_meta( $event_id,'invitation_only_text', true );
 	<?php endif ?>
 	<?php if ($main_color): ?>
 
+	.icon-label,
 	.eligibility-title{
 		background-color: <?php echo $main_color ?>;
 	}
@@ -117,16 +118,18 @@ $invitation_only_text = get_post_meta( $event_id,'invitation_only_text', true );
 
 	<div class="spacer-h-30 spacer-h-lg-70"></div>
 
-	<div class="row">
-		<div class="col-12">
-			<div class="eligibility-title">
-				<span><?php _e('Eligibility','theme-translations');?></span>
+	<?php if ($elegibility): ?>
+		<div class="row">
+			<div class="col-12">
+				<div class="eligibility-title">
+					<span><?php _e('Eligibility','theme-translations');?></span>
+				</div>
+			</div>
+			<div class="col-12 single-event-content">
+					<?php echo apply_filters('the_content', $elegibility); ?>
 			</div>
 		</div>
-		<div class="col-12 single-event-content">
-				<?php echo apply_filters('the_content', $elegibility); ?>
-		</div>
-	</div>
+	<?php endif ?>
 
 <?php do_action( 'tribe_events_single_event_after_the_content' );?>
 

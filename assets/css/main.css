@@ -9180,6 +9180,14 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta-tabs-position-left .vc_tta-p
   overflow: visible !important;
 }
 
+body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta-tabs-position-left .vc_tta-tab.vc_active a {
+  color: #fff !important;
+}
+
+body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .vc_active .vc_tta-panel-heading a {
+  color: #fff !important;
+}
+
 .vc_btn3 {
   background-image: none !important;
 }
@@ -10091,9 +10099,14 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta-tabs-position-left .vc_tta-p
   margin: 0;
 }
 
+.event-meta-text .icon-label {
+  margin-right: 10px;
+}
+
+.event-meta-text a,
 .event-meta-text span {
   line-height: 33px;
-  display: inline-block;
+  display: inline;
   vertical-align: top;
 }
 
