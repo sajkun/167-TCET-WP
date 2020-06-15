@@ -24,8 +24,6 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     $marker_url_term = wp_get_attachment_image_url($marker_id, 'full');
   }
 
-  clog($secondary_color );
-
 
    // stylings depending on category
   if($secondary_color){
@@ -50,6 +48,12 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
           background-color: <?php echo $color; ?>;
         }
 
+        .service-content a{
+          color: <?php echo $color; ?>;
+        }
+        .service-content a[download]{
+          color: #fff;
+        }
         .service-content a[download],
         .event-data__more,
         .event-data__icon,
@@ -103,7 +107,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 
     $data = get_field('program_'.$i);
 
-    if(!$data['show']){
+    if(!$data['show'] || (!$data['title'] && !$data['text'])){
       continue;
     }
 
@@ -124,7 +128,6 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   }
 
   ?>
-  <div class="spacer-h-30 spacer-h-lg-60"></div>
 
   <?php
 

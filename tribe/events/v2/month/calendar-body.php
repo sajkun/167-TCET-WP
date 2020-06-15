@@ -16,7 +16,7 @@
  */
 ?>
 
-<div class="tribe-events-calendar-month__body 111" role="rowgroup">
+<div class="tribe-events-calendar-month__body" role="rowgroup">
 
 	<?php foreach ( array_chunk( $days, 7, true ) as $week ) : ?>
 

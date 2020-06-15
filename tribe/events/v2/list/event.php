@@ -16,8 +16,6 @@
  * @see tribe_get_event() For the format of the event object.
  */
 
-clog($event);
-
 $container_classes = ['event-list', $event->post_name];
 $container_classes['tribe-events-calendar-list__event-row--featured'] = $event->featured;
 

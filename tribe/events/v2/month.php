@@ -24,12 +24,7 @@ $header_classes = [ 'tribe-events-header' ];
 if ( empty( $disable_event_search ) ) {
 	$header_classes[] = 'tribe-events-header--has-event-search';
 }
-$events_page_id = (int)get_option('theme_page_events');
 
-if ($events_page_id) {
-	$page = get_post($events_page_id);
-	echo apply_filters('the_content', $page->post_content);
-}
 ?>
 <div
 	<?php tribe_classes( $container_classes ); ?>

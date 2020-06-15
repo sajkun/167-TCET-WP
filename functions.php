@@ -20,7 +20,8 @@ class velesh_orgafresh_child{
     define('THEME_PATH', get_stylesheet_directory());
     define('THEME_URL', get_stylesheet_directory_uri());
     define('HOME_URL', get_home_url());
-    define('THEME_DEBUG', false);
+    define('THEME_DEBUG', true);
+    define('US_SERVICE_COLOR', false);
     define('SERVICE_POST_NAME', 'theme_services');
     define('FAQ_POST_NAME', 'faq_post');
     define('LOCATIONS_POST', 'tribe_venue');
@@ -61,11 +62,85 @@ class velesh_orgafresh_child{
 
      if(THEME_DEBUG){
         add_action('wp_footer', 'exec_clog', PHP_INT_MAX);
+        add_action('admin_footer', 'exec_clog', PHP_INT_MAX);
      }
 
     add_action('admin_init', array($this,'add_reading_settings'));
 
     add_action('admin_menu', array($this,'add_option_pages'));
+
+    add_action('tribe_before_content', 'print_events_header');
+
+    add_action( 'admin_menu', array($this,'register_my_import_page' ));
+  }
+
+  public function import_services_cb(){
+    echo 'blocked';
+    return;
+
+    if(isset($_FILES['csv'])){
+      $content = file_get_contents($_FILES['csv']["tmp_name"]);
+      $data    = str_getcsv ( $content, PHP_EOL, '"');
+
+      $keys = str_getcsv ( $data[0], ',');
+
+      $tax_service_group = 'services_term';
+      $tax_session_type   = 'session_type';
+
+
+     // clog($data);
+      foreach ($data as $key => $value) {
+         if($key > 0){
+            $row = str_getcsv ( $value, ',', '"');
+
+            // clog($row);
+
+            $term_service_group = get_term_by( 'name', $row[1], 'services_term');
+            if(!$term_service_group  && isset($row[1])){
+              $term_service_group = wp_insert_term($row[1], 'services_term');
+            }
+            // clog( $term_service_group->term_id  );
+
+            $term_session_type = get_term_by( 'name', $row[2], 'session_type');
+
+            if(!$term_session_type && isset($row[2])){
+              $term_session_type = wp_insert_term($row[2], 'session_type');
+            }
+
+            $post_data = array(
+              'post_title'    => $row[0],
+              'post_content'  =>  $row[3],
+              'post_status'   => 'publish',
+              'post_type'     => 'theme_services',
+            );
+
+            $post_id = wp_insert_post( $post_data );
+
+            clog($post_id);
+
+            if ($term_service_group) {
+              wp_set_post_terms( $post_id, array($term_service_group->term_id), 'services_term');
+            }
+
+            if ($term_session_type) {
+              wp_set_post_terms( $post_id, array($term_session_type->term_id), 'session_type');
+            }
+
+
+            add_post_meta( $post_id, 'eligibility', $row[4]);
+        }
+      }
+    }
+
+    ?>
+      <form action="<?php echo admin_url('admin.php?page=import_services'); ?>" method="POST" enctype="multipart/form-data">
+        <input type="file" name="csv">
+        <input type="submit" value ="upload">
+      </form>
+    <?php
+  }
+  public function register_my_import_page(){
+    add_menu_page( 'Import Services', 'Import Services', 'manage_options', 'import_services', array($this, 'import_services_cb' ));
   }
 
   /**
