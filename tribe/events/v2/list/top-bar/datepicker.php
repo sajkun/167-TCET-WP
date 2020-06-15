@@ -25,6 +25,7 @@
  * @var string $datepicker_date            The datepicker selected date, in the `Y-m-d` format.
  */
 $now_label = __('Upcoming Events');
+
 ?>
 <div class="tribe-events-c-top-bar__datepicker">
 	<button
