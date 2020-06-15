@@ -12,10 +12,7 @@
 if ( ! tribe_get_venue_id() ) {
 	return;
 }
-
-$id   = (int)tribe_get_venue_id();
-$lat  = get_post_meta($id, 'latitude', true);
-$lng  = get_post_meta($id, 'longitude', true);
+$address = str_replace(' ', '+', strip_tags(tribe_get_full_address()));
 ?>
 
 <div class="spacer-h-20"></div>
@@ -35,15 +32,13 @@ $lng  = get_post_meta($id, 'longitude', true);
 						<?php //echo tribe_get_map_link_html(); ?>
 					<?php endif; ?>
 
-					<?php if ($lat && $lng ): ?>
 					<div class="spacer-h-10"></div>
 						<div class="event-meta-text">
 							<i class="icon-label">
 								<img src="<?php echo THEME_URL?>/assets/images/icons/geo.svg" alt="">
 							</i>
-							<a href="http://www.google.com/maps/place/<?php echo $lat ?>,<?php echo $lng ?>" target="_blank">Directions</a>
+							<a href="http://www.google.com/maps/place/?q=<?php echo $address ?>" target="_blank">Directions</a>
 						</div>
-					<?php endif ?>
 				</address>
 			</dd>
 		<?php endif; ?>
