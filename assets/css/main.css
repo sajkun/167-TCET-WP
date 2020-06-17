@@ -7731,16 +7731,19 @@ a.page-numbers {
   line-height: 76px;
 }
 
+h2,
 .section-title {
   color: #000;
   font-family: "Muli", sans-serif;
   font-size: 33px;
   letter-spacing: 1.49px;
+  line-height: 40px;
 }
 
 @media (min-width: 992px) {
+  h2,
   .section-title {
-    font-size: 35px;
+    font-size: 33px;
   }
 }
 
@@ -7923,7 +7926,8 @@ a.page-numbers {
   border: 2px solid #000000;
   width: 100%;
   max-width: 311px;
-  height: 160px;
+  flex-basis: 311px;
+  min-height: 160px;
   margin: 0 8px 20px;
 }
 
@@ -7973,7 +7977,12 @@ a.page-numbers {
 
 .upcomming-events {
   max-width: 992px;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   margin: 0 auto;
+  flex-flow: row wrap;
 }
 
 .carousel-ctrl {

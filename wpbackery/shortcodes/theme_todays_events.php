@@ -41,8 +41,9 @@ class WPBakeryShortCode_theme_todays_events extends WPBakeryShortCode {
             continue;
           }
 
-          $terms        =  get_terms('services_term',['hide_empty' => false]);
-          $event->color = count($terms['services_term']) > 0 ?  get_term_meta($terms['services_term'][0]->term_id, 'events_color', true) : '#eee';
+          $terms        =  wp_get_post_terms($event->ID, 'services_term');
+
+          $event->color = count($terms) > 0 ?  get_term_meta($terms[0]->term_id, 'events_color', true) : '#eee';
 
           $events_formatted[] = $event;
          }
