@@ -14,8 +14,11 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
       'posts_per_page' => -1,
       'post_type'      => 'theme_success_story',
       'field' => 'ids',
-
     );
+
+    foreach ($ids as $key => $id) {
+     $ids[$key] = (int)$id;
+    }
 
     if($ids){
       $args['tax_query'] = array(array(
@@ -26,7 +29,6 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
     }
 
     $stories = get_posts($args);
-
     if(! $stories) return;
 
     $end = count( $stories ) - 1;
@@ -43,11 +45,15 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
       $color     = get_term_meta($terms[0], 'events_color', true);
     }
 
+    $gender        = get_field('gender', $stories[$index]->ID);
+    $default_image = THEME_URL . '/assets/images/'.$gender.'_photo.svg';
+
+
     $args_story = array(
       'text' => $stories[$index]->post_title,
       'location' => get_field('location', $stories[$index]->ID),
       'name'     => get_field('name', $stories[$index]->ID),
-      'image'    => wp_get_attachment_image_url( $img_id, 'medium', false ),
+      'image'    => wp_get_attachment_image_url( $img_id, 'medium', false )?:$default_image ,
       'url'      => get_permalink(get_option('theme_page_success_stories')),
       'color'    => $color,
     );

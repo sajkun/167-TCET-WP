@@ -40,7 +40,10 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     ?>
       <style>
 
-        .venue-preview__contacts li:before,
+        .venue-preview__contacts li:before{
+          background-color: <?php echo $color; ?>;
+        }
+
         .service-content ul li:before{
           color: <?php echo $color; ?>;
         }

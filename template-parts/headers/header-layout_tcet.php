@@ -8,7 +8,16 @@
   <?php if( orgafresh_get_opt('alus_header_top_bar') ) : ?>
     <div class="site-header__top-row">
       <div class="container">
-        <div class="row no-gutters justify-content-end">
+        <div class="row">
+
+          <div class="col-12 col-sm-6 text-left valign-center" >
+            <div id="accesibility-header">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 text-right">
+            <div class="row no-gutters justify-content-end">
+
           <?php if( orgafresh_get_opt('alus_login_url') ): ?>
             <a href="<?php echo orgafresh_get_opt('alus_login_url') ?>" class="header-login-link" target="_blank"><?php _e('Login','theme-translation'); ?></a>
           <?php endif; ?>
@@ -20,6 +29,8 @@
           <?php if( orgafresh_get_opt('alus_enable_search') ): ?>
               <i class="icon-search"></i>
           <?php endif; ?>
+            </div>
+          </div>
         </div>
         <?php if( orgafresh_get_opt('alus_enable_search') ): ?>
           <div class="search-container">

@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="template-story">
   <div class="template-story__image">
     <?php if ($image): ?>
-    <img src="<?php echo $image?>" alt="">
+    <img src="<?php echo $image; ?>" alt="">
     <?php endif ?>
   </div>
   <div class="spacer-h-30"></div>

@@ -7918,6 +7918,16 @@ h2,
   padding-right: 0 !important;
 }
 
+.gutters-12 {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.gutters-12 [class^=col] {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .event-preview {
   display: inline-block;
   text-decoration: none;
@@ -8532,30 +8542,36 @@ h2,
 .venue-preview {
   font-family: "Muli", sans-serif;
   transition: opacity .3s;
+  font-family: "Muli", sans-serif;
+  background: #f3f5f6;
+  height: calc(100% - 20px);
 }
 
 .venue-preview__info {
   background: #f3f5f6;
-  padding: 40px 35px 40px 70px;
+  padding: 44px 35px 40px 70px;
 }
 
-.venue-preview__title {
+.venue-preview__title, .venue-preview__title:first-child, .venue-preview__titleh4, .venue-preview__titleh4:first-child {
   font-size: 33px;
   color: #030303;
   font-weight: 300;
   line-height: 43px;
   display: block;
-  margin: 0 0 15px;
+  margin: 0 0 20px;
+  font-family: "Muli", sans-serif;
 }
 
 .venue-preview__address {
   display: block;
-  margin: 0 0 10px;
+  margin: 0 0 21px;
   font-size: 26px;
+  line-height: 40px;
+  font-weight: 400;
 }
 
 .venue-preview__contacts {
-  padding-left: 20px;
+  padding-left: 31px;
   margin: 0 !important;
 }
 
@@ -8566,11 +8582,18 @@ h2,
 }
 
 .venue-preview__contacts li:before {
-  content: '•';
+  content: '';
   display: block;
   position: absolute;
-  left: -20px;
-  top: 0px;
+  left: -25px;
+  top: 11px;
+  width: 11px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.venue-preview__contacts li:not(:last-child) {
+  margin-bottom: 4px;
 }
 
 .search-map {
@@ -8994,15 +9017,17 @@ h2,
   height: 248px;
   border-radius: 50%;
   overflow: hidden;
-  background-image: url(../images/success_default.png);
+  background-color: #bebebe;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  border: 2px solid  #464445;
 }
 
 .template-story__image img {
   display: block;
   max-width: 100%;
+  margin: 0 auto;
   max-height: 100%;
 }
 

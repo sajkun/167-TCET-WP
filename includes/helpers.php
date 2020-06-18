@@ -183,9 +183,6 @@ if(!function_exists('print_theme_template_part')){
 }
 
 
-
-
-
 if(!function_exists('include_php_from_dir')){
 
   /**
@@ -243,3 +240,5 @@ function print_events_header(){
     echo apply_filters('the_content', $page->post_content);
   }
 }
+
+

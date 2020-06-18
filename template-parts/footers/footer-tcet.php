@@ -13,7 +13,7 @@
 <div class="site-footer__bottom">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-6 text-center text-left-md order-3 order-md-0">
+      <div class="col-12 col-md-4 text-center text-left-md order-3 order-md-0">
          <?php if( orgafresh_get_opt('velesh_footer_copyrights') ):
             printf('<p class="copyrights">%s</p>', orgafresh_get_opt('velesh_footer_copyrights'));
           endif; ?>
@@ -27,7 +27,11 @@
         );
        endif; ?>
       </div>
-      <div class="col-12 col-md-6 text-center text-right-md">
+      <div class="col-12 col-md-4 valign-center">
+        <div id="accesibility-footer">
+        </div>
+      </div>
+      <div class="col-12 col-md-4 text-center text-right-md">
         <?php if( orgafresh_get_opt('velesh_social_menu') ):
         wp_nav_menu(
            array(

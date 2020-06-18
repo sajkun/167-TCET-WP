@@ -116,8 +116,6 @@ class velesh_orgafresh_child{
 
             $post_id = wp_insert_post( $post_data );
 
-            clog($post_id);
-
             if ($term_service_group) {
               wp_set_post_terms( $post_id, array($term_service_group->term_id), 'services_term');
             }
