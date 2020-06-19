@@ -66,8 +66,15 @@ if ( tribe_get_venue_id() ) {
 		$set_venue_apart = true;
 	}
 }
+
+$email_register = get_post_meta($event_id, 'email_for_registration', true);
+$message = get_post_meta($event_id, 'message_for_registration', true);
 	?>
 		<div class="events-line"></div>
+
+		<?php if ($email || $message || $phone || $email_register): ?>
+
+
 		<div class="single-event-meta-title">
 			Contact
 		</div>
@@ -97,13 +104,18 @@ if ( tribe_get_venue_id() ) {
 
 	switch ($reg_mode) {
 		case 'message':
-			echo get_post_meta($event_id, 'message_for_registration', true);
+			echo $message;
 			break;
 		case 'email':
 		$p = get_post($event_id);
-			printf('<a href="mailto:%1$s?subject=%3$s" class="register-event-button">%2$s</a>',get_post_meta($event_id, 'email_for_registration', true), __('Register Now','theme-translations'), 'Register for event : '. $p->post_title);
+
+		if($email_register){
+			printf('<a href="mailto:%1$s?subject=%3$s" class="register-event-button">%2$s</a>',$email_register, __('Register Now','theme-translations'), 'Register for event : '. $p->post_title);
 			break;
+		}
 	}
+
+	endif;
 
 // Include organizer meta if appropriate
 if ( tribe_has_organizer() ) {

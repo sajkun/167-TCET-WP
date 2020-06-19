@@ -469,6 +469,26 @@ jQuery('.search-locations-wrapper .field').on('input',function(){
     })
   }, 500);
 })
+
+
+
+jQuery(document).ready(function($) {
+  if(jQuery('.service-select').length && 'undefined' !== typeof(link_passed_service)){
+
+    var value = false;
+    link_passed_service = link_passed_service.toLowerCase();
+
+    jQuery('.service-select option').each(function(index, el) {
+      var val = jQuery(el).val().toLowerCase();
+
+      value = val.indexOf(link_passed_service) >= 0 ? jQuery(el).val() : value;
+    });
+
+    if(value){
+      jQuery('.service-select').val(value);
+    }
+  }
+});
 var locations_selected = {
   // title: [],
   // category:  []

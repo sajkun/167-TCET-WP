@@ -173,6 +173,10 @@ class velesh_orgafresh_child{
     if (THEME_DEBUG) {
       wp_localize_script( 'velesh-theme-script', 'THEME_DEBUG' , 'yes' );
     }
+
+    if(isset($_GET['service'])){
+      wp_localize_script( 'velesh-theme-script', 'link_passed_service' , $_GET['service'] );
+    }
   }
 
 

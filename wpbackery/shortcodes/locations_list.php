@@ -100,8 +100,6 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
         implode('&', $styles)
       );
 
-      clog($term);
-
       $args = array(
           'title'            => get_field('display_name', $venue->ID)?:$venue->post_title,
           'category'         => ($term && !is_a($term, "WP_Error"))? $term->name : '',
@@ -122,7 +120,7 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
       );
 
 
-      ?> <div class="col-12 col-md-6 col-lg-4 js-parent"> <?php
+      ?> <div class="col-12 col-xs-6 col-sm-6 col-lg-4 js-parent"> <?php
 
         print_theme_template_part('location-item','wpbackery', $args);
 
@@ -137,9 +135,10 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
    }
 }
 
+add_action('vc_before_init', 'vc_before_init_theme_locations_list');
 
-
-vc_map( array(
+function vc_before_init_theme_locations_list(){
+  vc_map( array(
     'base' => 'theme_locations_list',
     'name' => __( 'Locations list', 'theme-translation' ),
     'class' => '',
@@ -153,4 +152,5 @@ vc_map( array(
     'params' => array(
 
     ),
-));
+  ));
+}

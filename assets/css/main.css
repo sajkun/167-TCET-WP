@@ -6544,7 +6544,8 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAASCAYAAAC0EpUuAAAB00lEQVQ4T62UvU4CURCFz3ZQSSihAENN1IYSsaN0Sxqj1BRjAiWI1CQ7b6CxgBJ8AoUSGh8AIha0gBWU5qy7ZGFxCYapuMzcb8+dPwMBJiJJwzASAM4BTAAsLMvqBd2hz9gVICK3AB4AJHf4FwC6AB5VlR/y2QaUygB0HGV2cCqVQjQaxWw2w3Q6xWq18kLuVPV5m7qGigif+AYgEgqFYJomMpmMTwXhrVYL4/HY9d2rqnoDvdAPAGexWAylUgnhcDgwdb1eD90us2Dblaq+uwcbKiJ15pAKa7XaXqB7udPpoN/v8zhR1dNtKBOeKBaLSKfT+4q74W80GpjP5/zPVFVbuuEU55MHy7IOAjKY+R0Oh/zJbuCLbWiOBWIuK5XKwdDBYIB2u817r6p6vQGNx+Mol8tHg7I3j/t8p/p2OxUKhZ29+Zf85XKJZrNpDwaAC1Ul53dMnbF8Ym9Wq9X/tNSXqq5H2tf8zC1bi6MZZHub31HLL1H+CRXn83lks1kfl/PPSRqNRl4fp4l9ymWzuaVEJAKAAWfuDSp3R3YL9A3gBcANhXAtAuCC6QatPvHCPbII42aqU5kjhJN06cSYO6EuwLnA7eXawq3wdl5EhCK4h3M/vYbFE732GjIAAAAASUVORK5CYII=);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAlCAYAAAA0lXuOAAADSklEQVRYR82Y0W0UMRCGf1cAKQBxqQDoIDzwHFIBUAGTCkgq2EkFQAUcFXB5R4JUQBAFkFSw6D+NV8Znn8d7J+VGOp20u7Y/j/8Zjx0ww0TkcQjhmTVd2P8t/4dhuJ7RZbNJaH5hH4jIIoRwOo7jWwDPG+1WIYTlOI5fVXU9gV2tCUpAAB8AEHCOfQJwuSvwVlARGQDIHLq8TQhBhmG4mttXEZQaBPAFwMncjivtlgDeqepdb78boAb5zaHDGwAcMGqQEuHvaQPiJ4CXvbD/gTogfwO4ALCqac40TT1TMo9qnlXVsx6v5qAU/ptKB+eqqt7ObdKEZSCWjAHGSbtsAhUR6pFLnts9taqqXLJuE5HXAOiAknePvdkgBf1R0SX1tOomTBqICKXwsdDH0iuBNaiIMIETNLcrVd1LehIRRvxpYQyXVyMotfc+6+RGVVs7kNvRplnKJ88KLu1H0F+WWtKBme+orb2ZiDB48uC6VtVmvo6gY4HmxdwAqs3MAosbSWp3qnrU8kao6VNVm3VAq/P8vS3/3/y5ZyyCltKSazl6QS1wuZPlOm0GVA30VlWP54C02ojIhsy8HmUBsrEcAI5692MHZHFTcYHacpSCaedEX9AoczJLx9RcaTBGfSkZ7y3ZRyoRYcRzS03ts6o2i/IIWtvi9ubVSmoi8Jmq0lFbLYJSp4zGvHDgM+bT7kI3HdVKP27RHCe1e1XNnxWB06KktGuwkbtwKI3QqHHdu18KypmV9mKOz+qJS9TlWfMkdVmqGbpydV4416oowhKStfNlS0/mRRY5jPLa0n4H8Mo7+dKZqRZYkY/AyxACvZyf2RfjODKqmS892mN7rlSzKK+dQluwLaf2vOfEqdWtkV8tPKxYoddqB7QeGH77B8CTLY0utsmqdQHB5WNRXTvweWB55mIf/DEG6Lna5Fn/spDeCFpXKWfRy/RF/Xk9zKM1B2YATgNbX4SNl2z5ZIvnfhdolrzpFQLHC4f0NYODA/HcXw0QywqcROkMFTMMd8Wpj25Qz1p7vxGR0lktbT5tCA8KSiI7ShO4JilK5/zBQQ2WcqplGN5xnRwEqMEywxA2DbLpluZgQKMwRSS9/5rKzIMDNe+ub2fSS7l/eYNFlbH6iFsAAAAASUVORK5CYII=);
+  background-size: 19px 18px;
 }
 
 .search-submit:after {
@@ -7688,8 +7689,14 @@ p {
   line-height: 43px;
   color: #030303;
   font-family: "Muli", sans-serif;
-  font-size: 33px;
+  font-size: 26px;
   font-weight: 700;
+}
+
+@media (min-width: 552px) {
+  .block-title {
+    font-size: 33px;
+  }
 }
 
 .no-float button,
@@ -7720,6 +7727,13 @@ a.page-numbers {
 
 .event-list i {
   text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .margins-15-lg {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
 }
 
 .slider-title {
@@ -7928,10 +7942,30 @@ h2,
   padding-right: 12px;
 }
 
+@media (min-width: 768px) {
+  .row-equal-height [class^=col] .vc_column-inner,
+  .row-equal-height [class^=col] div {
+    height: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .row-equal-height .vc_column-inner {
+    height: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .absolute-pos-bottom {
+    position: absolute;
+    bottom: 25px;
+  }
+}
+
 .event-preview {
   display: inline-block;
   text-decoration: none;
-  padding: 20px 40px;
+  padding: 20px 40px 30px;
   position: relative;
   border: 2px solid #000000;
   width: 100%;
@@ -7952,7 +7986,7 @@ h2,
   font-weight: 400;
   display: block;
   margin: 0;
-  line-height: 40px;
+  line-height: 31px;
 }
 
 .event-preview__date {
@@ -8945,6 +8979,12 @@ h2,
   white-space: pre;
 }
 
+.ctct-form .ctct-form-field-submit,
+.wpcf7-form .ctct-form-field-submit {
+  text-align: center;
+}
+
+.ctct-form label,
 .wpcf7-form label {
   line-height: 30px;
   color: #030303;
@@ -8954,10 +8994,16 @@ h2,
   display: block;
 }
 
+.ctct-form .wpcf7-list-item,
 .wpcf7-form .wpcf7-list-item {
   margin-left: 0 !important;
 }
 
+.ctct-form input[type=email],
+.ctct-form input[type=text],
+.ctct-form input[type=number],
+.ctct-form input[type=tel],
+.ctct-form input[type=email],
 .wpcf7-form input[type=email],
 .wpcf7-form input[type=text],
 .wpcf7-form input[type=number],
@@ -8972,11 +9018,17 @@ h2,
   padding: 0 15px;
   outline: 0;
   margin: 5px 0 0;
+  background-color: transparent;
   font-size: 18px;
 }
 
 @media (min-width: 992px) {
-  .newsletter-form .wpcf7-form input[type=email], .newsletter-form
+  .newsletter-form .ctct-form input[type=email], .newsletter-form
+  .ctct-form input[type=text], .newsletter-form
+  .ctct-form input[type=number], .newsletter-form
+  .ctct-form input[type=tel], .newsletter-form
+  .ctct-form input[type=email], .newsletter-form
+  .wpcf7-form input[type=email], .newsletter-form
   .wpcf7-form input[type=text], .newsletter-form
   .wpcf7-form input[type=number], .newsletter-form
   .wpcf7-form input[type=tel], .newsletter-form
@@ -8985,6 +9037,7 @@ h2,
   }
 }
 
+.ctct-form input[type=checkbox],
 .wpcf7-form input[type=checkbox] {
   width: 23px;
   height: 23px;
@@ -8994,12 +9047,14 @@ h2,
   display: none;
 }
 
+.ctct-form input[type=checkbox] + .wpcf7-list-item-label,
 .wpcf7-form input[type=checkbox] + .wpcf7-list-item-label {
   padding-left: 30px;
   display: inline-block;
   position: relative;
 }
 
+.ctct-form input[type=checkbox] + .wpcf7-list-item-label:before,
 .wpcf7-form input[type=checkbox] + .wpcf7-list-item-label:before {
   content: '';
   display: inline-block;
@@ -9014,11 +9069,13 @@ h2,
 }
 
 @media (min-width: 992px) {
+  .ctct-form input[type=checkbox] + .wpcf7-list-item-label:before,
   .wpcf7-form input[type=checkbox] + .wpcf7-list-item-label:before {
     border-color: #776e64;
   }
 }
 
+.ctct-form input[type=checkbox] + .wpcf7-list-item-label:after,
 .wpcf7-form input[type=checkbox] + .wpcf7-list-item-label:after {
   content: '✔';
   opacity: 0;
@@ -9035,15 +9092,18 @@ h2,
 }
 
 @media (min-width: 992px) {
+  .ctct-form input[type=checkbox] + .wpcf7-list-item-label:after,
   .wpcf7-form input[type=checkbox] + .wpcf7-list-item-label:after {
     color: #776e64;
   }
 }
 
+.ctct-form input[type=checkbox]:checked + .wpcf7-list-item-label:after,
 .wpcf7-form input[type=checkbox]:checked + .wpcf7-list-item-label:after {
   opacity: 1;
 }
 
+.ctct-form textarea,
 .wpcf7-form textarea {
   border: 2px solid #5cb8b2;
   height: 244px;
@@ -9053,6 +9113,7 @@ h2,
   padding: 15px;
 }
 
+.ctct-form select,
 .wpcf7-form select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -9069,6 +9130,8 @@ h2,
   width: 100%;
 }
 
+.ctct-form input[type=submit],
+.ctct-form button[type=submit],
 .wpcf7-form input[type=submit],
 .wpcf7-form button[type=submit] {
   color: #ffffff;
@@ -9085,6 +9148,8 @@ h2,
   float: unset !important;
 }
 
+.ctct-form input[type=submit]:hover,
+.ctct-form button[type=submit]:hover,
 .wpcf7-form input[type=submit]:hover,
 .wpcf7-form button[type=submit]:hover {
   background-color: #91887d;
@@ -10038,6 +10103,14 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
 
 .tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
   padding-top: 10px;
+}
+
+.tribe-events-calendar-month__calendar-event-title-link {
+  color: #fff !important;
+}
+
+.tribe-events-calendar-month__calendar-event {
+  background: #aaa;
 }
 
 .eligibility-title {

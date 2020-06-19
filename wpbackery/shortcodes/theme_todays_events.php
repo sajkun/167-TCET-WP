@@ -20,8 +20,6 @@ class WPBakeryShortCode_theme_todays_events extends WPBakeryShortCode {
 
         $output = '';
 
-        $css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $width_class, $this->settings['base'], $atts );
-
         $today = new DateTime( $start_type );
 
         $events = tribe_get_events( [
@@ -92,34 +90,38 @@ class WPBakeryShortCode_theme_todays_events extends WPBakeryShortCode {
   }
 }
 
-if (in_array("the-events-calendar/the-events-calendar.php", get_option('active_plugins'))){
+add_action('vc_before_init', 'vc_before_init_theme_todays_events');
 
-  vc_map( array(
-      'base' => 'theme_todays_events',
-      'name' => __( 'Today Events', 'theme-translation' ),
-      'class' => '',
-      'category' => __( 'Theme Shortcodes' ),
-      'icon' => THEME_URL.'/assets/images/icons/today.jpg',
-      'description' => __('Display a carousel with latest events. Uses tribe_events post type','theme-translation'),
-      'show_settings_on_create' => false,
-      'params' => array(
-        array(
-          'type' => 'dropdown',
-          "heading" => __( "Start Date Type", "theme-translation" ),
-          'param_name' => 'start_type',
-          'description' => __('Defines starting date for events', 'theme-translation'),
-          'value' => array(
-              __( 'Today',  "theme-translation"  ) => 'today',
-              __( 'Now',  "theme-translation"  ) => 'now',
-            ),
+function vc_before_init_theme_todays_events(){
+  if (in_array("the-events-calendar/the-events-calendar.php", get_option('active_plugins'))){
+
+    vc_map( array(
+        'base' => 'theme_todays_events',
+        'name' => __( 'Today Events', 'theme-translation' ),
+        'class' => '',
+        'category' => __( 'Theme Shortcodes' ),
+        'icon' => THEME_URL.'/assets/images/icons/today.jpg',
+        'description' => __('Display a carousel with latest events. Uses tribe_events post type','theme-translation'),
+        'show_settings_on_create' => false,
+        'params' => array(
+          array(
+            'type' => 'dropdown',
+            "heading" => __( "Start Date Type", "theme-translation" ),
+            'param_name' => 'start_type',
+            'description' => __('Defines starting date for events', 'theme-translation'),
+            'value' => array(
+                __( 'Today',  "theme-translation"  ) => 'today',
+                __( 'Now',  "theme-translation"  ) => 'now',
+              ),
+          ),
+          array(
+            "type" => "checkbox",
+            "heading" => __( "Show future events", "theme-translation" ),
+            "param_name" => "show_future_events",
+            "value" => 'yes',
+            "description" => __( "Check this if you want to show events that will start later than today.", "theme-translation" )
+          ),
         ),
-        array(
-          "type" => "checkbox",
-          "heading" => __( "Show future events", "theme-translation" ),
-          "param_name" => "show_future_events",
-          "value" => 'yes',
-          "description" => __( "Check this if you want to show events that will start later than today.", "theme-translation" )
-        ),
-      ),
-  ));
+    ));
+  }
 }

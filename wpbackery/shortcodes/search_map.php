@@ -62,36 +62,39 @@ class WPBakeryShortCode_theme_search_map extends WPBakeryShortCode {
    }
 }
 
+add_action('vc_before_init', 'vc_before_init_theme_search_map');
 
+function vc_before_init_theme_search_map(){
 
-vc_map( array(
-    'base' => 'theme_search_map',
-    'name' => __( 'Locations map', 'theme-translation' ),
-    'class' => '',
-    'category' => __( 'Theme Shortcodes' ),
-    'icon' => THEME_URL.'/assets/images/icons/map.png',
+  vc_map( array(
+      'base' => 'theme_search_map',
+      'name' => __( 'Locations map', 'theme-translation' ),
+      'class' => '',
+      'category' => __( 'Theme Shortcodes' ),
+      'icon' => THEME_URL.'/assets/images/icons/map.png',
 
-    'description' => __('Locations map', 'theme-translation'),
+      'description' => __('Locations map', 'theme-translation'),
 
-    'show_settings_on_create' => true,
+      'show_settings_on_create' => true,
 
-    'params' => array(
-      array(
-        'type' => 'textfield',
-        "heading" => __('Latitude of map center', 'theme-translation'),
-        'param_name' => 'lat',
+      'params' => array(
+        array(
+          'type' => 'textfield',
+          "heading" => __('Latitude of map center', 'theme-translation'),
+          'param_name' => 'lat',
+        ),
+        array(
+          'type' => 'textfield',
+          "heading" => __('Longitude of map center', 'theme-translation'),
+          'param_name' => 'lng',
+        ),
+        array(
+          'type' => 'textfield',
+          "heading" => __('Initial zoom', 'theme-translation'),
+          'param_name' => 'zoom',
+          'description' => __('this number should be between 1 and 16'),
+          'value' => 12,
+        ),
       ),
-      array(
-        'type' => 'textfield',
-        "heading" => __('Longitude of map center', 'theme-translation'),
-        'param_name' => 'lng',
-      ),
-      array(
-        'type' => 'textfield',
-        "heading" => __('Initial zoom', 'theme-translation'),
-        'param_name' => 'zoom',
-        'description' => __('this number should be between 1 and 16'),
-        'value' => 12,
-      ),
-    ),
-));
+  ));
+}

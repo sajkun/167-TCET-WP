@@ -34,28 +34,31 @@ if ( class_exists( 'WPBakeryShortCodesContainer' ) ) {
     }
   }
 }
+add_action('vc_before_init', 'vc_before_init_collapse_on_mobile');
 
-vc_map( array(
-    'base' => 'collapse_on_mobile',
-    'name' => __( 'Collapse On mobile', 'theme-translation' ),
-    "content_element" => true,
-    "show_settings_on_create" => true,
-    "is_container" => true,
-    'category' => __( 'Theme Shortcodes' ),
-    'description' =>__("content collapsed on mobiles", "theme-translations"),
-    'icon' => THEME_URL.'/assets/images/icons/accordeon.png',
-    "js_view" => 'VcSectionView',
-    'params' => array(
-      array(
-        'type' => 'textfield',
-        "heading" => __('Title', 'theme-translation'),
-        'param_name' => 'title',
-      ),
+function vc_before_init_collapse_on_mobile(){
+  vc_map( array(
+      'base' => 'collapse_on_mobile',
+      'name' => __( 'Collapse On mobile', 'theme-translation' ),
+      "content_element" => true,
+      "show_settings_on_create" => true,
+      "is_container" => true,
+      'category' => __( 'Theme Shortcodes' ),
+      'description' =>__("content collapsed on mobiles", "theme-translations"),
+      'icon' => THEME_URL.'/assets/images/icons/accordeon.png',
+      "js_view" => 'VcSectionView',
+      'params' => array(
+        array(
+          'type' => 'textfield',
+          "heading" => __('Title', 'theme-translation'),
+          'param_name' => 'title',
+        ),
 
-      array(
-        'type' => 'textfield',
-        "heading" => __('Anchor for links', 'theme-translation'),
-        'param_name' => 'anchor',
+        array(
+          'type' => 'textfield',
+          "heading" => __('Anchor for links', 'theme-translation'),
+          'param_name' => 'anchor',
+        ),
       ),
-    ),
-));
+  ));
+}

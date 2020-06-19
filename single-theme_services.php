@@ -104,7 +104,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 
   <?php
 
-  $limit = 2;
+  $limit = 6;
 
   for($i = 1; $i <= $limit; $i++){
 
@@ -126,7 +126,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 
     if($i!== $limit){
 
-      echo '<div class="spacer-h-30 spacer-h-lg-70"></div>';
+      echo '<div class="spacer-h-50"></div>';
     }
   }
 
@@ -135,24 +135,28 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   <?php
 
     $future_events_category = get_field('future_events_category');
-    $future_events = tribe_get_events( [
-       'posts_per_page' => -1,
+
+    $args = array(
+       'posts_per_page' => 3,
        'start_date'     => new DateTime('today'),
        'fields' => 'ids',
-       'tax_query' => array(
-        array(
+    );
+
+    if($future_events_category && !is_a('WP_Error', $future_events_category)){
+       $args['tax_query'] = array( array(
           'taxonomy' => "tribe_events_cat",
           'field' => 'id',
           'terms' =>  $future_events_category->term_id
-        )
-      )
-    ]);
+        ) );
+    }
+    $future_events = tribe_get_events($args);
+
      glog('event', true);
      clog($future_events);
      glog(false);
 
     if ($future_events) {
-      ?><div class="container no-paddings">
+      ?><div class="spacer-h-40"></div><div class="container no-paddings">
         <?php
       printf("<h2>%s</h2>",__('Upcoming Events & Workshops', 'theme-translations'));
 

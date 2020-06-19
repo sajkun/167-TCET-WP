@@ -23,7 +23,7 @@
           <?php endif; ?>
 
           <?php if( orgafresh_get_opt('alus_donate_url') ): ?>
-            <a href="<?php echo orgafresh_get_opt('alus_donate_url') ?>" class="header-donate-link"><?php _e('Donate','theme-translation'); ?></a>
+            <a href="<?php echo orgafresh_get_opt('alus_donate_url') ?>" class="header-donate-link" target="_blank"><?php _e('Donate','theme-translation'); ?></a>
           <?php endif; ?>
 
           <?php if( orgafresh_get_opt('alus_enable_search') ): ?>
@@ -62,7 +62,7 @@
 
         <div class="block-right-mobile">
           <?php if( orgafresh_get_opt('alus_donate_url') ): ?>
-           <a href="<?php echo orgafresh_get_opt('alus_donate_url') ?>" class="button-donate-mobile"><?php _e('Donate','theme-translation'); ?></a>
+           <a href="<?php echo orgafresh_get_opt('alus_donate_url') ?>" class="button-donate-mobile" target="_blank"><?php _e('Donate','theme-translation'); ?></a>
           <?php endif; ?>
 
           <?php if( orgafresh_get_opt('alus_enable_search') ): ?>

@@ -38,6 +38,11 @@ class WPBakeryShortCode_faq_accorderon extends WPBakeryShortCode {
 }
 
 
+add_action('vc_before_init', 'vc_before_init_faq_post');
+
+
+function vc_before_init_faq_post(){
+
 
   $faq = get_posts( array(
      'posts_per_page' => -1,
@@ -74,3 +79,4 @@ class WPBakeryShortCode_faq_accorderon extends WPBakeryShortCode {
         ),
       ),
   ));
+}

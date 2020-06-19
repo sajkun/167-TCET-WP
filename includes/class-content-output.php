@@ -59,7 +59,7 @@ class theme_content_output{
   public static function add_page_color_styles(){
     $obj = get_queried_object();
 
-    if($obj->post_type=="page"){
+    if( $obj && is_a($obj, "WP_Post") && $obj->post_type=="page"){
       $primary_color   = get_field('primary_color',$obj->ID);
       $secondary_color = get_field('secondary_color',$obj->ID);
       ?>

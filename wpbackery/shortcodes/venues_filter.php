@@ -65,19 +65,23 @@ class WPBakeryShortCode_theme_venues_filter extends WPBakeryShortCode {
    }
 }
 
+add_action('vc_before_init', 'vc_before_init_theme_venues_filter');
 
 
-vc_map( array(
-    'base' => 'theme_venues_filter',
-    'name' => __( 'Venues Filter', 'theme-translation' ),
-    'class' => '',
-    'category' => __( 'Theme Shortcodes' ),
-    'icon' => THEME_URL.'/assets/images/icons/filter.png',
+function vc_before_init_theme_venues_filter(){
 
-    'description' => __('Locations map', 'theme-translation'),
+  vc_map( array(
+      'base' => 'theme_venues_filter',
+      'name' => __( 'Venues Filter', 'theme-translation' ),
+      'class' => '',
+      'category' => __( 'Theme Shortcodes' ),
+      'icon' => THEME_URL.'/assets/images/icons/filter.png',
 
-    'show_settings_on_create' => false,
+      'description' => __('Locations map', 'theme-translation'),
 
-    'params' => array(
-    ),
-));
+      'show_settings_on_create' => false,
+
+      'params' => array(
+      ),
+  ));
+}

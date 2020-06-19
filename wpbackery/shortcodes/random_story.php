@@ -22,10 +22,10 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
 
     if($ids){
       $args['tax_query'] = array(array(
-            'taxonomy' => 'services_term',
-            'field' => 'id',
-            'terms' => $ids // Where term_id of Term 1 is "1".
-          ) );
+        'taxonomy' => 'services_term',
+        'field' => 'id',
+        'terms' => $ids // Where term_id of Term 1 is "1".
+      ) );
     }
 
     $stories = get_posts($args);
@@ -47,7 +47,6 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
 
     $gender        = get_field('gender', $stories[$index]->ID);
     $default_image = THEME_URL . '/assets/images/'.$gender.'_photo.svg';
-
 
     $text = strip_tags(strip_shortcodes($stories[$index]->post_content));
 
@@ -118,6 +117,4 @@ function map_theme_random_story(){
           ),
       ),
   ));
-
-
 }

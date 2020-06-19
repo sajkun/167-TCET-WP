@@ -17,7 +17,9 @@ class WPBakeryShortCode_event_count_down extends WPBakeryShortCode {
 
     $event = get_post($event_id);
 
-    if(!$event){
+    clog($event);
+
+    if(!$event || $event->post_status !== 'publish'){
       return;
     }
 
@@ -62,39 +64,43 @@ class WPBakeryShortCode_event_count_down extends WPBakeryShortCode {
   }
 }
 
-
-if (in_array("the-events-calendar/the-events-calendar.php", get_option('active_plugins'))){
-
-
-  $events = tribe_get_events( [
-     'posts_per_page' => -1,
-     'start_date'     => 'now',
-  ]);
-
-  $values = array();
-
-  foreach ($events as $event) {
-    $values[$event->post_title] = $event->ID;
-  }
+add_action('vc_before_init', 'vc_before_init_event_count_down');
 
 
-  vc_map( array(
-      'base' => 'event_count_down',
-      'name' => __( 'Event Count Down', 'theme-translation' ),
-      'class' => '',
-      'category' => __( 'Theme Shortcodes' ),
-      'icon' => THEME_URL.'/assets/images/icons/countdown.png',
-      'description' => __('Display a countdown to a specified event. Will be hidded if event starting day passed','theme-translation'),
-      'show_settings_on_create' => true,
-      'custom_markup' => '<h4 class="wpb_element_title"> <i class="vc_general vc_element-icon"></i>Event Count Down</h4> <span class="vc_admin_label admin_label_event_id" style="display: inline;"><label> Event </label></span>',
-      'params' => array(
-        array(
-          'type' => 'dropdown',
-          "heading" => __( "Event", "theme-translation" ),
-          'param_name' => 'event_id',
-          'description' => __('Select an event for a countdown', 'theme-translation'),
-          'value' => $values,
+function vc_before_init_event_count_down(){
+  if (in_array("the-events-calendar/the-events-calendar.php", get_option('active_plugins'))){
+
+
+    $events = tribe_get_events( [
+       'posts_per_page' => -1,
+       'start_date'     => 'now',
+    ]);
+
+    $values = array();
+
+    foreach ($events as $event) {
+      $values[$event->post_title] = $event->ID;
+    }
+
+
+    vc_map( array(
+        'base' => 'event_count_down',
+        'name' => __( 'Event Count Down', 'theme-translation' ),
+        'class' => '',
+        'category' => __( 'Theme Shortcodes' ),
+        'icon' => THEME_URL.'/assets/images/icons/countdown.png',
+        'description' => __('Display a countdown to a specified event. Will be hidded if event starting day passed','theme-translation'),
+        'show_settings_on_create' => true,
+        'custom_markup' => '<h4 class="wpb_element_title"> <i class="vc_general vc_element-icon"></i>Event Count Down</h4> <span class="vc_admin_label admin_label_event_id" style="display: inline;"><label> Event </label></span>',
+        'params' => array(
+          array(
+            'type' => 'dropdown',
+            "heading" => __( "Event", "theme-translation" ),
+            'param_name' => 'event_id',
+            'description' => __('Select an event for a countdown', 'theme-translation'),
+            'value' => $values,
+          ),
         ),
-      ),
-  ));
+    ));
+  }
 }

@@ -29,12 +29,18 @@ class WPBakeryShortCode_member_of_team extends WPBakeryShortCode {
 
     if(! $members) return;
     ob_start();
+
     ?><div class="row"><?php
+
 
     foreach ($members as $key => $m) {
       $img_id = get_post_thumbnail_id($m->ID);
+
+      $gender        = get_field('gender', $m->ID)?: 'male';
+      $default_image = THEME_URL . '/assets/images/'.$gender.'_photo.svg';
+
       $args_team = array(
-        'image_url' => wp_get_attachment_image_url($img_id, 'photo_team') ?:THEME_URL.'/assets/images/girl.svg',
+        'image_url' => wp_get_attachment_image_url($img_id, 'photo_team') ?: $default_image,
         'name'      => get_post_meta( $m->ID, 'name', true),
         'certificationcertification'      => get_post_meta( $m->ID, 'certificationcertification', true),
         'title'      => get_post_meta( $m->ID, 'title', true),
@@ -43,11 +49,11 @@ class WPBakeryShortCode_member_of_team extends WPBakeryShortCode {
         'email'      => get_post_meta( $m->ID, 'email', true),
       );
 
-    ?> <div class="col-12 col-md-6 col-lg-4" style="order: <?php echo get_post_meta( $m->ID, 'order', true); ?>"> <?php
-
-      print_theme_template_part('team-member','wpbackery', $args_team);
-
-   ?>
+      ?>
+       <div class="col-12 col-md-6 col-lg-4" <?php
+         echo 'style="order: '. get_post_meta( $m->ID, 'order', true) .'"' ?>
+         >
+        <?php print_theme_template_part('team-member','wpbackery', $args_team); ?>
       </div>
     <?php
     }

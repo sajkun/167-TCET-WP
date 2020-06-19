@@ -21,7 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
   </div>
   <div class="col-12 col-md-6">
+    <?php if ($topics): ?>
     <p class="event-data__info"><?php _e('Topics', 'theme-translations') ?> - <?php echo $topics; ?></p>
+    <?php endif ?>
     <ul class="event-data__data">
 
       <?php if ( $date_start): ?>
