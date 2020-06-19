@@ -81,7 +81,7 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
      /**
       * @see includes/helpers.php
       */
-      $address = get_address_for_gmap();
+      $address = get_address_for_gmap($venue->ID);
 
 
       /**

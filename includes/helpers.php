@@ -273,7 +273,7 @@ if(!function_exists('get_styles_for_gmap_static')){
 }
 
 
-function get_address_for_gmap(){
+function get_address_for_gmap($venue_id = null){
    $address = '';
 
   if(function_exists('tribe_get_full_address')){
@@ -284,4 +284,6 @@ function get_address_for_gmap(){
 
     $address = str_replace(' ', '+', $address );
   }
+
+  return $address;
 }

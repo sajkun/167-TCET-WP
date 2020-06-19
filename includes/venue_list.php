@@ -26,8 +26,7 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
           /**
           * @see includes/helpers.php
           */
-          $address = get_address_for_gmap();
-
+          $address = get_address_for_gmap($venue_id);
 
           /**
           * @see includes/helpers.php

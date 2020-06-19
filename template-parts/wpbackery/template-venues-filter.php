@@ -15,10 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
   <div class="venues-filter__item expanded">
     <h4 class="venues-filter__item-title">Location <span class="marker"></span></h4>
 
-    <div class="venues-filter__item-body" style="display:block">
+    <div class="venues-filter__item-body" <?php echo 'style="display:block"'; ?> >
       <ul class="venues-filter__list">
-        <?php foreach ($names as $key => $name): ?>
-
+        <?php foreach ($names as $key => $name):
+          if (!$name){ continue;}
+         ?>
         <li>
           <label class="radio-imitation">
             <input type="checkbox" name="title" value="<?php echo $name ?>">
@@ -36,7 +37,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <div class="venues-filter__item-body">
       <ul class="venues-filter__list">
-        <?php foreach ($categories as $key => $name): ?>
+        <?php foreach ($categories as $key => $name):
+           if (!$name){ continue;}
+          ?>
 
         <li>
           <label class="radio-imitation">

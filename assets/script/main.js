@@ -10,116 +10,7 @@ var maps = {};
 function  do_google_map(map_id, lat, lng, marker_url) {
   clog('do_google_map')
   var styledMapType = new google.maps.StyledMapType(
-      [
-        {elementType: 'geometry', stylers: [{color: '#f2f2f2'}]},
-        {elementType: 'labels.text.fill', stylers: [{color: '#414141'}]},
-        {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
-        {
-          featureType: 'administrative',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#c9b2a6'}]
-        },
-        {
-          featureType: 'administrative.land_parcel',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#dcd2be'}]
-        },
-        {
-          featureType: 'administrative.land_parcel',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#a7a7a7'}]
-        },
-        {
-          featureType: 'landscape.natural',
-          elementType: 'geometry',
-          stylers: [{color: '#dfd2ae'}]
-        },
-        {
-          featureType: 'poi',
-          elementType: 'geometry',
-          stylers: [{color: '#dfd2ae'}]
-        },
-        {
-          featureType: 'poi',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#a7a7a7'}]
-        },
-        {
-          featureType: 'poi.park',
-          elementType: 'geometry.fill',
-          stylers: [{color: '#a5b076'}]
-        },
-        {
-          featureType: 'poi.park',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#a7a7a7'}]
-        },
-        {
-          featureType: 'road',
-          elementType: 'geometry',
-          stylers: [{color: '#f5f1e6'}]
-        },
-        {
-          featureType: 'road.arterial',
-          elementType: 'geometry',
-          stylers: [{color: '#fdfcf8'}]
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry',
-          stylers: [{color: '#f8c967'}]
-        },
-        {
-          featureType: 'road.highway',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#e9bc62'}]
-        },
-        {
-          featureType: 'road.highway.controlled_access',
-          elementType: 'geometry',
-          stylers: [{color: '#e98d58'}]
-        },
-        {
-          featureType: 'road.highway.controlled_access',
-          elementType: 'geometry.stroke',
-          stylers: [{color: '#db8555'}]
-        },
-        {
-          featureType: 'road.local',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#a7a7a7'}]
-        },
-        {
-          featureType: 'transit.line',
-          elementType: 'geometry',
-          stylers: [{color: '#dfd2ae'}]
-        },
-        {
-          featureType: 'transit.line',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#a7a7a7'}]
-        },
-        // {
-        //   featureType: 'transit.line',
-        //   elementType: 'labels.text.stroke',
-        //   stylers: [{color: '#ebe3cd'}]
-        // },
-        {
-          featureType: 'transit.station',
-          elementType: 'geometry',
-          stylers: [{color: '#dfd2ae'}]
-        },
-        {
-          featureType: 'water',
-          elementType: 'geometry.fill',
-          stylers: [{color: '#9d9d9f'}]
-        },
-        {
-          featureType: 'water',
-          elementType: 'labels.text.fill',
-          stylers: [{color: '#a7a7a7'}]
-        }
-      ],
+      [],
       {name: 'Styled Map'}
       );
 
@@ -203,8 +94,9 @@ function do_search_map(id, lat, lng, zoom){
   search_map_object = new google.maps.Map(document.getElementById(id), {
     center: {lat: parseFloat(lat), lng: parseFloat(lng)},
     zoom: parseInt(zoom),
+    mapTypeControl: false,
     mapTypeControlOptions: {
-      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+      mapTypeIds: ['roadmap',
               'styled_map']
     }
   });
@@ -215,8 +107,9 @@ function do_large_map(id, lat, lng, zoom, title){
   var large_map = new google.maps.Map(document.getElementById(id), {
     center: {lat: parseFloat(lat), lng: parseFloat(lng)},
     zoom: parseInt(zoom),
+    mapTypeControl: false,
     mapTypeControlOptions: {
-      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+      mapTypeIds: ['roadmap',
               'styled_map']
     }
   });
