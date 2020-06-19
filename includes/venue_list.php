@@ -23,37 +23,16 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
 
            // get
 
-          $address = '';
+          /**
+          * @see includes/helpers.php
+          */
+          $address = get_address_for_gmap();
 
-          if(function_exists('tribe_get_full_address')){
-            $address = strip_tags(tribe_get_full_address($venue_id));
-            $address = str_replace(array(',', ':', PHP_EOL, '\\n'), ' ', trim(strip_tags($address)));
-            $address = preg_replace('/\s{1,}/', ' ', $address );
 
-            $address = str_replace(' ', '+', $address );
-          }
-
-          $styles = array(
-            'style=element:geometry|color:0xf5f5f5',
-            'style=element:labels.icon|visibility:off',
-            'style=element:labels.text.fill|color:0x616161',
-            'style=element:labels.text.stroke|color:0xf5f5f5',
-            'style=feature:administrative.land_parcel|element:labels.text.fill|color:0xbdbdbd',
-            'style=feature:poi|element:geometry|color:0xeeeeee',
-            'style=feature:poi|element:labels.text.fill|color:0x757575',
-            'style=feature:poi.park|element:geometry|color:0xe5e5e5',
-            'style=feature:poi.park|element:labels.text.fill|color:0x9e9e9e',
-            'style=feature:road|element:geometry|color:0xffffff',
-            'style=feature:road.arterial|element:labels.text.fill|color:e7e7e7',
-            'style=feature:road.highway|element:geometry|color:0xdadada',
-            'style=feature:road.highway|element:labels.text.fill|color:0x616161',
-            'style=feature:road.local|element:labels.text.fill|color:0xffffff',
-            'style=feature:transit.line|element:geometry|color:0xe5e5e5',
-            'style=feature:transit.station|element:geometry|color:0xeeeeee',
-            'style=feature:water|element:geometry|color:0xc9c9c9',
-            'style=feature:water|element:labels.text.fill|color:0x9e9e9e',
-            'style=feature:landscape|element:geometry.fill|color:0xf2f2f2',
-          );
+          /**
+          * @see includes/helpers.php
+          */
+          $styles = get_styles_for_gmap_static();
 
           $google_map_static_url = sprintf('https://maps.googleapis.com/maps/api/staticmap?center=%1$s&zoom=%2$s&size=%3$s&key=%4$s&%8$s&markers=icon:%5$s|%6$s,%7$s',
             $address,
@@ -68,17 +47,17 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
 
 
          $venues_formatted[] = array(
-            'latitude'  => get_field('latitude', $venue_id),
-            'longitude' => get_field('longitude', $venue_id),
-            'block_id'  => 'theme_map_holder_'.$key,
-
-            'marker'    => ($marker_url_term && function_exists('get_field')) ? $marker_url_term : get_field('marker_google_map_venue', $venue_id),
-            'title'     => $venu->post_title,
-            'address'   => (function_exists('tribe_get_full_address'))? strip_tags(tribe_get_full_address($venue_id) ): '',
-            'phone'     => get_post_meta($venue_id, '_VenuePhone', true),
-            'email'     => get_post_meta($venue_id, '_VenueEmail', true),
-            'static_url'     => $google_map_static_url ,
-            'search_url'     => "http://www.google.com/maps/place/?q=$address",
+            'latitude'           => get_field('latitude', $venue_id),
+            'longitude'          => get_field('longitude', $venue_id),
+            'responsible_person' => get_field('responsible_person', $venue_id),
+            'block_id'           => 'theme_map_holder_'.$key,
+            'marker'             => ($marker_url_term && function_exists('get_field')) ? $marker_url_term : get_field('marker_google_map_venue', $venue_id),
+            'title'              => get_field('display_name', $venue_id)?:$venu->post_title,
+            'address'            => (function_exists('tribe_get_full_address'))? strip_tags(tribe_get_full_address($venue_id) ): '',
+            'phone'              => get_post_meta($venue_id, '_VenuePhone', true),
+            'email'              => get_post_meta($venue_id, '_VenueEmail', true),
+            'static_url'         => $google_map_static_url ,
+            'search_url'         => "http://www.google.com/maps/place/?q=$address",
           );
        }
 
@@ -87,8 +66,8 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
        foreach ($venues_show as $id =>  $venue):
         $hide_class = ($id > $limit && !isset($_GET['show']))? 'hidden' : '';
         ?>
-        <div class="col-md-6 ">
-          <div class="venue-preview <?php echo $hide_class ?>">
+        <div class="col-md-6 js-show-venue <?php echo $hide_class ?>">
+          <div class="venue-preview">
         <?php
 
           //MAP

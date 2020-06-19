@@ -19,6 +19,13 @@ if ( ! defined( 'ABSPATH' ) ) {
   <?php endif ?>
 
   <ul class="venue-preview__contacts">
+    <?php if ($responsible_person): ?>
+    <li>
+      <?php
+        echo $responsible_person;
+       ?>
+    </li>
+    <?php endif ?>
     <?php if ($phone): ?>
     <li>
       <?php

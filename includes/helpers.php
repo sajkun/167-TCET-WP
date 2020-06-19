@@ -221,24 +221,67 @@ if(!function_exists('test_filter')){
   }
 }
 
-/**
- * prints passed data to a file
- *
- * @param $log - mixed string|bool|integer|object
- */
-function print_theme_log($log){
-  $log = print_r($log, true);
-  file_put_contents(THEME_PATH.'/logs/post_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+
+if(!function_exists('print_theme_log')){
+  /**
+   * prints passed data to a file
+   *
+   * @param $log - mixed string|bool|integer|object
+   */
+  function print_theme_log($log){
+    $log = print_r($log, true);
+    file_put_contents(THEME_PATH.'/logs/post_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+  }
 }
 
-
-function print_events_header(){
-  $events_page_id = (int)get_option('theme_page_events');
-
-  if ($events_page_id) {
-    $page = get_post($events_page_id);
-    echo apply_filters('the_content', $page->post_content);
+if(!function_exists('print_events_header')){
+  function print_events_header(){
+    $events_page_id = (int)get_option('theme_page_events');
+    if ($events_page_id) {
+      $page = get_post($events_page_id);
+      echo apply_filters('the_content', $page->post_content);
+    }
   }
 }
 
 
+if(!function_exists('get_styles_for_gmap_static')){
+  function get_styles_for_gmap_static(){
+
+    return array(
+      'style=feature:poi|visibility:off',
+      'style=element:geometry|color:0xf5f5f5',
+      'style=element:labels.text.fill|color:0x616161',
+      'style=element:labels.text.stroke|color:0xf5f5f5',
+      'style=feature:administrative.land_parcel|element:labels.text.fill|color:0xbdbdbd',
+      'style=feature:poi|element:geometry|color:0xeeeeee',
+      'style=feature:poi|element:labels.text.fill|color:0x757575',
+      'style=feature:poi.park|element:geometry|color:0xe5e5e5',
+      'style=feature:poi.park|element:labels.text.fill|color:0x9e9e9e',
+      'style=feature:road|element:geometry|color:0xffffff',
+      'style=feature:road.arterial|element:labels.text.fill|color:e7e7e7',
+      'style=feature:road.highway|element:geometry|color:0xdadada',
+      'style=feature:road.highway|element:labels.text.fill|color:0x616161',
+      'style=feature:road.local|element:labels.text.fill|color:0xffffff',
+      'style=feature:transit.line|element:geometry|color:0xe5e5e5',
+      'style=feature:transit.station|element:geometry|color:0xeeeeee',
+      'style=feature:water|element:geometry|color:0xc9c9c9',
+      'style=feature:water|element:labels.text.fill|color:0x9e9e9e',
+      'style=feature:landscape|element:geometry.fill|color:0xf2f2f2',
+    );
+  }
+}
+
+
+function get_address_for_gmap(){
+   $address = '';
+
+  if(function_exists('tribe_get_full_address')){
+    $forbidden_symbols = array(',', ':', '\'', '.', '#', PHP_EOL, '\\n', '&');
+    $address = strip_tags(tribe_get_full_address($venue_id));
+    $address = str_replace($forbidden_symbols, ' ', trim(strip_tags($address)));
+    $address = preg_replace('/\s{1,}/', ' ', $address );
+
+    $address = str_replace(' ', '+', $address );
+  }
+}

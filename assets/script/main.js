@@ -144,10 +144,6 @@ function  do_google_map(map_id, lat, lng, marker_url) {
   }
 
    new google.maps.Marker(marker_args);
-
-  //Associate the styled map with the MapTypeId and set it to display.
-  // maps[map_id].mapTypes.set('styled_map', styledMapType);
-  // maps[map_id].setMapTypeId('styled_map');
 }
 
 var search_map_object;
@@ -398,34 +394,39 @@ jQuery('.load-more-venues').click(function(e){
 
   var counter = 0;
 
-  jQuery('div.venues-preview').find('.venue-preview.hidden').each(function(ind, el){
+  jQuery('div.venues-preview').find('.js-show-venue.hidden').each(function(ind, el){
 
     if(counter < 6){
       var map = jQuery(el).find('div.google-map-preview');
 
-      var block_id = map.attr('id');
-      var lat      = map.data('lat');
-      var lng      = map.data('lng');
-      var marker   = map.data('marker');
 
       jQuery(el)
         .css({opacity:0})
         .removeClass('hidden');
-       do_google_map(block_id, lat, lng,  marker);
+
+      if(map.length){
+          var block_id = map.attr('id');
+          var lat      = map.data('lat');
+          var lng      = map.data('lng');
+          var marker   = map.data('marker');
+         do_google_map(block_id, lat, lng,  marker);
+      }
     }
     counter++;
   });
 
    setTimeout(function(){
-     jQuery('div.venues-preview').find('div.venue-preview').css({opacity:1})
+     jQuery('div.venues-preview').find('div.js-show-venue').css({opacity:1})
    }, 100);
 
-   if(! jQuery('div.venues-preview').find('.venue-preview.hidden').length){
+   if(! jQuery('div.venues-preview').find('.js-show-venue.hidden').length){
 
      jQuery('.load-more-venues').remove();
    }
 })
 
+
+// scroll button action
 jQuery('.go-up-button').click(function(){
   jQuery('html, body').animate({scrollTop: 0});
 })

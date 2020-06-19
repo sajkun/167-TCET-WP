@@ -8788,6 +8788,11 @@ h2,
   margin: 0 0 8px;
 }
 
+.venues-filter__list label {
+  padding-left: 40px;
+  position: relative;
+}
+
 .radio-imitation {
   display: block;
   cursor: pointer;
@@ -8806,8 +8811,6 @@ h2,
   border: 2px solid #776e64;
   text-align: center;
   line-height: 20px;
-  margin-right: 5px;
-  margin-left: 10px;
 }
 
 .radio-imitation__view:after {
@@ -8820,6 +8823,12 @@ h2,
   display: block;
   transition: all .2s;
   opacity: 0;
+}
+
+.venues-filter__list .radio-imitation__view {
+  position: absolute;
+  top: 1px;
+  left: 10px;
 }
 
 :checked + .radio-imitation__view:after {

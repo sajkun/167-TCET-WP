@@ -78,37 +78,16 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
 
       );
 
-      $address = '';
+     /**
+      * @see includes/helpers.php
+      */
+      $address = get_address_for_gmap();
 
-      if(function_exists('tribe_get_full_address')){
-        $address = strip_tags(tribe_get_full_address($venue->ID));
-        $address = str_replace(array(',', ':', PHP_EOL, '\\n'), ' ', trim(strip_tags($address)));
-        $address = preg_replace('/\s{1,}/', ' ', $address );
 
-        $address = str_replace(' ', '+', $address );
-      }
-
-      $styles = array(
-        'style=element:geometry|color:0xf5f5f5',
-        'style=element:labels.icon|visibility:off',
-        'style=element:labels.text.fill|color:0x616161',
-        'style=element:labels.text.stroke|color:0xf5f5f5',
-        'style=feature:administrative.land_parcel|element:labels.text.fill|color:0xbdbdbd',
-        'style=feature:poi|element:geometry|color:0xeeeeee',
-        'style=feature:poi|element:labels.text.fill|color:0x757575',
-        'style=feature:poi.park|element:geometry|color:0xe5e5e5',
-        'style=feature:poi.park|element:labels.text.fill|color:0x9e9e9e',
-        'style=feature:road|element:geometry|color:0xffffff',
-        'style=feature:road.arterial|element:labels.text.fill|color:e7e7e7',
-        'style=feature:road.highway|element:geometry|color:0xdadada',
-        'style=feature:road.highway|element:labels.text.fill|color:0x616161',
-        'style=feature:road.local|element:labels.text.fill|color:0xffffff',
-        'style=feature:transit.line|element:geometry|color:0xe5e5e5',
-        'style=feature:transit.station|element:geometry|color:0xeeeeee',
-        'style=feature:water|element:geometry|color:0xc9c9c9',
-        'style=feature:water|element:labels.text.fill|color:0x9e9e9e',
-        'style=feature:landscape|element:geometry.fill|color:0xf2f2f2',
-      );
+      /**
+      * @see includes/helpers.php
+      */
+      $styles = get_styles_for_gmap_static();
 
       $google_map_static_url = sprintf('https://maps.googleapis.com/maps/api/staticmap?center=%1$s&zoom=%2$s&size=%3$s&key=%4$s&%5$s',
         $address,
@@ -118,10 +97,8 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
         implode('&', $styles)
       );
 
-      clog( $google_map_static_url );
-
       $args = array(
-          'title'            =>  $venue->post_title,
+          'title'            => get_field('display_name', $venue_id)?:$venu->post_title,
           'category'         => $term->name,
           'image_url'        => $google_map_static_url ,
           'show_parkings'    => get_field('show_parkings', $venue->ID),
