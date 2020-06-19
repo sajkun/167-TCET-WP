@@ -31,10 +31,14 @@ class WPBakeryShortCode_theme_venues_filter extends WPBakeryShortCode {
 
       $term_id = get_field('service', $venue->ID);
       $term    = get_term($term_id, "services_term");
+
+
       $venues_formatted[] = array(
         'title'     => $venue->post_title,
-        'category'  => $term->name,
+        'category'  => ($term && !is_a($term, "WP_Error"))? $term->name : '',
        );
+
+
      }
 
      $categories = array();

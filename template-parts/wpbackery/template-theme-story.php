@@ -20,16 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
   <?php if ($text): ?>
   <p class="template-story__text">
-    "<?php echo $text;  ?>"
+    <?php echo $text;  ?>
   </p>
   <?php endif ?>
 
   <p class="template-story__text">
-    <?php if ($name): ?>
-      <strong><?php echo $name;  ?></strong>,
-    <?php endif ?>
-    <?php if ($location): ?>
-      <?php echo $location;  ?>
+    <?php if ($name_location): ?>
+      <?php echo $name_location;  ?>
     <?php endif ?>
   </p>
 

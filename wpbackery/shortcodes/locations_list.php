@@ -74,9 +74,12 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
          $venue->post_title,
          get_post_meta( $venue->ID, '_VenueAddress', true ),
          implode(', ', $city_province_ ),
-         $term->name,
 
       );
+
+      if($term && !is_a($term, "WP_Error")){
+        array_push($search, $term->name);
+      }
 
      /**
       * @see includes/helpers.php
@@ -97,9 +100,11 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
         implode('&', $styles)
       );
 
+      clog($term);
+
       $args = array(
-          'title'            => get_field('display_name', $venue_id)?:$venu->post_title,
-          'category'         => $term->name,
+          'title'            => get_field('display_name', $venue->ID)?:$venue->post_title,
+          'category'         => ($term && !is_a($term, "WP_Error"))? $term->name : '',
           'image_url'        => $google_map_static_url ,
           'show_parkings'    => get_field('show_parkings', $venue->ID),
           'parking_url'      => get_field('parking_url', $venue->ID),

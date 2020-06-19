@@ -49,10 +49,25 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
     $default_image = THEME_URL . '/assets/images/'.$gender.'_photo.svg';
 
 
+    $text = strip_tags(strip_shortcodes($stories[$index]->post_content));
+
+
+    $text = (strlen($text) > 240)? substr($text, 0 ,240)."...\"" : $text;
+
+    $name_location = array();
+
+    if(get_field('name', $stories[$index]->ID)){
+       $name_location[] = sprintf( '<strong>%s</strong>',get_field('name', $stories[$index]->ID));
+    }
+
+    if(get_field('location', $stories[$index]->ID)){
+       $name_location[] = get_field('location', $stories[$index]->ID);
+    }
+
+
     $args_story = array(
-      'text' => $stories[$index]->post_title,
-      'location' => get_field('location', $stories[$index]->ID),
-      'name'     => get_field('name', $stories[$index]->ID),
+      'text'     => $text,
+      'name_location'     => implode(', ', $name_location),
       'image'    => wp_get_attachment_image_url( $img_id, 'medium', false )?:$default_image ,
       'url'      => get_permalink(get_option('theme_page_success_stories')),
       'color'    => $color,
