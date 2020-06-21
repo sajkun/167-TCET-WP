@@ -18,6 +18,7 @@
 	<?php // $this->template( 'month/top-bar/nav' ); ?>
 
 	<?php // $this->template( 'components/top-bar/today' ); ?>
+  <?php print_venu_filter($grid_date); ?>
 
 
 	<?php $this->template( 'components/top-bar/actions' ); ?>

@@ -489,20 +489,18 @@ jQuery(document).ready(function($) {
     }
   }
 });
-var locations_selected = {
-  // title: [],
-  // category:  []
-}
+var locations_selected = {}
+
 var selected_services = [];
 
-jQuery('.venues-filter__list input').on('click, change',function(){
-  var name  = jQuery(this).attr('name');
-  var val   = jQuery(this).val();
-  var state = jQuery(this).prop('checked');
+
+function change_filter_checkbox(name, val, obj){
 
   if('undefined' == typeof(locations_selected[name])){
     locations_selected[name] = [];
   }
+
+  var state = jQuery(obj).prop('checked');
 
   if(state){
     var ind = locations_selected[name].indexOf(val);
@@ -519,9 +517,32 @@ jQuery('.venues-filter__list input').on('click, change',function(){
     }
   }
 
-  jQuery(document.body).trigger('filter_locations', [locations_selected])
+  jQuery('.location-items').css({opacity: '.6'});
+  setTimeout(function(){
+    jQuery(document.body).trigger('filter_locations', [locations_selected])
+  }, 50);
+}
 
-})
+function change_filter_select(obj){
+
+  var name = jQuery(obj).attr('name');
+  var value = jQuery(obj).val();
+
+  if('undefined' == typeof(locations_selected[name])){
+    locations_selected[name] = [];
+  }
+
+
+  locations_selected[name] = (value != 'all')? [value] : [];
+
+  console.log(locations_selected)
+
+
+  jQuery('.location-items').css({opacity: '.6'});
+  setTimeout(function(){
+    jQuery(document.body).trigger('filter_locations', [locations_selected])
+  }, 50);
+}
 
 jQuery(document.body).on('filter_locations', function(e,locations_selected){
   var locations = jQuery('.location-item');
@@ -530,11 +551,14 @@ jQuery(document.body).on('filter_locations', function(e,locations_selected){
   for(id in locations_selected){
     show_all = locations_selected[id].length > 0? false: show_all;
   }
-
+  console.log(locations_selected)
   if(show_all){
     locations.each(function(ind, el){
        jQuery(el).closest('div.js-parent').slideDown();
     })
+    setTimeout(function(){
+     jQuery('.location-items').css({opacity: '1'});
+  }, 50);
     return;
   }
 
@@ -558,6 +582,10 @@ jQuery(document.body).on('filter_locations', function(e,locations_selected){
       jQuery(el).closest('div.js-parent').slideUp();
     }
   })
+
+    setTimeout(function(){
+     jQuery('.location-items').css({opacity: '1'});
+  }, 50);
 })
 var Cookie =
 {
@@ -632,3 +660,52 @@ var Cookie =
       Cookie.set(name, '', -1);
    }
 };
+
+
+function reloadDate(obj){
+
+
+  var $form = jQuery(obj).closest('form');
+  var data  = $form.serializeArray();
+
+
+  var _data = {};
+
+  for(id in data){
+    _data[data[id].name] = data[id].value;
+  }
+
+
+   var data = {
+      prev_url: "",
+      should_manage_url: true,
+      url: "http://localhost/tcet/?post_type=tribe_events&eventDisplay="+_data.display+"&name=tcet",
+      view_data: {'tribe-bar-date':  _data.eventDate},
+      _wpnonce: jQuery(document.body).find('.tribe-events-view').data( 'view-rest-nonce' ),
+
+      search_service_term: _data.services_term,
+      venue_id:            _data.locations_filter,
+    };
+
+    var $container = jQuery(document.body).find('.tribe-events-view');
+
+    window.tribe.events.views.manager.request(data, $container );
+
+    var script = jQuery(document.body).find('[data-js="tribe-events-view-data"]');
+    var data    = JSON.parse(jQuery.trim(script.text()));
+
+    window.save_this_data = {
+      eventDate:          _data.eventDate,
+      services_term:        _data.services_term,
+      locations_filter:             _data.locations_filter,
+    };
+}
+
+
+jQuery(document.body).on('afterAjaxSuccess.tribeEvents',  '.tribe-events-view', function(e,data, textStatus, jqXHR ){
+
+  for(select_name in window.save_this_data){
+    jQuery('select[name='+select_name+']').val(window.save_this_data[select_name]);
+  }
+
+})

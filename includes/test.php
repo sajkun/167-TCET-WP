@@ -7,6 +7,7 @@ if(!THEME_DEBUG){
 add_action('wp_enqueue_scripts', 'check_scripts');
 
 function check_scripts(){
+
   global $wp_scripts;
 
   glog('scripts', true);
@@ -15,6 +16,5 @@ function check_scripts(){
 
   glog(false);
 
-  wp_dequeue_script('gmap-api');
 }
 

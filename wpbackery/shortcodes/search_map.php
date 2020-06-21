@@ -39,13 +39,13 @@ class WPBakeryShortCode_theme_search_map extends WPBakeryShortCode {
 
 
      $venues_formatted = array();
+     $forbidden_symbols = array(',', ':', '\'', '.', '#', PHP_EOL, '\\n', '&');
 
     if($venues){
      foreach ($venues as $key => $venue){
       $venue_id = $venue->ID;
-
        $venues_formatted[] = array(
-          'title' => $venue->post_title,
+          'title' => str_replace($forbidden_symbols,' ', $venue->post_title),
           'lat'   => get_field('latitude', $venue_id),
           'lng'   => get_field('longitude', $venue_id),
           'marker'    => get_field('marker_google_map_venue', $venue_id),

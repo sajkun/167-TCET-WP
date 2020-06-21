@@ -50,6 +50,7 @@ class velesh_orgafresh_child{
     global $wp_styles;
 
     add_action( 'wp_enqueue_scripts', array($this,'orgafresh_child_enqueue_styles'), 10 );
+    add_action( 'wp_enqueue_scripts', array($this,'orgafresh_child_enqueue_scripts'), PHP_INT_MAX );
 
     add_action( 'wp_enqueue_scripts', array($this,'unregister_styles'), PHP_INT_MAX );
 
@@ -161,6 +162,10 @@ class velesh_orgafresh_child{
 
     wp_enqueue_style( 'owl-carousel-style', THEME_URL . '/assets/owlcarousel/css/owl.carousel.min.css', array());
 
+  }
+
+  public static function orgafresh_child_enqueue_scripts() {
+
     wp_enqueue_script('owl-carousel-script', THEME_URL.'/assets/owlcarousel/js/owl.carousel.min.js', array('jquery'), '1.0', true);
 
     wp_enqueue_script('velesh-theme-script', THEME_URL.'/assets/script/main.js', array('jquery'), '1.0', true);
@@ -177,6 +182,7 @@ class velesh_orgafresh_child{
     if(isset($_GET['service'])){
       wp_localize_script( 'velesh-theme-script', 'link_passed_service' , $_GET['service'] );
     }
+      wp_localize_script( 'velesh-theme-script', 'HOME_URL' , HOME_URL );
   }
 
 
@@ -290,3 +296,6 @@ class velesh_orgafresh_child{
 
 
 new velesh_orgafresh_child();
+
+
+

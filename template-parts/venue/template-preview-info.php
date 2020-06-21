@@ -41,5 +41,14 @@ if ( ! defined( 'ABSPATH' ) ) {
          printf('<a href="mailto:+%1$s" class="venue-preview__email">%1$s</a>',$email); ?>
       </li>
     <?php endif ?>
+
+    <?php if ($multiple_contacts): ?>
+
+      <?php foreach ($multiple_contacts as $key => $value): ?>
+      <li>
+        <?php echo $value; ?>
+      </li>
+      <?php endforeach ?>
+    <?php endif ?>
   </ul>
 </div>

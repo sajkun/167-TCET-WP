@@ -33,7 +33,7 @@ $months = array(
      'Dec' => 'December',
 );
 ?>
-<?php if (!wp_is_mobile()): ?>
+<?php /* if (!wp_is_mobile()): ?>
   <div class="spacer-h-30"></div>
   <div class="row navigate-events">
     <div class="col-6">
@@ -62,7 +62,7 @@ $months = array(
       <?php endif ?>
     </div>
   </div>
-<?php endif ?>
+<?php endif */?>
 <div class="tribe-events-after-html">
 	<?php echo $after_events; ?>
 </div>

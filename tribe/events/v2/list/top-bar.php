@@ -20,6 +20,7 @@
 	<?php // $this->template( 'components/top-bar/today' ); ?>
 
 	<?php // $this->template( 'list/top-bar/datepicker' ); ?>
+  <?php print_venu_filter(false, 'list'); ?>
 
 	<?php $this->template( 'components/top-bar/actions' ); ?>
 

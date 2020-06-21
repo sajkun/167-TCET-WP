@@ -287,3 +287,88 @@ function get_address_for_gmap($venue_id = null){
 
   return $address;
 }
+
+
+function print_venu_filter($grid_date = false, $display = 'month'){
+  $date = new DateTime();
+  $year  = $date->format('Y');
+  $month = $grid_date? explode('-',$grid_date)[1] : $date->format('m');
+
+  $months = array(
+    'January'   => "01",
+    'February'  => "02",
+    'March'     => "03",
+    'April'     => "04",
+    'May'       => "05",
+    'June'      => "06",
+    'July'      => "07",
+    'August'    => "08",
+    'September' => "09",
+    'October'   => "10",
+    'November'  => "11",
+    'December'  => "12",
+  );
+
+    $terms = get_terms( 'services_term', [
+      'hide_empty' => false,
+    ] );
+
+   $locations = get_posts(array(
+    'posts_per_page' => -1,
+    'post_type' => 'tribe_venue',
+   ));
+
+  ?>
+  <form action="javascript:void(0)" method="POST">
+    <input type="hidden" value="<?php echo $display; ?>">
+    <div class="events-filters">
+      <div class="row " <?php echo "style='width: 100%'"?>>
+        <div class="col-12 col-md-4">
+
+          <label for="eventDate">Month</label>
+
+          <select name="eventDate" id="eventDate" onchange='reloadDate(this, event)'>
+            <?php foreach ($months as $mos => $num):
+              printf('<option value="%1$s" %2$s>%3$s</option>',
+                       "$year-$num",
+                        $num  == $month? 'selected = "selected"' : '',
+                        $mos
+                    );
+             endforeach; ?>
+          </select> <div class="spacer-h-10 spacer-h-md-0"></div>
+        </div>
+        <div class="col-12 col-md-4 ">
+          <label for="locations_filter">Locations</label>
+
+          <select name="locations_filter" id="locations_filter" onchange='reloadDate(this, event)'>
+            <option value="-1">Any location</option>
+            <?php foreach ($locations as $t):
+              $name = (get_post_meta($t->ID,'display_name',true))?:$t->post_title;
+              printf('<option value="%1$s" %2$s>%3$s</option>',
+                        $t->ID,
+                        $t  == $month? 'selected = "selected"' : '',
+                        $name
+                    );
+             endforeach; ?>
+          </select> <div class="spacer-h-10 spacer-h-md-0"></div>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="services_term">Service</label>
+
+          <select name="services_term" id="services_term" onchange='reloadDate(this, event)'>
+             <option value="none">Any service</option>
+            <?php foreach ($terms as $t):
+              printf('<option value="%1$s" %2$s>%3$s</option>',
+                        $t->slug,
+                        $t  == $month? 'selected = "selected"' : '',
+                        $t->name
+                    );
+             endforeach; ?>
+          </select> <div class="spacer-h-30 spacer-h-md-0"></div>
+
+        </div>
+      </div>
+  </div>
+  </form>
+  <?php
+}

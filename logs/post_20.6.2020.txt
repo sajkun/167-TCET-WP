@@ -1,0 +1,340 @@
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-03
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-03
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-03
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => employment-job-seeker
+    [venue_id] => 1845
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-03
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-09
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-09
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-09
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => employment-job-seeker
+    [venue_id] => 1845
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-09
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => youth
+    [venue_id] => 1845
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-10
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-10
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-10
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => employment-job-seeker
+    [venue_id] => 1845
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-10
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => employment-job-seeker
+    [venue_id] => 1822
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => referrals-and-training-system-harts
+    [venue_id] => 1845
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => youth
+    [venue_id] => 1845
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => employment-job-seeker
+    [venue_id] => 1832
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => -1
+    [venue_id] => 1604
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => none
+    [venue_id] => 1825
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => none
+    [venue_id] => 1099
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => none
+    [venue_id] => 1099
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => newcomer-assistance
+    [venue_id] => 1099
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => youth
+    [venue_id] => 1099
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => youth
+    [venue_id] => -1
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => 
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => none
+    [venue_id] => -1
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)
+Array
+(
+    [prev_url] => http://localhost/tcet/events/list/?eventDisplay=past
+    [should_manage_url] => true
+    [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+    [view_data] => Array
+        (
+            [tribe-bar-date] => 2020-06
+            [url] => http://localhost/tcet/?post_type=tribe_events&eventDisplay=month&name=tcet&tribe-bar-date=2020-06
+        )
+
+    [_wpnonce] => 0935b4490c
+    [search_service_term] => none
+    [venue_id] => 1844
+    [post_type] => tribe_events
+    [eventDisplay] => month
+    [name] => tcet
+    [tribe-bar-date] => 2020-06
+    [event_display_mode] => month
+)

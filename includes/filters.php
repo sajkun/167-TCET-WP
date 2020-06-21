@@ -31,3 +31,46 @@ function entex_fn_remove_post_type_from_search_results($query){
 }
 
 add_action('pre_get_posts', 'entex_fn_remove_post_type_from_search_results');
+
+
+add_action('pre_get_posts', 'request_mod_events');
+
+function request_mod_events($query){
+
+    // print_theme_log($query);
+
+    if($_REQUEST && isset($_REQUEST['search_service_term']) && $_REQUEST['search_service_term'] !== 'none' && $query->query_vars['post_type'] === 'tribe_events'){
+      $taxquery = array( array(
+        'taxonomy' => "services_term",
+        'field' => 'slug',
+        'terms' => $_REQUEST['search_service_term']
+      ) );
+
+      $query->set( 'tax_query', $taxquery );
+    }
+
+
+    if($_REQUEST && isset($_REQUEST['venue_id']) && $_REQUEST['venue_id'] != '-1' && $query->query_vars['post_type'] === 'tribe_events'){
+        $meta_query = (array)$query->get('meta_query');
+
+        $meta_query[] = array(
+                'key'     => '_EventVenueID',
+                'value'   => $_REQUEST['venue_id'],
+                'compare' => '=',
+        );
+        $query->set('meta_query',$meta_query);
+    }
+
+}
+
+
+add_filter('tribe_get_option', 'test_tribe_get_option', 10, 3);
+
+function test_tribe_get_option($option, $optionname, $default){
+
+  if(wp_is_mobile() && $optionname == 'viewOption'){
+    return 'list';
+  }
+
+  return $option;
+}

@@ -8430,10 +8430,17 @@ h2,
   color: #030303;
   font-family: "Muli", sans-serif;
   font-size: 33px;
-  padding-left: 30px;
+  padding-left: 10px;
   font-weight: 700;
   line-height: 50px;
   margin: 0 0 5px;
+}
+
+@media (min-width: 992px) {
+  .event-data__title,
+  .event-data__title a {
+    padding-left: 30px;
+  }
 }
 
 .event-data__decoration {
@@ -8537,6 +8544,11 @@ h2,
   color: #fff;
 }
 
+.featured-program {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 .featured-program__title {
   display: block;
   color: #030303;
@@ -8583,30 +8595,74 @@ h2,
 
 .venue-preview__info {
   background: #f3f5f6;
-  padding: 44px 35px 40px 70px;
+  padding: 25px;
+}
+
+@media (min-width: 480px) {
+  .venue-preview__info {
+    padding: 25px 45px;
+  }
+}
+
+@media (min-width: 992px) {
+  .venue-preview__info {
+    padding: 44px 35px 40px 70px;
+  }
 }
 
 .venue-preview__title, .venue-preview__title:first-child, .venue-preview__titleh4, .venue-preview__titleh4:first-child {
-  font-size: 33px;
+  font-size: 30px;
   color: #030303;
-  font-weight: 300;
-  line-height: 43px;
+  line-height: 40px;
   display: block;
   margin: 0 0 20px;
   font-family: "Muli", sans-serif;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .venue-preview__title, .venue-preview__title:first-child, .venue-preview__titleh4, .venue-preview__titleh4:first-child {
+    font-weight: 300;
+    line-height: 43px;
+    font-size: 33px;
+  }
 }
 
 .venue-preview__address {
   display: block;
   margin: 0 0 21px;
-  font-size: 26px;
-  line-height: 40px;
+  font-size: 22px;
+  line-height: 33px;
   font-weight: 400;
 }
 
+@media (min-width: 768px) {
+  .venue-preview__address {
+    line-height: 40px;
+    font-size: 26px;
+  }
+}
+
 .venue-preview__contacts {
-  padding-left: 31px;
+  padding-left: 0;
   margin: 0 !important;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .venue-preview__contacts {
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+    -moz-column-width: 180px;
+         column-width: 180px;
+  }
+}
+
+@media (min-width: 768px) {
+  .venue-preview__contacts {
+    padding-left: 31px;
+  }
 }
 
 .venue-preview__contacts li {
@@ -8615,15 +8671,17 @@ h2,
   font-size: 20px;
 }
 
-.venue-preview__contacts li:before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: -25px;
-  top: 11px;
-  width: 11px;
-  height: 10px;
-  border-radius: 50%;
+@media (min-width: 768px) {
+  .venue-preview__contacts li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -25px;
+    top: 11px;
+    width: 11px;
+    height: 10px;
+    border-radius: 50%;
+  }
 }
 
 .venue-preview__contacts li:not(:last-child) {
@@ -9110,6 +9168,7 @@ h2,
   line-height: 20px;
   font-size: 18px;
   box-sizing: border-box;
+  background-color: transparent;
   padding: 15px;
 }
 
@@ -9128,6 +9187,7 @@ h2,
   margin: 5px 0 0;
   font-size: 18px;
   width: 100%;
+  background-color: transparent;
 }
 
 .ctct-form input[type=submit],
@@ -9374,6 +9434,16 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
 
 .vc_btn3 {
   background-image: none !important;
+}
+
+.select-location {
+  width: 100%;
+  border: 3px solid #5cb8b2;
+  font-size: 18px;
+  height: 50px;
+  line-height: 44px;
+  padding: 0 15px !important;
+  font-family: "Muli", sans-serif;
 }
 
 .team-member__photo {
@@ -10051,6 +10121,43 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
 .tribe-events-calendar-month-mobile-events__mobile-event-title-link {
   font-size: 24px !important;
   font-family: "Muli", sans-serif !important;
+}
+
+.events-filters {
+  text-align: left;
+  max-width: 610px;
+}
+
+@media (min-width: 992px) {
+  .events-filters {
+    margin: -31px auto 0 !important;
+  }
+}
+
+.events-filters [class^=col] {
+  padding: 0 15px !important;
+}
+
+.events-filters label {
+  margin: 0 0 10px;
+  display: block;
+  line-height: 30px;
+  color: #030303;
+  font-size: 20px;
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+}
+
+.events-filters select {
+  font-family: "Muli", sans-serif;
+  width: 100%;
+  height: 50px;
+  border: 2px solid #776e64;
+  background-color: #ffffff;
+  padding: 0 35px 0 15px !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 .datepicker {

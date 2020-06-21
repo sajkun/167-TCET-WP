@@ -44,9 +44,12 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
             implode('&', $styles)
           );
 
+          $multiple_contacts = get_field('multiple_contacts', $venue_id);
+
 
          $venues_formatted[] = array(
             'latitude'           => get_field('latitude', $venue_id),
+            'multiple_contacts'  => $multiple_contacts? explode(PHP_EOL, $multiple_contacts) : false,
             'longitude'          => get_field('longitude', $venue_id),
             'responsible_person' => get_field('responsible_person', $venue_id),
             'block_id'           => 'theme_map_holder_'.$key,
@@ -92,6 +95,7 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
             'email'              => $venue['email'],
             'title'              => $venue['title'],
             'address'            => $venue['address'],
+            'multiple_contacts'  => $venue['multiple_contacts'],
           );
 
           // print details of location
