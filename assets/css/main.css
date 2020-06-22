@@ -7736,6 +7736,23 @@ a.page-numbers {
   }
 }
 
+.grecaptcha-badge {
+  opacity: 0;
+  visibility: hidden;
+  transition: translateX(100%);
+  z-index: -1;
+}
+
+.grecaptcha-logo {
+  visibility: hidden !important;
+  opacity: 0;
+  z-index: -1;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden;
+  display: none !important;
+}
+
 .slider-title {
   color: #fff;
   font-family: "Muli", sans-serif;
