@@ -33,10 +33,10 @@ $style = "style='background-color:$color'";
 	<div class="tribe-events-calendar-month-mobile-events__mobile-event-details">
 
     <div class="row">
-      <div class="col-6 col-xs-6">
+      <div class="col-12 col-xs-6 col-sm-6">
   		<?php $this->template( 'month/mobile-events/mobile-day/mobile-event/title', [ 'event' => $event ] ); ?>
       </div>
-      <div class="col-6 col-xs-6 text-right">
+      <div class="col-12 col-xs-6 col-sm-6 text-right-xs">
     		<?php $this->template( 'month/mobile-events/mobile-day/mobile-event/date', [ 'event' => $event ] ); ?>
     		<?php $this->template( 'month/mobile-events/mobile-day/mobile-event/cost', [ 'event' => $event ] ); ?>
       </div>

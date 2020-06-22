@@ -10008,8 +10008,8 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
   line-height: 24px !important;
   color: #000000 !important;
   font-family: "Muli", sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 400 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
   padding: 0 !important;
 }
 
@@ -10218,6 +10218,12 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
 
 .tribe-events-calendar-month__calendar-event {
   background: #aaa;
+}
+
+@media (max-width: 767px) {
+  .tribe-events .tribe-events-l-container {
+    padding-top: 15px !important;
+  }
 }
 
 .eligibility-title {
