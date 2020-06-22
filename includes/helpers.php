@@ -313,10 +313,20 @@ function print_venu_filter($grid_date = false, $display = 'month'){
       'hide_empty' => false,
     ] );
 
-   $locations = get_posts(array(
+  $locations = get_posts(array(
     'posts_per_page' => -1,
     'post_type' => 'tribe_venue',
-   ));
+  ));
+
+  $locations_grouped = array();
+
+  foreach ($locations as $l) {
+    $name = (get_post_meta($l->ID,'display_name',true))?:$l->post_title;
+    if(!isset($locations_grouped[$name])){
+      $locations_grouped[$name] = array();
+    }
+    array_push($locations_grouped[$l->post_title], $l->ID);
+  }
 
   ?>
   <form action="javascript:void(0)" method="POST">
@@ -342,11 +352,9 @@ function print_venu_filter($grid_date = false, $display = 'month'){
 
           <select name="locations_filter" id="locations_filter" onchange='reloadDate(this, event)'>
             <option value="-1">Any location</option>
-            <?php foreach ($locations as $t):
-              $name = (get_post_meta($t->ID,'display_name',true))?:$t->post_title;
-              printf('<option value="%1$s" %2$s>%3$s</option>',
-                        $t->ID,
-                        $t  == $month? 'selected = "selected"' : '',
+            <?php foreach ($locations_grouped as $name => $value):
+              printf('<option value="%1$s">%2$s</option>',
+                        implode(',',$value),
                         $name
                     );
              endforeach; ?>

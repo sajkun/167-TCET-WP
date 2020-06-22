@@ -53,11 +53,14 @@ function request_mod_events($query){
     if($_REQUEST && isset($_REQUEST['venue_id']) && $_REQUEST['venue_id'] != '-1' && $query->query_vars['post_type'] === 'tribe_events'){
         $meta_query = (array)$query->get('meta_query');
 
-        $meta_query[] = array(
-                'key'     => '_EventVenueID',
-                'value'   => $_REQUEST['venue_id'],
-                'compare' => '=',
-        );
+        $ids = explode(',', $_REQUEST['venue_id']);
+
+          $meta_query[] = array(
+                  'key'     => '_EventVenueID',
+                  'value'   => $ids,
+                  'compare' => 'IN',
+          );
+
         $query->set('meta_query',$meta_query);
     }
 
