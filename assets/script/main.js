@@ -347,6 +347,15 @@ jQuery('.theme-accordeon-mob__head').click(function(event) {
 });
 
 
+
+jQuery('.wp-google-place').click(function(e){
+  if(!jQuery(e.target).closest('.wp-google-name').length){
+    // jQuery(this).siblings('.wp-google-content-inner').slideToggle();
+    // jQuery(this).toggleClass('expanded');
+  }
+})
+
+
 jQuery(document.body).on('theme.init.map',function(event, id, lng, lat, $marker_url){
   do_google_map(id, lng, lat, $marker_url);
 })

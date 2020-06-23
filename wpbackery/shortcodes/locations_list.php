@@ -102,6 +102,7 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
 
       $args = array(
           'title'            => get_field('display_name', $venue->ID)?:$venue->post_title,
+          'title_data'       =>get_post_meta($venue->ID, '_VenueCity', true),
           'category'         => ($term && !is_a($term, "WP_Error"))? $term->name : '',
           'image_url'        => $google_map_static_url ,
           'show_parkings'    => get_field('show_parkings', $venue->ID),

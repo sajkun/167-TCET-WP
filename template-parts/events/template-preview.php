@@ -17,7 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
       <h4 class="event-data__title"><a href="<?php echo $permalink; ?>"><?php echo $title ?></a></h4>
 
       <div class="event-data__decoration"></div>
-      <div class="spacer-h-20"></div>
     </div>
   </div>
   <div class="col-12 col-md-6">

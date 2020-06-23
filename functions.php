@@ -20,7 +20,7 @@ class velesh_orgafresh_child{
     define('THEME_PATH', get_stylesheet_directory());
     define('THEME_URL', get_stylesheet_directory_uri());
     define('HOME_URL', get_home_url());
-    define('THEME_DEBUG', true);
+    define('THEME_DEBUG', false);
     define('US_SERVICE_COLOR', true);
     define('SERVICE_POST_NAME', 'theme_services');
     define('FAQ_POST_NAME', 'faq_post');
@@ -194,6 +194,7 @@ class velesh_orgafresh_child{
     wp_dequeue_style('orgafresh-default');
     wp_deregister_style('orgafresh-default');
     wp_dequeue_script('gmap-api');
+    wp_deregister_style('grw_css');
   }
 
 

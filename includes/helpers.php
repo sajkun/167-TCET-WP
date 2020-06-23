@@ -323,10 +323,17 @@ function print_venu_filter($grid_date = false, $display = 'month'){
   foreach ($locations as $l) {
     $name = (get_post_meta($l->ID,'display_name',true))?:$l->post_title;
     if(!isset($locations_grouped[$name])){
-      $locations_grouped[$name] = array();
+      $locations_grouped[$name] = array(
+        'name' => $name,
+        'value' => array(),
+      );
     }
-    array_push($locations_grouped[$l->post_title], $l->ID);
+
+    array_push($locations_grouped[$name]['value'], $l->ID);
   }
+
+  usort($locations_grouped, 'compare_names');
+
 
   ?>
   <form action="javascript:void(0)" method="POST">
@@ -352,10 +359,10 @@ function print_venu_filter($grid_date = false, $display = 'month'){
 
           <select name="locations_filter" id="locations_filter" onchange='reloadDate(this, event)'>
             <option value="-1">Any location</option>
-            <?php foreach ($locations_grouped as $name => $value):
+            <?php foreach ($locations_grouped as $name => $data):
               printf('<option value="%1$s">%2$s</option>',
-                        implode(',',$value),
-                        $name
+                        implode(',',$data['value']),
+                        $data['name']
                     );
              endforeach; ?>
           </select> <div class="spacer-h-10 spacer-h-md-0"></div>
@@ -380,3 +387,11 @@ function print_venu_filter($grid_date = false, $display = 'month'){
   </form>
   <?php
 }
+
+function compare_names($a, $b){
+  if($a['name'] == $b['name']) return 0;
+
+  return ($a['name'] < $b['name'])? -1: 1;
+
+}
+
