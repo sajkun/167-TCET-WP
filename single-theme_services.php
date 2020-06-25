@@ -57,6 +57,8 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
         .service-content a[download]{
           color: #fff;
         }
+
+        .show-all-events,
         .service-content a[download],
         .event-data__more,
         .event-data__icon,
@@ -201,7 +203,9 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 
       }
 
-       ?></div><?php
+       ?>
+      <a class="show-all-events" href="<?php echo HOME_URL. '/'.tribe_get_option('eventsSlug'). '/' ; ?>">VIEW MORE EVENTS & WORKSHOPS</a>
+       </div><?php
     }
   ?>
 

@@ -20,13 +20,14 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
      $ids[$key] = (int)$id;
     }
 
-    if($ids){
+    if($term_ids){
       $args['tax_query'] = array(array(
         'taxonomy' => 'services_term',
         'field' => 'id',
         'terms' => $ids // Where term_id of Term 1 is "1".
       ) );
     }
+
 
     $stories = get_posts($args);
     if(! $stories) return;

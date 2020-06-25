@@ -28,6 +28,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="spacer-h-20"></div>
   <?php endif ?>
   <?php if ($email): ?>
-    <a href="mailto:<?php echo $email; ?>:"><?php echo $email; ?></a>
+    <div class="spacer-h-50"></div>
+      <a class="icon-label pos-bottom-abs" href="mailto:<?php echo $email; ?>">
+        <img src="<?php echo THEME_URL?>/assets/images/icons/email.svg" alt="">
+      </a>
   <?php endif ?>
+    <div class="spacer-h-20"></div>
 </div>

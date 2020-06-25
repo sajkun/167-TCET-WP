@@ -22,8 +22,8 @@ $set_venue_apart = apply_filters( 'tribe_events_single_event_the_meta_group_venu
 
 $EventOrganizerID = get_post_meta($event_id, '_EventOrganizerID', true );
 
-$email = get_post_meta($EventOrganizerID, '_OrganizerEmail', true);
-$phone = get_post_meta($EventOrganizerID, '_OrganizerPhone', true);
+$email = get_post_meta($event_id, 'phone_event', true);
+$phone = get_post_meta($event_id, 'email_event', true);
 
 
 ?>
@@ -93,7 +93,7 @@ $message = get_post_meta($event_id, 'message_for_registration', true);
 			<i class="icon-label">
 				<img src="<?php echo THEME_URL?>/assets/images/icons/email.svg" alt="">
 			</i>
-			<span><a><?php echo $email; ?></a></span>
+			<span><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></span>
 		</div>
 		<?php endif ?>
 

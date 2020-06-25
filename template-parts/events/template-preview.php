@@ -43,7 +43,9 @@ if ( ! defined( 'ABSPATH' ) ) {
       <?php endif ?>
     </ul>
 
+    <div class="spacer-h-30"></div>
+
     <a href="<?php echo $permalink; ?>" class="event-data__more"> <?php _e('Learn More', 'theme-translations') ?></a>
   </div>
 </div>
-<div class="spacer-h-30 spacer-h-lgl-70"></div>
+<div class="spacer-h-30 spacer-h-lg-70"></div>
