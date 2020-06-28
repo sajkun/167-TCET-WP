@@ -7437,6 +7437,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.site-footer__social a[href*=linked] {
+  background-image: url(../images/social_icons/linkedin.svg);
+  background-size: 19px 19px;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .site-footer__social a[href*=linked] {
+    background-size: 36px 36px;
+  }
+}
+
 .site-footer .copyrights {
   margin: 0;
   padding: 0;
@@ -7751,34 +7762,6 @@ a.page-numbers {
   height: 1px !important;
   overflow: hidden;
   display: none !important;
-}
-
-.pos-bottom-abs {
-  position: absolute !important;
-  bottom: 20px;
-  left: 15px;
-}
-
-.title-404 {
-  text-align: center;
-  font: Bold 150px/70px Muli;
-  letter-spacing: -3.75px;
-  color: #e04f39;
-  opacity: 1;
-}
-
-.text-404 {
-  font-family: "Muli", sans-serif;
-  font-size: 30px;
-  letter-spacing: -0.3px;
-  color: #787069;
-  line-height: 60px;
-}
-
-.text-404 .marked-404 {
-  font-size: 50px;
-  letter-spacing: -0.5px;
-  color: #5cb8b2;
 }
 
 .slider-title {
@@ -8447,8 +8430,8 @@ h2,
 }
 
 .event-data .col-12 {
-  padding-bottom: 19px;
-  max-height: calc(100% - 19px);
+  padding-bottom: 34px;
+  max-height: calc(100% - 49px);
 }
 
 .event-data__image-holder {
@@ -8502,7 +8485,7 @@ h2,
   display: block;
   height: 19px;
   background-color: #eee;
-  bottom: 0;
+  bottom: 7px;
   position: absolute;
   left: 15px;
   right: 15px;
@@ -8561,42 +8544,13 @@ h2,
   text-decoration: none;
   text-align: center;
   font-size: 20px;
-  padding: 10px 20px;
+  padding: 7px 15px;
   background-color: #eee;
   border-radius: 20px;
   line-height: 20px;
-  position: absolute;
-  left: 15px;
-  bottom: 10px;
-  text-transform: uppercase;
 }
 
 .event-data__more:hover {
-  opacity: .8;
-  color: #fff;
-}
-
-.show-all-events {
-  color: #fff;
-  display: inline-block;
-  font-family: "Muli", sans-serif;
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-  padding: 10px 20px;
-  background-color: #eee;
-  border-radius: 20px;
-  line-height: 20px;
-  text-transform: uppercase;
-}
-
-@media (min-width: 992px) {
-  .show-all-events {
-    margin-top: -30px !important;
-  }
-}
-
-.show-all-events:hover {
   opacity: .8;
   color: #fff;
 }
@@ -8628,6 +8582,24 @@ h2,
 }
 
 .load-more-venues:hover {
+  opacity: .8;
+  color: #fff;
+}
+
+.show-all-events {
+  color: #fff;
+  display: inline-block;
+  font-family: "Muli", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  padding: 7px 15px;
+  background-color: #eee;
+  border-radius: 20px;
+  line-height: 20px;
+}
+
+.show-all-events:hover {
   opacity: .8;
   color: #fff;
 }
@@ -9534,10 +9506,6 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
   font-family: "Muli", sans-serif;
 }
 
-.team-member {
-  height: 100%;
-}
-
 .team-member__photo {
   display: block;
   background: #f5fbfa;
@@ -10030,6 +9998,10 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
   background-image: url(../images/icons/list.svg);
 }
 
+.tribe-common .active .tribe-common-svgicon--list {
+  background-image: url(../images/icons/list_a.svg);
+}
+
 .tribe-events-c-top-bar__datepicker-mobile {
   color: #fff !important;
 }
@@ -10157,6 +10129,10 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
 
 .tribe-common .tribe-common-svgicon--month {
   background-image: url(../images/icons/month.svg);
+}
+
+.tribe-common .active .tribe-common-svgicon--month {
+  background-image: url(../images/icons/month_a.svg);
 }
 
 .navigate-events {
@@ -10316,6 +10292,34 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
   .tribe-events .tribe-events-l-container {
     padding-top: 15px !important;
   }
+}
+
+.tribe-events .tribe-events-c-view-selector__list-item-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 !important;
+}
+
+.tribe-events-c-view-selector__list-item-text {
+  display: block;
+  line-height: 30px;
+  color: #030303;
+  font-size: 20px;
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.tribe-events .tribe-events-c-view-selector__list-item-link {
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.tribe-events .tribe-events-c-view-selector__list-item-link {
+  padding: 12px;
 }
 
 .eligibility-title {

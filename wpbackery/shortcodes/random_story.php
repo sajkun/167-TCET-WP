@@ -52,7 +52,7 @@ class WPBakeryShortCode_theme_random_story extends WPBakeryShortCode {
     $text = strip_tags(strip_shortcodes($stories[$index]->post_content));
 
 
-    $text = (strlen($text) > 240)? substr($text, 0 ,240)."...\"" : $text;
+    // $text = (strlen($text) > 240)? substr($text, 0 ,240)."...\"" : $text;
 
     $name_location = array();
 
