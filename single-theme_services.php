@@ -54,10 +54,14 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
         .service-content a{
           color: <?php echo $color; ?>;
         }
+
+        .service-content a.download,
+        .service-content a,
         .service-content a[download]{
           color: #fff;
         }
-
+        .service-content a.download,
+        .service-content a,
         .show-all-events,
         .service-content a[download],
         .event-data__more,

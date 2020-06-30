@@ -7764,6 +7764,34 @@ a.page-numbers {
   display: none !important;
 }
 
+.pos-bottom-abs {
+  position: absolute !important;
+  bottom: 20px;
+  left: 15px;
+}
+
+.title-404 {
+  text-align: center;
+  font: Bold 150px/70px Muli;
+  letter-spacing: -3.75px;
+  color: #e04f39;
+  opacity: 1;
+}
+
+.text-404 {
+  font-family: "Muli", sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.3px;
+  color: #787069;
+  line-height: 60px;
+}
+
+.text-404 .marked-404 {
+  font-size: 50px;
+  letter-spacing: -0.5px;
+  color: #5cb8b2;
+}
+
 .slider-title {
   color: #fff;
   font-family: "Muli", sans-serif;
@@ -8302,6 +8330,8 @@ h2,
   padding-left: 20px;
 }
 
+.service-content a,
+.service-content .button,
 .service-content a[download] {
   color: #fff;
   display: inline-block;
@@ -8317,6 +8347,8 @@ h2,
   margin: 10px 0;
 }
 
+.service-content a:hover,
+.service-content .button:hover,
 .service-content a[download]:hover {
   opacity: .8;
   color: #fff;
@@ -9504,6 +9536,10 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
   line-height: 44px;
   padding: 0 15px !important;
   font-family: "Muli", sans-serif;
+}
+
+.team-member {
+  height: 100%;
 }
 
 .team-member__photo {
