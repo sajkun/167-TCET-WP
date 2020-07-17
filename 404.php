@@ -18,14 +18,6 @@
 					</p>
 
 			</div>
-
-
-			<div class="text-center">
-				<h3 class="section-title">SUCCESS STORIES</h3>
-				<div class="spacer-h-30"></div>
-
-				<?php echo do_shortcode('[theme_random_story]')?>
-			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- .container -->

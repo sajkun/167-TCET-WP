@@ -29,23 +29,42 @@ class WPBakeryShortCode_theme_venues_filter extends WPBakeryShortCode {
 
      foreach ($venues as $key => $venue){
 
-      $term_id = get_field('service', $venue->ID);
-      $term    = get_term($term_id, "services_term");
+      $terms_id = get_field('service', $venue->ID);
 
 
-     $venues_formatted[] = array(
+      $terms = array();
+
+      foreach ($terms_id as $key => $term_id) {
+        $terms[]    = get_term($term_id, "services_term");
+      }
+
+
+
+
+       $categories = array();
+       foreach ($terms as $key => $term) {
+        if($term && !is_a($term, "WP_Error")){
+         $categories[] = $term->name;
+         }
+       }
+
+      $venues_formatted[] = array(
         'title'     => get_post_meta($venue->ID, '_VenueCity', true),
-        'category'  => ($term && !is_a($term, "WP_Error"))? $term->name : '',
+        'category'  => $categories,
        );
      }
+
 
      $categories = array();
      $names      = array();
 
      foreach ($venues_formatted as $key => $v) {
-       $categories[] = $v['category'];
        $names[]      = $v['title'];
+       foreach ($v['category'] as $c) {
+         $categories[]      = $c;
+       }
      }
+
 
      $categories = array_unique($categories);
      $names      = array_unique($names);

@@ -67,8 +67,10 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
         }
       }
 
-      $term_id = get_field('service', $venue->ID);
-      $term    = get_term( $term_id, "services_term" );
+      $terms_id = get_field('service', $venue->ID);
+      // $term    = get_term( $term_id, "services_term" );
+
+      $terms = array();
 
       $search = array(
          $venue->post_title,
@@ -77,8 +79,15 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
 
       );
 
-      if($term && !is_a($term, "WP_Error")){
-        array_push($search, $term->name);
+      $terms_name = array();
+
+      foreach ($terms_id as $key => $term_id) {
+        $terms[] = $term = get_term($term_id, "services_term");
+
+        if($term && !is_a($term, "WP_Error")){
+          array_push($search, $term->name);
+          array_push($terms_name, $term->name);
+        }
       }
 
      /**
@@ -103,7 +112,7 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
       $args = array(
           'title'            => get_field('display_name', $venue->ID)?:$venue->post_title,
           'title_data'       =>get_post_meta($venue->ID, '_VenueCity', true),
-          'category'         => ($term && !is_a($term, "WP_Error"))? $term->name : '',
+          'category'         => implode(',', $terms_name),
           'image_url'        => $google_map_static_url ,
           'show_parkings'    => get_field('show_parkings', $venue->ID),
           'parking_url'      => get_field('parking_url', $venue->ID),

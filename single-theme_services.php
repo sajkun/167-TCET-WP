@@ -6,6 +6,8 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   $content_class['main_class'] = 'col-sm-12 col-xs-12';
 }
 
+
+
   orgafresh_page_heading();
   // get page welcome screen
 
@@ -79,6 +81,11 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 <section id="content" class="site-content <?php echo esc_attr($content_class['main_class']); ?>">
 
   <div class="container service-content">
+  <?php if (post_password_required() ): ?>
+
+  <div class="spacer-h-40"></div>
+  <?php endif; ?>
+
   <?php
     echo the_content();
    ?>
@@ -90,7 +97,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   <?php
     $eligibility = get_field('eligibility');
 
-    if ($eligibility) {
+    if ($eligibility && ! post_password_required() ) {
       ?>
       <section class="fullwidth-title">
         <div class="container">
@@ -106,9 +113,14 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     }
   ?>
 
+  <?php if (! post_password_required() ): ?>
+
+
   <div class="spacer-h-30 spacer-h-lg-60"></div>
 
   <?php
+
+
 
   $limit = 6;
 
@@ -138,6 +150,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 
   ?>
 
+
   <?php
 
     $future_events_category = get_field('future_events_category');
@@ -156,10 +169,6 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
         ) );
     }
     $future_events = tribe_get_events($args);
-
-     glog('event', true);
-     clog($future_events);
-     glog(false);
 
     if ($future_events) {
       ?><div class="spacer-h-40"></div><div class="container no-paddings">
@@ -184,13 +193,12 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
           get_post_meta($venue_id,'_VenueProvince', true),
           get_post_meta($venue_id,'_VenueAddress', true),
         );
-        $address_formatted = array();
-        foreach ($address as $key => $a) {
-          if($a){
-            array_push($address_formatted, $a);
-          }
-          # code...
-        }
+
+         $address = '';
+        if ( tribe_address_exists($event_id) ) :
+         $address =  tribe_get_full_address($event_id);
+        endif;
+
 
         $args = array(
           'title' => $event->post_title,
@@ -199,7 +207,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
           'date_start'  =>  $start->format('l, F d, Y'),
           'time_start'  =>  $start->format('h:i a'),
           'time_end'    =>  $end->format('h:i a'),
-          'address' => implode(', ', $address_formatted),
+          'address' =>  strip_tags($address),
           'topics' => get_field('event_topic', $event_id),
         );
 
@@ -212,7 +220,6 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
        </div><?php
     }
   ?>
-
   <div class="spacer-h-20"></div>
   <div class="spacer-h-20"></div>
 
@@ -245,6 +252,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     endif; ?>
 
 
+  <?php endif ?>
 
  </section><!-- #content -->
 
@@ -253,5 +261,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
     <?php dynamic_sidebar( orgafresh_get_opt('alus_blog_details_right_sidebar') ); ?>
   </aside>
   <?php endif; ?>
+
+
 
 <?php get_footer();

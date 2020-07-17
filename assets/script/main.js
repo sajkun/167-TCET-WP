@@ -532,6 +532,8 @@ function change_filter_checkbox(name, val, obj){
   }, 50);
 }
 
+
+
 function change_filter_select(obj){
 
   var name = jQuery(obj).attr('name');
@@ -581,7 +583,7 @@ jQuery(document.body).on('filter_locations', function(e,locations_selected){
     for(var id in locations_selected){
       var param = locations_selected[id];
       var compare_value = jQuery(el).data(id);
-      show_element = (param.length > 0 && param.indexOf(compare_value) < 0) ? false : show_element;
+      show_element = (param.length > 0 && compare_value.indexOf(param) < 0) ? false : show_element;
     }
 
 
