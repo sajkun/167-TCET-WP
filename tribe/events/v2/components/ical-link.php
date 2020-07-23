@@ -15,8 +15,8 @@
  */
 
 if ( empty( $ical->display_link ) ) {
-	return;
 }
+	return;
 
 ?>
 <div class="spacer-h-30"></div>
@@ -24,7 +24,8 @@ if ( empty( $ical->display_link ) ) {
 	<a
 		class="export-events"
 		title="<?php echo esc_attr( $ical->link->title ); ?>"
-		href="<?php echo esc_url( $ical->link->url ); ?>"
+		<?php /* href="<?php echo esc_url( $ical->link->url ); ?>" */?>
+    href="javascript:void(0)"
 	><?php echo esc_html( $ical->link->text ); ?></a>
 </div>
 

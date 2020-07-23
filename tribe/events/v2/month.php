@@ -60,6 +60,7 @@ if ( empty( $disable_event_search ) ) {
 			<?php $this->template( 'month/top-bar' ); ?>
 		</header>
 
+
 		<?php $this->template( 'components/filter-bar' ); ?>
 
 		<div

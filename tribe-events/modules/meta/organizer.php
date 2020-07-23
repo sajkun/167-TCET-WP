@@ -29,7 +29,7 @@ $website = tribe_get_organizer_website_link();
 			}
 
 			?>
-			<dt style="display:none;"><?php // This element is just to make sure we have a valid HTML ?></dt>
+			<dt <?php echo 'style="display:none;"' ?> ><?php // This element is just to make sure we have a valid HTML ?></dt>
 			<dd class="tribe-organizer">
 				<?php echo tribe_get_organizer_link( $organizer ) ?>
 			</dd>

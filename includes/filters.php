@@ -77,3 +77,15 @@ function test_tribe_get_option($option, $optionname, $default){
 
   return $option;
 }
+
+
+
+add_filter('tribe_events_ical_single_event_links', 'tribe_events_ical_single_event_links_filter', 1000, 1);
+
+function tribe_events_ical_single_event_links_filter($links){
+
+  $html = '<a href="javascript:print()" id="exec-print-pdf" class="button tribe-events-button">Download PDF</a>';
+
+  $links = str_replace('</div>',$html.'</div>', $links);
+  return $links;
+}

@@ -20,7 +20,7 @@ class velesh_orgafresh_child{
     define('THEME_PATH', get_stylesheet_directory());
     define('THEME_URL', get_stylesheet_directory_uri());
     define('HOME_URL', get_home_url());
-    define('THEME_DEBUG', true);
+    define('THEME_DEBUG', false);
     define('US_SERVICE_COLOR', true);
     define('SERVICE_POST_NAME', 'theme_services');
     define('FAQ_POST_NAME', 'faq_post');
@@ -168,6 +168,10 @@ class velesh_orgafresh_child{
 
     wp_enqueue_script('owl-carousel-script', THEME_URL.'/assets/owlcarousel/js/owl.carousel.min.js', array('jquery'), '1.0', true);
 
+    // wp_enqueue_script('velesh-theme-html2canvas', THEME_URL.'/assets/script/html2canvas.js', array('jquery'), '1.0', true);
+
+    wp_enqueue_script('velesh-theme-pdf-print', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js', array('jquery'), '1.0', true);
+
     wp_enqueue_script('velesh-theme-script', THEME_URL.'/assets/script/main.js', array('jquery'), '1.0', true);
 
 
@@ -183,6 +187,15 @@ class velesh_orgafresh_child{
       wp_localize_script( 'velesh-theme-script', 'link_passed_service' , $_GET['service'] );
     }
       wp_localize_script( 'velesh-theme-script', 'HOME_URL' , HOME_URL );
+
+
+    $obj = get_queried_object();
+
+    clog($obj);
+
+    if(isset($obj->post_type) &&  $obj->post_type=="tribe_events"){
+      wp_localize_script( 'velesh-theme-script','tribe_event_title' , trim($obj->post_name) );
+    }
   }
 
 
