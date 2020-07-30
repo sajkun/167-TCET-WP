@@ -1,0 +1,790 @@
+<!DOCTYPE html> <html lang="en-US" > <head>       <meta charset="UTF-8">     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">     <link rel="profile" href="http://gmpg.org/xfn/11">     <link rel="pingback" href="http://localhost/tcet/xmlrpc.php" />      	<!-- This site is optimized with the Yoast SEO plugin v14.0.4 - https://yoast.com/wordpress/plugins/seo/ --> 	<title>Importance of Networking for Job Search during COVID-19 - TCET</title> 	<meta name="robots" content="noindex, follow" /> 	<meta property="og:locale" content="en_US" /> 	<meta property="og:type" content="article" /> 	<meta property="og:title" content="Importance of Networking for Job Search during COVID-19 - TCET" /> 	<meta property="og:description" content="You will learn some important networking tips and explore how technology and social media can help you reach your career goals and find the job you desire during COVID 19." /> 	<meta property="og:url" content="http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/" /> 	<meta property="og:site_name" content="TCET" /> 	<meta property="article:modified_time" content="2020-07-15T16:46:50+00:00" /> 	<meta property="og:image" content="http://localhost/tcet/wp-content/uploads/2020/06/18338-RB-R9-TCET-Event-Photography-Duotones-02.jpg" /> 	<meta name="twitter:card" content="summary_large_image" /> 	<script type="application/ld+json" class="yoast-schema-graph">{ 	    "@context": "https://schema.org", 	    "@graph": [ 	        { 	            "@type": "WebSite", 	            "@id": "http://localhost/tcet/#website", 	            "url": "http://localhost/tcet/", 	            "name": "TCET", 	            "description": "Just another WordPress site", 	            "potentialAction": [ 	                { 	                    "@type": "SearchAction", 	                    "target": "http://localhost/tcet/?s={search_term_string}", 	                    "query-input": "required name=search_term_string" 	                } 	            ], 	            "inLanguage": "en-US" 	        }, 	        { 	            "@type": "ImageObject", 	            "@id": "http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/#primaryimage", 	            "inLanguage": "en-US", 	            "url": "http://localhost/tcet/wp-content/uploads/2020/06/18338-RB-R9-TCET-Event-Photography-Duotones-02.jpg", 	            "width": 1192, 	            "height": 509 	        }, 	        { 	            "@type": "WebPage", 	            "@id": "http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/#webpage", 	            "url": "http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/", 	            "name": "Importance of Networking for Job Search during COVID-19 - TCET", 	            "isPartOf": { 	                "@id": "http://localhost/tcet/#website" 	            }, 	            "primaryImageOfPage": { 	                "@id": "http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/#primaryimage" 	            }, 	            "datePublished": "2020-06-13T02:36:38+00:00", 	            "dateModified": "2020-07-15T16:46:50+00:00", 	            "inLanguage": "en-US", 	            "potentialAction": [ 	                { 	                    "@type": "ReadAction", 	                    "target": [ 	                        "http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/" 	                    ] 	                } 	            ] 	        } 	    ] 	}</script> 	<!-- / Yoast SEO plugin. -->   <link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="TCET &raquo; Feed" href="http://localhost/tcet/feed/" />
+<link rel="alternate" type="application/rss+xml" title="TCET &raquo; Comments Feed" href="http://localhost/tcet/comments/feed/" />
+<link rel="alternate" type="text/calendar" title="TCET &raquo; iCal Feed" href="http://localhost/tcet/events/?ical=1" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"wpemoji":"http:\/\/localhost\/tcet\/wp-includes\/js\/wp-emoji.js?ver=5.4.2","twemoji":"http:\/\/localhost\/tcet\/wp-includes\/js\/twemoji.js?ver=5.4.2"}};
+			/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	// Create a canvas element for testing native browser support of emoji.
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {number[]} set1 Set of Emoji character codes.
+	 * @param {number[]} set2 Set of Emoji character codes.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detects if the browser supports rendering emoji or flag emoji.
+	 *
+	 * Flag emoji are a single glyph made of two characters, so some browsers
+	 * (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for Transgender flag compatibility. This flag is shortlisted for the Emoji 13 spec,
+				 * but has landed in Twemoji early, so we can add support for it, too.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0x1F3F3, 0xFE0F, 0x200D, 0x26A7, 0xFE0F ],
+					[ 0x1F3F3, 0xFE0F, 0x200B, 0x26A7, 0xFE0F ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDDFA, 0xD83C, 0xDDF3 ],
+					[ 0xD83C, 0xDDFA, 0x200B, 0xD83C, 0xDDF3 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDFF4, 0xDB40, 0xDC67, 0xDB40, 0xDC62, 0xDB40, 0xDC65, 0xDB40, 0xDC6E, 0xDB40, 0xDC67, 0xDB40, 0xDC7F ],
+					[ 0xD83C, 0xDFF4, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC62, 0x200B, 0xDB40, 0xDC65, 0x200B, 0xDB40, 0xDC6E, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC7F ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * Love is love.
+				 *
+				 * To test for Emoji 12 support, try to render a new emoji: men holding hands, with different skin
+				 * tone modifiers.
+				 *
+				 * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+				 * sequence come from older emoji standards.
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[0xD83D, 0xDC68, 0xD83C, 0xDFFE, 0x200D, 0xD83E, 0xDD1D, 0x200D, 0xD83D, 0xDC68, 0xD83C, 0xDFFC],
+					[0xD83D, 0xDC68, 0xD83C, 0xDFFE, 0x200B, 0xD83E, 0xDD1D, 0x200B, 0xD83D, 0xDC68, 0xD83C, 0xDFFC]
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {Object} src The url where the script is located.
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	/*
+	 * Tests the browser support for flag emojis and other emojis, and adjusts the
+	 * support settings accordingly.
+	 */
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	// Sets DOMReady to false and assigns a ready function to settings.
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	// When the browser can not render everything we need to load a polyfill.
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		/*
+		 * Cross-browser version of adding a dom ready event.
+		 */
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='tribe-accessibility-css-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/src/resources/css/accessibility.min.css?ver=4.12.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-full-calendar-style-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-full.min.css?ver=5.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-custom-jquery-styles-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/vendor/jquery/smoothness/jquery-ui-1.8.23.custom.css?ver=5.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-bootstrap-datepicker-css-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css?ver=5.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-style-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-theme.min.css?ver=5.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-full-mobile-style-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-full-mobile.min.css?ver=5.1.2' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/src/resources/css/common-skeleton.min.css?ver=4.12.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-common-full-style-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/src/resources/css/common-full.min.css?ver=4.12.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-bootstrap-datepicker-styles-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css?ver=5.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-tooltipster-css-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/vendor/tooltipster/tooltipster.bundle.min.css?ver=4.12.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-skeleton-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/css/views-skeleton.min.css?ver=5.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-full-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/css/views-full.min.css?ver=5.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-mobile-style-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/css/tribe-events-theme-mobile.min.css?ver=5.1.2' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='tribe-tooltip-css'  href='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/src/resources/css/tooltip.min.css?ver=4.12.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='http://localhost/tcet/wp-includes/css/dist/block-library/style.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='http://localhost/tcet/wp-includes/css/dist/block-library/theme.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://localhost/tcet/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.9' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='http://localhost/tcet/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.2.2' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='wpa-style-css'  href='http://localhost/tcet/wp-content/plugins/wp-accessibility/css/wpa-style.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ui-font.css-css'  href='http://localhost/tcet/wp-content/plugins/wp-accessibility/toolbar/fonts/css/a11y-toolbar.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ui-a11y.css-css'  href='http://localhost/tcet/wp-content/plugins/wp-accessibility/toolbar/css/a11y.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ui-fontsize.css-css'  href='http://localhost/tcet/wp-content/plugins/wp-accessibility/toolbar/css/a11y-fontsize.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/assets/css/font-awesome.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='orgafresh-style-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/style.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='child-style-css'  href='http://localhost/tcet/wp-content/themes/orgafresh-child/style.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='velesh-theme-style-css'  href='http://localhost/tcet/wp-content/themes/orgafresh-child/assets/css/main.min.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-style-css'  href='http://localhost/tcet/wp-content/themes/orgafresh-child/assets/owlcarousel/css/owl.carousel.min.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='orgafresh-font-google-css'  href='https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CLato%3A300%2C400%2C500%2C600%2C700%2C800%2C900%7CLato%3A300%2C400%2C500%2C600%2C700%2C800%2C900&#038;subset=latin%2Clatin-ext&#038;ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='font-master-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/assets/css/simple-line-icons.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='orgafresh-responsive-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/assets/css/responsive.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='orgafresh-shortcode-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/assets/css/shortcode.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/assets/css/owl.carousel.min.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/assets/css/magnific-popup.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='photoswipe-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/assets/css/photoswipe/photoswipe.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='photoswipe-default-css'  href='http://localhost/tcet/wp-content/themes/orgafresh/assets/css/photoswipe/default-skin/default-skin.css?ver=5.4.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://localhost/tcet/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/vendor/php-date-formatter/js/php-date-formatter.min.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/vendor/momentjs/moment.min.js?ver=4.12.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tribe_dynamic_help_text = {"date_with_year":"F j, Y","date_no_year":"F j","datepicker_format":"n\/j\/Y","datepicker_format_index":"1","days":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"daysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"msgs":"[\"This event is from %%starttime%% to %%endtime%% on %%startdatewithyear%%.\",\"This event is at %%starttime%% on %%startdatewithyear%%.\",\"This event is all day on %%startdatewithyear%%.\",\"This event starts at %%starttime%% on %%startdatenoyear%% and ends at %%endtime%% on %%enddatewithyear%%\",\"This event starts at %%starttime%% on %%startdatenoyear%% and ends on %%enddatewithyear%%\",\"This event is all day starting on %%startdatenoyear%% and ending on %%enddatewithyear%%.\"]"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/events-dynamic.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/vendor/jquery-resize/jquery.ba-resize.min.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/vendor/jquery-placeholder/jquery.placeholder.js?ver=5.1.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tribe_js_config = {"permalink_settings":"\/%postname%\/","events_post_type":"tribe_events","events_base":"http:\/\/localhost\/tcet\/events\/","update_urls":{"shortcode":{"list":true,"month":true,"day":true}},"debug":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/tribe-events.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/tribe-events-bar.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/src/resources/js/tribe-common.js?ver=4.12.3'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/breakpoints.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.0' defer='defer'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.2.2' defer='defer'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/widget-google-reviews/static/js/wpac-time.js?ver=1.8.7'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAq96WGmtPTGbREnaj3ALZKOf5gNE_QdmE&#038;ver=1.0'></script>
+<link rel='https://api.w.org/' href='http://localhost/tcet/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost/tcet/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://localhost/tcet/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel='shortlink' href='http://localhost/tcet/?p=1093' />
+<link rel="alternate" type="application/json+oembed" href="http://localhost/tcet/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Ftcet%2Fevent%2Fimportance-of-networking-for-job-search-during-covid-19%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://localhost/tcet/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%2Ftcet%2Fevent%2Fimportance-of-networking-for-job-search-during-covid-19%2F&#038;format=xml" />
+ 
+            <script>
+             jQuery(document).ready(function($) {           
+                $( "#wpexperts_pdf_generate_file" ).click(function() {
+                    $("#wpexperts_pdf_generate_file").css("display", "none");
+                    var element = document.getElementsByClassName('wpexperts-page')[0];
+                    var opt = {
+                        margin:       1,
+                        filename:     'wpexperts-importance-of-networking-for-job-search-during-covid-19' + '.pdf',
+                        image:        { type: 'jpeg', quality: 0.98 },
+                        html2canvas:  { scale: 2 },
+                        jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' }
+                    };
+                    html2pdf().from(element).set(opt).save();
+                    setTimeout(function(){
+                        $('#wpexperts_pdf_generate_file').show();
+                    }, 5000);
+                });
+            });
+        </script>
+                    <style>
+            #wpexperts_pdf_generate_file{
+                overflow: hidden;
+                padding: 5px;
+                cursor: pointer;
+            }
+        </style>
+        <meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="http://localhost/tcet"><link rel="https://theeventscalendar.com/" href="http://localhost/tcet/wp-json/tribe/events/v1/events/1093" />        <link rel="shortcut icon" href="http://localhost/tcet/wp-content/themes/orgafresh/assets/images/icon.png" />         <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://localhost/tcet/wp-content/themes/orgafresh/assets/images/icon.png">         <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<script type="application/ld+json"> [{"@context":"http://schema.org","@type":"Event","name":"Importance of Networking for Job Search during COVID-19","description":"&lt;p&gt;You will learn some important networking tips and explore how technology and social media can help you reach your career goals and find the job you desire during COVID 19.&lt;/p&gt;\\n","image":"http://localhost/tcet/wp-content/uploads/2020/06/18338-RB-R9-TCET-Event-Photography-Duotones-02.jpg","url":"http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/","startDate":"2020-06-30T10:00:00-04:00","endDate":"2020-06-30T12:00:00-04:00","location":{"@type":"Place","name":"Brampton East","description":"","url":false,"address":{"@type":"PostalAddress","streetAddress":"263 Queen Street East, Unit 14","addressLocality":"Brampton","addressRegion":"ON","postalCode":"L6W 4K6","addressCountry":"Canada"},"telephone":"905.595.0722","sameAs":""},"performer":"Organization"}] </script><meta name="generator" content="Powered by Slider Revolution 6.2.2 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<script type="text/javascript">function setREVStartSize(e){			 			try {								 				var pw = document.getElementById(e.c).parentNode.offsetWidth, 					newh; 				pw = pw===0 || isNaN(pw) ? window.innerWidth : pw; 				e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw); 				e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw); 				e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh); 				e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh); 				e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide); 				e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide); 				e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		 				if(e.layout==="fullscreen" || e.l==="fullscreen") 						 					newh = Math.max(e.mh,window.innerHeight);				 				else{					 					e.gw = Array.isArray(e.gw) ? e.gw : [e.gw]; 					for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					 					e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el; 					e.gh = Array.isArray(e.gh) ? e.gh : [e.gh]; 					for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1]; 										 					var nl = new Array(e.rl.length), 						ix = 0,						 						sl;					 					e.tabw = e.tabhide>=pw ? 0 : e.tabw; 					e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw; 					e.tabh = e.tabhide>=pw ? 0 : e.tabh; 					e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					 					for (var i in e.rl) nl[i] = e.rl[i]<window.innerWidth ? 0 : e.rl[i]; 					sl = nl[0];									 					for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															 					var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					  					newh =  (e.type==="carousel" && e.justify==="true" ? e.gh[ix] : (e.gh[ix] * m)) + (e.tabh + e.thumbh); 				}			 				 				if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					 				document.getElementById(e.c).height = newh; 				window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				 			} catch(e){ 				console.log("Failure at Presize of Slider:" + e) 			}					    		  };</script>
+<style type="text/css" title="dynamic-css" class="options-output">.alus-popup{background-color:#111111;background-repeat:no-repeat;background-size:contain;background-position:left center;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> </head>  <body class="wpexperts-page tribe-no-js tribe-events-page-template tribe-filter-live has-top-bar has-sidebar wrapper-layout-full-width open wpb-js-composer js-comp-ver-6.2.0 vc_responsive">          <div id="wrapper">                                         <header id="header" class="site-header header-mobile-right">             <div class="header-alus  header-layout_tcet">       <div class="site-header__top-row">       <div class="container">         <div class="row">            <div class="col-12 col-sm-6 text-left valign-center" >             <div id="accesibility-header">             </div>           </div>            <div class="col-12 col-sm-6 text-right">             <div class="row no-gutters justify-content-end">                        <a href="https://intranet.tcet.com/intranet/" class="header-login-link" target="_blank">Login</a>                                  <a href="/donate/" class="header-donate-link" target="_blank">Donate</a>                                    <i class="icon-search"></i>                       </div>           </div>         </div>                   <div class="search-container">             <div class="icon-hide-search">×</div>             <div class="alus-header-search">                        <div class="search-form-wrapper">             <form method="get" class="searchform" action="http://localhost/tcet/" role="search">                                     <select  name='term' id='term' class='select-category' >
+	<option value='0' selected='selected'>All categories</option>
+	<option class="level-0" value="uncategorized">Uncategorized</option>
+</select>
+                                <div class="alus_search_products">                     <input type="text" value="" name="s" class="search-field" placeholder="Search for post ..." autocomplete="off" />                     <input type="hidden" name="post_type" value="post" />                     <input type="hidden" name="taxonomy" value="category" />                     <button type="submit" class="search-submit"></button>                 </div>                 <div class="close-search"><i class="fa fa-close"></i></div>             </form>         </div>                      </div>           </div>               </div>     </div><!-- site-header__top-row -->      <div class="site-header__main-row">     <div class="container">       <div class="row justify-content-between no-gutters">         <div class="logo-wrap">         <div class="logo  logo-sticky-enable">             <a href="http://localhost/tcet/" class="logo-nomal">                                     <img src="http://localhost/tcet/wp-content/uploads/2020/05/logo.png" alt="TCET" title="TCET" />                          </a>              <a href="http://localhost/tcet/" class="logo-sticky" rel="home">                 <img src="http://localhost/tcet/wp-content/uploads/2020/05/logo.png" alt="TCET" title="TCET" />             </a>     </div>      </div>          <nav class="menu">           <nav class="main-navigation" aria-label="Primary Menu"> 	<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-42 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/about/" class="nav-link"><span>About</span></a>
+<div class="sub-menu-dropdown">
+
+<ul class="sub-menu">
+	<li id="menu-item-549" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549 item-level-1"><a href="http://localhost/tcet/about/meet-the-team/" class="nav-link"><span>Meet The Team</span></a></li>
+</ul>
+</div>
+</li>
+<li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-45 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/services/" class="nav-link"><span>Services</span></a>
+<div class="sub-menu-dropdown">
+
+<ul class="sub-menu">
+	<li id="menu-item-550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550 item-level-1"><a href="http://localhost/tcet/services/employment-service/" class="nav-link"><span>Employment Service</span></a></li>
+	<li id="menu-item-553" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-553 item-level-1"><a href="http://localhost/tcet/services/youth-service/" class="nav-link"><span>Youth Service</span></a></li>
+	<li id="menu-item-551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-551 item-level-1"><a href="http://localhost/tcet/services/language-service/" class="nav-link"><span>Language Service</span></a></li>
+	<li id="menu-item-552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-552 item-level-1"><a href="http://localhost/tcet/services/newcomer-service/" class="nav-link"><span>Newcomer Service</span></a></li>
+</ul>
+</div>
+</li>
+<li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-43 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/events/" class="nav-link"><span>EVENTS &#038; WORKSHOPS</span></a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/locations/" class="nav-link"><span>LOCATIONS</span></a></li>
+<li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/success-stories/" class="nav-link"><span>SUCCESS STORIES</span></a></li>
+</ul></div></nav><!-- #site-navigation -->        </nav>          <div class="block-right-mobile">                      <a href="/donate/" class="button-donate-mobile" target="_blank">Donate</a>                                  <i class="icon-search-mobile"></i>                      <div class="mobile-switcher-holder">             <div class="mobile-menu-toggle equis"><span></span></div>           </div>         </div>       </div>            </div><!-- container -->   </div><!-- site-header__main-row --> </div>  <div class="mobile-menu-holder ">   <div class="container">      <div class="mobile-menu-holder__top">       <div class="logo-wrap_mobile">         <div class="logo  logo-sticky-enable">             <a href="http://localhost/tcet/" class="logo-nomal">                                     <img src="http://localhost/tcet/wp-content/uploads/2020/05/logo.png" alt="TCET" title="TCET" />                          </a>              <a href="http://localhost/tcet/" class="logo-sticky" rel="home">                 <img src="http://localhost/tcet/wp-content/uploads/2020/05/logo.png" alt="TCET" title="TCET" />             </a>     </div>      </div>       <div class="icon-close-mobile"></div>     </div>   </div>    <div class="mobile-menu-holder__scroll">                   <div class="search-form-wrapper">             <form method="get" class="searchform" action="http://localhost/tcet/" role="search">                                     <select  name='term' id='term' class='select-category' >
+	<option value='0' selected='selected'>All categories</option>
+	<option class="level-0" value="uncategorized">Uncategorized</option>
+</select>
+                                <div class="alus_search_products">                     <input type="text" value="" name="s" class="search-field" placeholder="Search for post ..." autocomplete="off" />                     <input type="hidden" name="post_type" value="post" />                     <input type="hidden" name="taxonomy" value="category" />                     <button type="submit" class="search-submit"></button>                 </div>                 <div class="close-search"><i class="fa fa-close"></i></div>             </form>         </div>               <nav class="mobile-menu-container"><ul id="menu-main-menu-1" class="mobile-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-42"><a href="http://localhost/tcet/about/">About</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549"><a href="http://localhost/tcet/about/meet-the-team/">Meet The Team</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-45"><a href="http://localhost/tcet/services/">Services</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a href="http://localhost/tcet/services/employment-service/">Employment Service</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-553"><a href="http://localhost/tcet/services/youth-service/">Youth Service</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-551"><a href="http://localhost/tcet/services/language-service/">Language Service</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-552"><a href="http://localhost/tcet/services/newcomer-service/">Newcomer Service</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-43"><a href="http://localhost/tcet/events/">EVENTS &#038; WORKSHOPS</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="http://localhost/tcet/locations/">LOCATIONS</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="http://localhost/tcet/success-stories/">SUCCESS STORIES</a></li>
+</ul></nav>  <div class="text-center">           <a href="https://intranet.tcet.com/intranet/" class="header-login-link-mobile" target="_blank">Login</a>                <a href="/donate/" class="header-donate-link-mobile" >Donate</a>       </div>   </div> </div>        </header><!-- #header -->          <main id="main" class="site-main"> <section class="vc_section"><div id="EVENTSSLIDER" class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+			<!-- START EVENTS WORKSHOP TOP NAV REVOLUTION SLIDER 6.2.2 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_78_1_wrapper" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+				<rs-module id="rev_slider_78_1" style="display:none;" data-version="6.2.2">
+					<rs-slides>
+						<rs-slide data-key="rs-134" data-title="EMPLOYMENT" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
+							<img src="//localhost/tcet/wp-content/plugins/revslider/public/assets/assets/transparent.png" data-bg="p:right center;" class="rev-slidebg" data-no-retina>
+<!--
+							--><h2
+								id="slider-78-slide-134-layer-2" 
+								class="rs-layer slider-title"
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="x:l,l,l,c;xo:143px,114px,114px,62px;yo:111px,70px,70px,34px;"
+								data-text="w:normal;s:60,40,40,48;l:78,52,52,62;ls:0,0px,0px,0px;fw:700;"
+								data-dim="w:785px,480px,480px,462px;"
+								data-frame_0="x:0,0,0,0px;y:-50,-39,-39,-19px;"
+								data-frame_1="x:0,0,0,0px;y:0,0,0,0px;st:170;sp:1000;sR:170;"
+								data-frame_999="o:1;st:w;sR:7830;"
+								style="z-index:12;font-family:Muli;"
+							>EVENTS & WORKSHOPS 
+							</h2><!--
+
+							--><rs-layer
+								id="slider-78-slide-134-layer-5" 
+								data-type="shape"
+								data-rsp_ch="on"
+								data-xy="y:m,m,m,b;"
+								data-text="w:normal;s:20,15,15,5;l:0,19,19,6;"
+								data-dim="w:1771px,1590px,1590px,100%;h:100%;"
+								data-frame_999="o:0;st:w;sR:8700;"
+								style="z-index:8;background-color:#5cb8b2;"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-78-slide-134-layer-7" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:r,r,r,c;xo:-60px,-47px,-47px,-6px;y:b;yo:0,0,0,2px;"
+								data-text="w:normal;s:20,15,15,5;l:0,19,19,6;"
+								data-dim="w:1173px,937px,937px,888px;h:735px,587px,587px,556px;"
+								data-frame_1="e:power4.inOut;st:170;sp:1500;sR:170;"
+								data-frame_999="o:0;st:w;sR:7330;"
+								style="z-index:9;"
+							><img src="//localhost/tcet/wp-content/uploads/2020/07/Events-Workshops-group-of-people.png" width="878" height="550" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-78-slide-134-layer-13" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="yo:0,0,0,-480px;"
+								data-text="w:normal;s:20,15,15,6;l:0,19,19,8;"
+								data-dim="w:['100%','100%','100%','100%'];h:['100%','100%','100%','100%'];"
+								data-vbility="t,t,f,f"
+								data-frame_999="o:0;st:w;sR:8700;"
+								style="z-index:11;"
+							><img src="//localhost/tcet/wp-content/plugins/revslider/public/assets/assets/dummy.png" width="2835" height="552" data-lazyload="//localhost/tcet/wp-content/uploads/2020/07/DESKTOP_PILL.png" data-c="cover-proportional" data-no-retina> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-78-slide-134-layer-18" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:l,l,l,c;y:t,t,t,b;"
+								data-text="w:normal;s:20,15,15,6;l:0,19,19,8;"
+								data-dim="w:2835px,100%,100%,100%;h:7582px,100%,100%,auto;"
+								data-vbility="f,f,t,t"
+								data-frame_999="o:0;st:w;sR:8700;"
+								style="z-index:10;"
+							><img src="//localhost/tcet/wp-content/plugins/revslider/public/assets/assets/dummy.png" width="636" height="1701" data-lazyload="//localhost/tcet/wp-content/uploads/2020/07/MOBILE_PILL.png" data-no-retina> 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+					<rs-static-layers><!--
+					--></rs-static-layers>
+					<rs-progress class="rs-bottom" style="visibility: hidden !important;"></rs-progress>
+				</rs-module>
+				<script type="text/javascript">
+					setREVStartSize({c: 'rev_slider_78_1',rl:[1240,992,992,552],el:[552,441,441,600],gw:[1240,991,991,375],gh:[552,441,441,600],type:'standard',justify:'',layout:'fullwidth',mh:"0"});
+					var	revapi78,
+						tpj;
+					jQuery(function() {
+						tpj = jQuery;
+						if(tpj("#rev_slider_78_1").revolution == undefined){
+							revslider_showDoubleJqueryError("#rev_slider_78_1");
+						}else{
+							revapi78 = tpj("#rev_slider_78_1").show().revolution({
+								jsFileLocation:"//localhost/tcet/wp-content/plugins/revslider/public/assets/js/",
+								sliderLayout:"fullwidth",
+								visibilityLevels:"1240,992,992,552",
+								gridwidth:"1240,991,991,375",
+								gridheight:"552,441,441,600",
+								spinner:"spinner14",
+								spinnerclr:"#5cb8b2",
+								editorheight:"552,441,960,600",
+								responsiveLevels:"1240,992,992,552",
+								disableProgressBar:"on",
+								navigation: {
+									touch: {
+										touchenabled:true
+									}
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+							});
+						}
+						
+					});
+				</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+			<div style="clear:both;display:block;width:100%;height:0px"></div></div></div></div></div></section><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div></div></div></div></div>
+<main id="tribe-events-pg-template" class="tribe-events-pg-template"><div class="tribe-events-before-html"></div><span class="tribe-events-ajax-loading"><img class="tribe-events-spinner-medium" src="http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/images/tribe-loading.gif" alt="Loading Events" /></span>
+<style>
+	.event-meta-text .marker{
+		background-color: #5cb8b2;
+	}
+</style>
+
+<style>
+			  .sinle-event__sideinfo,
+		.tribe-events-single-event-title{
+			background-color: #f5fbfa;
+		}
+		
+	.icon-label,
+	.eligibility-title{
+		background-color: #5cb8b2;
+	}
+
+	.tribe-events-schedule a,
+	.single-event-content a{
+		color: #5cb8b2!important;
+	}
+
+  .single-event-content li:before,
+  .single-event-content ul li:before{
+    color: #5cb8b2;
+  }
+	</style>
+<div class="spacer-h-30"></div>
+<div id="tribe-events-content" class="tribe-events-single container container-xxl">
+	<div class="tribe-events-notices"><ul><li>This event has passed.</li></ul></div>
+	<div class="row no-gutters">
+		<div class="col-lg-8">
+			<h1 class="tribe-events-single-event-title">
+			<span>Importance of Networking for Job Search during COVID-19</span> <br>
+				
+			</h1>
+			<div class="tribe-events-schedule tribe-clearfix ">
+								
+									<div id="post-1093" class="single-event-content post-1093 tribe_events type-tribe_events status-publish has-post-thumbnail hentry services_term-employment-job-seeker">
+						<!-- Event featured image, but exclude link -->
+						<div class="tribe-events-event-image"><img width="1192" height="509" src="http://localhost/tcet/wp-content/uploads/2020/06/18338-RB-R9-TCET-Event-Photography-Duotones-02.jpg" class="attachment-full size-full wp-post-image" alt="" srcset="http://localhost/tcet/wp-content/uploads/2020/06/18338-RB-R9-TCET-Event-Photography-Duotones-02.jpg 1192w, http://localhost/tcet/wp-content/uploads/2020/06/18338-RB-R9-TCET-Event-Photography-Duotones-02-300x128.jpg 300w, http://localhost/tcet/wp-content/uploads/2020/06/18338-RB-R9-TCET-Event-Photography-Duotones-02-1024x437.jpg 1024w, http://localhost/tcet/wp-content/uploads/2020/06/18338-RB-R9-TCET-Event-Photography-Duotones-02-768x328.jpg 768w" sizes="(max-width: 1192px) 100vw, 1192px" /></div>
+						<!-- Event content -->
+												<div class="tribe-events-single-event-description tribe-events-content">
+							<p>You will learn some important networking tips and explore how technology and social media can help you reach your career goals and find the job you desire during COVID 19.</p>
+						</div>
+						<!-- .tribe-events-single-event-description -->
+
+						<!-- Event meta -->
+					</div> <!-- #post-x -->
+				
+							</div>
+		</div>
+		<div class="col-lg-4 sinle-event__sideinfo clearfix">
+								 	<div class="col-12"> 		<div class="spacer-h-20"></div> 		<h4 class="single-event-meta-title"> 			Details 		</h4>  
+
+<p class="event-meta-text">Start:</p>
+<p class="event-meta-text">
+	June 30, 2020</p>
+<p class="event-meta-text">
+	10:00 am</p>
+
+<div class="events-line"></div>
+
+<p class="event-meta-text">End:</p>
+<p class="event-meta-text">
+	June 30, 2020</p>
+<p class="event-meta-text">
+	12:00 pm</p>
+
+<div class="events-line"></div>
+ <p class="event-meta-text service"> 	<span class="marker"></span> 	Employment - Job Seeker</p>  <div class="spacer-h-20"></div> <div class="tribe-events-meta-group tribe-events-meta-group-venue"> 	<h2 class="single-event-meta-title"> Venue </h2> 	<dl> 				<dd class="tribe-venue"> Brampton East </dd> 					<dd class="tribe-venue-location"> 				<address class="tribe-events-address"> 					<span class="tribe-address">
+
+<span class="tribe-street-address">263 Queen Street East, Unit 14</span>
+	
+		<br>
+		<span class="tribe-locality">Brampton</span><span class="tribe-delimiter">,</span>
+
+	<abbr class="tribe-region tribe-events-abbr" title="ON">ON</abbr>
+
+	<span class="tribe-postal-code">L6W 4K6</span>
+
+	<span class="tribe-country-name">Canada</span>
+
+</span>
+ 																 					<div class="spacer-h-10"></div> 						<div class="event-meta-text"> 							<i class="icon-label"> 								<img src="http://localhost/tcet/wp-content/themes/orgafresh-child/assets/images/icons/geo.svg" alt=""> 							</i> 							<a href="http://www.google.com/maps/place/?q=263+Queen+Street+East+Unit+14+Brampton+ON+L6W+4K6+Canada" target="_blank" >Directions</a> 						</div> 				</address> 			</dd> 					</dl> </div> 		<div class="events-line"></div>  		  		<div class="single-event-meta-title"> 			Contact 		</div> 		<div class="spacer-h-20"></div> 						<div class="event-meta-text"> 			<i class="icon-label"> 				<img src="http://localhost/tcet/wp-content/themes/orgafresh-child/assets/images/icons/email.svg" alt=""> 			</i> 			<span><a href="mailto:905-595-0722 ext. 4000">905-595-0722 ext. 4000</a></span> 		</div> 		 		<div class="spacer-h-30"></div> 	 <div class="spacer-h-30"></div>  	</div> 						</div>
+	</div>
+
+
+	<div class="spacer-h-30 spacer-h-lg-70"></div>
+
+	
+<div class="tribe-events-cal-links"><a class="tribe-events-gcal tribe-events-button" href="https://www.google.com/calendar/event?action=TEMPLATE&#038;text=Importance+of+Networking+for+Job+Search+during+COVID-19&#038;dates=20200630T100000/20200630T120000&#038;details=You+will+learn+some+important+networking+tips+and+explore+how+technology+and+social+media+can+help+you+reach+your+career+goals+and+find+the+job+you+desire+during+COVID+19.+%0A&#038;location=Brampton+East%2C+263+Queen+Street+East%2C+Unit+14%2C+Brampton%2C+ON%2C+L6W+4K6%2C+Canada&#038;trp=false&#038;sprop=website:http://localhost/tcet&#038;ctz=America%2FNew_York" title="Add to Google Calendar">+ Google Calendar</a><a class="tribe-events-ical tribe-events-button" href="http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/?ical=1" title="Download .ics file" >+ iCal Export</a><a href="javascript:print_pdf(1093)" id="exec-print-pdf" class="button tribe-events-button">Download PDF</a></div><!-- .tribe-events-cal-links -->        <script>           function open_window(href, title){            var w = 640, h = 480,               left = Number((screen.width/2)-(w/2)), tops = Number((screen.height/2)-(h/2));            popupWindow = window.open(href, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=1, copyhistory=no, width='+w+', height='+h+', top='+tops+', left='+left);           popupWindow.focus(); return false;           }         </script>        <div class="spacer-h-30"></div>       <div class="social-share">         <span class="social-share__title">Share This Event !</span>          <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/"           onclick="open_window(this.href, this.title); return false"  title="Share in Facebook"           target="_parent"           class="social-share__link employment">           <img src="http://localhost/tcet/wp-content/themes/orgafresh-child/assets/images/icons/fb.svg" alt="">         </a>                   <a href="http://twitter.com/share?text=Importance of Networking for Job Search during COVID-19. You will learn some important networking tips and explore how technology and soc...&url=http://localhost/tcet/event/importance-of-networking-for-job-search-during-covid-19/" title="Share in Twitter" onclick="open_window(this.href, this.title); return false" target="_parent" class="social-share__link youth">           <img src="http://localhost/tcet/wp-content/themes/orgafresh-child/assets/images/icons/twitter.svg" alt="">         </a>       </div>     
+	
+	<!-- Notices -->
+
+
+</div><!-- #tribe-events-content --><div class="tribe-events-after-html"></div>
+<!--
+This calendar is powered by The Events Calendar.
+http://m.tri.be/18wn
+-->
+</main>    </main><!-- #main -->      <footer class="site-footer">       <div class="site-footer__top">   <div class="container">      <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="site-footer__menu"><li id="menu-item-2219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2219 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/terms-use/" class="nav-link"><span>TERMS OF USE</span></a></li>
+<li id="menu-item-1124" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1124 item-level-0 menu-item-default menu-simple-dropdown"><a target="_blank" href="https://secure4.entertimeonline.com/ta/6149773.careers?CareersSearch" class="nav-link"><span>CAREERS</span></a></li>
+<li id="menu-item-1895" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1895 item-level-0 menu-item-default menu-simple-dropdown"><a href="/locations/#contact" class="nav-link"><span>CONTACT US</span></a></li>
+<li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/faq/" class="nav-link"><span>FAQ</span></a></li>
+</ul></div>  </div> </div><!-- site-footer__menu -->  <div class="site-footer__bottom">   <div class="container">     <div class="row">       <div class="col-12 col-md-4 text-center text-left-md order-3 order-md-0">          <p class="copyrights">2020 Copyrights</p>      </div>       <div class="col-12 show-mobile order-2 order-md-0">       <div class="menu-footer-menu-container"><ul id="menu-footer-menu-1" class="site-footer__menu-mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2219 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/terms-use/" class="nav-link"><span>TERMS OF USE</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1124 item-level-0 menu-item-default menu-simple-dropdown"><a target="_blank" href="https://secure4.entertimeonline.com/ta/6149773.careers?CareersSearch" class="nav-link"><span>CAREERS</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1895 item-level-0 menu-item-default menu-simple-dropdown"><a href="/locations/#contact" class="nav-link"><span>CONTACT US</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://localhost/tcet/faq/" class="nav-link"><span>FAQ</span></a></li>
+</ul></div>      </div>       <div class="col-12 col-md-4 valign-center">         <div id="accesibility-footer">         </div>       </div>       <div class="col-12 col-md-4 text-center text-right-md">         <div class="menu-social-menu-container"><ul id="menu-social-menu" class="site-footer__social"><li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://facebook.com" class="nav-link"><span>facebook</span></a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://twitter.com" class="nav-link"><span>twitter</span></a></li>
+<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://youtube.com" class="nav-link"><span>youtube</span></a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55 item-level-0 menu-item-default menu-simple-dropdown"><a href="http://instagram.com" class="nav-link"><span>instagram</span></a></li>
+<li id="menu-item-2220" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2220 item-level-0 menu-item-default menu-simple-dropdown"><a href="https://%20linked.in" class="nav-link"><span>linked in</span></a></li>
+</ul></div>      </div>     </div>   </div> </div>    </footer>     		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		     <div class="go-up-container container container-xxl">       <div class="go-up-button"><span class="go-up-button__inner"></span></div>     </div>     <script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><link href="https://fonts.googleapis.com/css?family=Muli:700%7CRoboto:400" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+		<script type="text/javascript">
+		if(typeof revslider_showDoubleJqueryError === "undefined") {
+			function revslider_showDoubleJqueryError(sliderID) {
+				var err = "<div class='rs_error_message_box'>";
+				err += "<div class='rs_error_message_oops'>Oops...</div>";
+				err += "<div class='rs_error_message_content'>";
+				err += "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
+				err += "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
+				err += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
+				err += "</div>";
+			err += "</div>";
+				jQuery(sliderID).show().html(err);
+			}
+		}
+		</script>
+<link rel='stylesheet' id='js_composer_front-css'  href='http://localhost/tcet/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.2.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/src/resources/js/utils/query-string.js?ver=4.12.3'></script>
+<script src='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-before.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+<script src='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-after.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/viewport.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/accordion.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/view-selector.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/navigation-scroll.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/multiday-events.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/month-mobile-events.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/month-grid.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/common/vendor/tooltipster/tooltipster.bundle.min.js?ver=4.12.3'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/tooltip.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/events-bar.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/events-bar-inputs.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/datepicker.js?ver=5.1.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/the-events-calendar/src/resources/js/views/manager.js?ver=5.1.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/localhost\/tcet\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpa = {"location":"#accesibility-footer","is_rtl":" ltr","is_right":" right","responsive":"a11y-non-responsive ","contrast":"Toggle High Contrast","grayscale":"Toggle Grayscale","fontsize":"Toggle Font size","enable_grayscale":"false","enable_fontsize":"true","enable_contrast":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/wp-accessibility/js/wpa-toolbar.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var a11y_stylesheet_path = "http:\/\/localhost\/tcet\/wp-content\/plugins\/wp-accessibility\/toolbar\/css\/a11y-contrast.css";
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/wp-accessibility/toolbar/js/a11y.js?ver=1.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/wp-accessibility/js/longdesc.button.js?ver=1.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/wp-accessibility/js/current-menu-item.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LfL7aYZAAAAAOGMF3EXGpyNgzV11uAaZDIaDRQg&#038;ver=3.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/owl.carousel.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.parallax.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.magnific-popup.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/photoswipe.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/photoswipe-ui-default.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/fastclick.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=6.2.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.tooltips.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/TweenLite.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/TweenMax.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.panr.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.waypoints.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.countdown.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.counterup.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.scrollTo.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.cookie.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/custom.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.lazy.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/infinite-scroll.pkgd.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/jquery.Photostack.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/rellax.min.js'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/bully.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var orgafresh_settings = {"ajax_uri":"\/tcet\/wp-admin\/admin-ajax.php","alus_enable_ajax_search":"1","alus_enable_popup":"0","alus_popup_event":"time","alus_popup_scroll":"1000","alus_popup_timeout":"1000","countdown_days":"days","countdown_hours":"hours","countdown_mins":"mins","countdown_sec":"secs","cart_message":" has been added to your cart.","alus_cookie_notice":"0","alus_cookie_expiry":"30","alus_grid_list":"grid","alus_shop_pagination":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh/assets/js/global.js?ver=1.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh-child/assets/owlcarousel/js/owl.carousel.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var HOME_URL = "http:\/\/localhost\/tcet";
+var tribe_event_title = "importance-of-networking-for-job-search-during-covid-19";
+var WP_URLS = {"theme_url":"http:\/\/localhost\/tcet\/wp-content\/themes\/orgafresh-child","ajax_url":"http:\/\/localhost\/tcet\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/themes/orgafresh-child/assets/script/main.js?ver=1.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-includes/js/wp-embed.js?ver=5.4.2'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/wp-pdf-generator/assets/js/es6-promise.auto.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/wp-pdf-generator/assets/js/jspdf.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/wp-pdf-generator/assets/js/html2canvas.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/wp-pdf-generator/assets/js/html2pdf.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://localhost/tcet/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.2.0'></script>
+<script type="text/javascript">
+( function( sitekey, actions ) {
+
+	document.addEventListener( 'DOMContentLoaded', function( event ) {
+		var wpcf7recaptcha = {
+
+			execute: function( action ) {
+				grecaptcha.execute(
+					sitekey,
+					{ action: action }
+				).then( function( token ) {
+					var event = new CustomEvent( 'wpcf7grecaptchaexecuted', {
+						detail: {
+							action: action,
+							token: token,
+						},
+					} );
+
+					document.dispatchEvent( event );
+				} );
+			},
+
+			executeOnHomepage: function() {
+				wpcf7recaptcha.execute( actions[ 'homepage' ] );
+			},
+
+			executeOnContactform: function() {
+				wpcf7recaptcha.execute( actions[ 'contactform' ] );
+			},
+
+		};
+
+		grecaptcha.ready(
+			wpcf7recaptcha.executeOnHomepage
+		);
+
+		document.addEventListener( 'change',
+			wpcf7recaptcha.executeOnContactform, false
+		);
+
+		document.addEventListener( 'wpcf7submit',
+			wpcf7recaptcha.executeOnHomepage, false
+		);
+
+	} );
+
+	document.addEventListener( 'wpcf7grecaptchaexecuted', function( event ) {
+		var fields = document.querySelectorAll(
+			"form.wpcf7-form input[name='g-recaptcha-response']"
+		);
+
+		for ( var i = 0; i < fields.length; i++ ) {
+			var field = fields[ i ];
+			field.setAttribute( 'value', event.detail.token );
+		}
+	} );
+
+} )(
+	'6LfL7aYZAAAAAOGMF3EXGpyNgzV11uAaZDIaDRQg',
+	{"homepage":"homepage","contactform":"contactform"}
+);
+</script>
+ <script type='text/javascript'> //<![CDATA[ (function( $ ) { 'use strict'; 	 	 	 	$('input,a,select,textarea,button').removeAttr('tabindex'); 	 }(jQuery)); //]]> </script>  </body> </html>  

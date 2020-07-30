@@ -50,7 +50,12 @@ class WPBakeryShortCode_theme_todays_events extends WPBakeryShortCode {
         ob_start();
 
         if(count($events_formatted) <= 0){
-         printf('<p class="text-center">%s</p>', __('No events scheduled for today', 'theme-translation'));
+
+    $events_archive_base = tribe_get_option( 'eventsSlug', 'events' );
+    $url_events = home_url( '/' . $events_archive_base . '/' );
+          ?>
+          <p class="text-center">No scheduled events at this time, <a <?php echo 'style="text-decoration: underline;"'?> href="<?php echo $url_events; ?>">view all events </a> for more</p>
+          <?php
         }else{
 
 

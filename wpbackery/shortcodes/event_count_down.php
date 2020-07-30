@@ -17,8 +17,6 @@ class WPBakeryShortCode_event_count_down extends WPBakeryShortCode {
 
     $event = get_post($event_id);
 
-    clog($event);
-
     if(!$event || $event->post_status !== 'publish'){
       return;
     }

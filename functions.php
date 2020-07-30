@@ -38,6 +38,7 @@ class velesh_orgafresh_child{
   */
   public function include(){
    include_once(THEME_PATH.'/includes/helpers.php');
+
    include_php_from_dir(THEME_PATH.'/includes/');
    include_php_from_dir(THEME_PATH.'/wpbackery/');
   }
@@ -189,13 +190,19 @@ class velesh_orgafresh_child{
       wp_localize_script( 'velesh-theme-script', 'HOME_URL' , HOME_URL );
 
 
-    $obj = get_queried_object();
 
-    clog($obj);
+    $obj = get_queried_object();
 
     if(isset($obj->post_type) &&  $obj->post_type=="tribe_events"){
       wp_localize_script( 'velesh-theme-script','tribe_event_title' , trim($obj->post_name) );
     }
+
+    $wp_urls = array(
+      'theme_url' =>THEME_URL,
+      'ajax_url'  => admin_url('admin-ajax.php'),
+    );
+
+     wp_localize_script( 'velesh-theme-script','WP_URLS' , $wp_urls );
   }
 
 

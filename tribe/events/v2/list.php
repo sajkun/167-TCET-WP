@@ -75,12 +75,18 @@ if ( empty( $disable_event_search ) ) {
 			<?php endforeach; ?>
 
 		</div>
+		<div class="text-center">
+			<a href="javascript:print_pdf_list()" id="exec-print-pdf" class="button tribe-events-button event-list__more">Download List as PDF</a>
+		</div>
+
+		<div class="spacer-h-30"></div>
 
 		<?php $this->template( 'list/nav' ); ?>
 
 		<?php $this->template( 'components/ical-link' ); ?>
 
 		<?php $this->template( 'components/after' ); ?>
+
 
 	</div>
 </div>

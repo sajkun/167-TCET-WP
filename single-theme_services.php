@@ -155,6 +155,11 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 
     $future_events_category = get_field('future_events_category');
 
+    if(!$future_events_category ){
+      $_terms = wp_get_post_terms( $post->ID, 'services_term', array('fields'=>'ids'));
+      $future_events_category = $_terms[0];
+    }
+
     $args = array(
        'posts_per_page' => 3,
        'start_date'     => new DateTime('today'),
@@ -163,9 +168,9 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 
     if($future_events_category && !is_a('WP_Error', $future_events_category)){
        $args['tax_query'] = array( array(
-          'taxonomy' => "tribe_events_cat",
+          'taxonomy' => "services_term",
           'field' => 'id',
-          'terms' =>  $future_events_category->term_id
+          'terms' =>  $future_events_category,
         ) );
     }
     $future_events = tribe_get_events($args);
