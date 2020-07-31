@@ -990,6 +990,9 @@ var Cookie =
    }
 };
 
+var style = '<style> .tribe-events .tribe-events-c-events-bar__views {display: none!important; flex: none; } .event-list__more { display: none !important; } .event-list__service-marker { display: none !important; } .event-list__title { line-height: 20px !important; font-size: 18px !important; font-weight: 700 !important;} .event-list__address { line-height: 20px !important; font-size: 18px !important; margin: 0 0 0px !important;} .event-list__date  { line-height: 20px !important; font-size: 18px !important; } .event-list__time { line-height: 20px !important; font-size: 18px !important; } .event-list { margin: 0 0 40px !important; } .tribe-common--breakpoint-medium.tribe-events .tribe-events-header { display: none !important; } .tribe-events-c-nav__next-label  { display: none !important; } .export-events  { display: none !important; } .tribe-events-c-nav__next  { display: none !important; } * { transition: none !important; } #real-accessability a#real-accessability-btn { display: none !important; } </style> ';
+  var image = '<img src="/wp-content/uploads/2020/05/logo.png" style="height: 45px; width:auto">';
+
 function print_pdf(id){
 
   var obj = jQuery('#tribe-events-content').clone();
@@ -999,10 +1002,11 @@ function print_pdf(id){
   obj.find('.col-lg-8').addClass('col-12').removeClass('col-lg-8').after('<div class="html2pdf__page-break"></div>');
   obj.find('.col-lg-4').addClass('col-12').removeClass('col-lg-4');
   obj.find('.tribe-events-address').find('.event-meta-text').remove();
+  obj.find('.eligibility-title').closest('.row').after('<div class="html2pdf__page-break"></div>');
 
+  var element = obj.html();
+  element = image + element + style;
 
-  element = obj.html();
-  console.log(tribe_event_title);
   var opt = {
     margin:       .4,
     filename:     ('undefined' !== typeof(tribe_event_title))? tribe_event_title : 'event.pdf',
@@ -1022,15 +1026,20 @@ function print_pdf_list(){
 
   var childs = obj.find('.event-list');
 
+  obj.addClass('print_style');
+
+
 
   childs.each(function(index, el) {
-    if(index % 2 > 0){
-      jQuery(el).after('<div class="html2pdf__page-break"></div>');
+    if((index + 1) % 4 == 0 && index> 0){
+      // jQuery(el).after('<div class="html2pdf__page-break"></div>');
     }
   });
 
+  var element = obj.html();
 
-  element = obj.html();
+  var print_element = image + element + style;
+
   var opt = {
     margin:       .4,
     filename:     ('undefined' !== typeof(tribe_event_title))? tribe_event_title : 'events.pdf',
@@ -1039,8 +1048,10 @@ function print_pdf_list(){
     jsPDF:        { unit: 'in', format: 'A4', orientation: 'portrait' }
   };
 
-  html2pdf().from(element).set(opt).save();
+  html2pdf().from(print_element).set(opt).save();
 }
+
+console.log('test');
 
 function reloadDate(obj){
 

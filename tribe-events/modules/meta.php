@@ -113,6 +113,15 @@ $message = get_post_meta($event_id, 'message_for_registration', true);
 			printf('<a href="mailto:%1$s?subject=%3$s" class="register-event-button">%2$s</a>',$email_register, __('Register Now','theme-translations'), 'Register for event : '. $p->post_title);
 			break;
 		}
+
+		case "form":
+			$form = get_field('contact_form_7_reg', $event_id);
+
+			if($form){
+				$sh = sprintf('[contact-form-7 id="%s" title="%s"]', $form->ID, $form->post_title);
+			  echo do_shortcode($sh);
+				}
+		  break;
 	}
 
 	endif;

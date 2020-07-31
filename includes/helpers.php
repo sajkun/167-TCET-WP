@@ -316,12 +316,32 @@ function print_venu_filter($grid_date = false, $display = 'month'){
   $locations = get_posts(array(
     'posts_per_page' => -1,
     'post_type' => 'tribe_venue',
+
+    'meta_query' => array(
+      'relation' => 'OR',
+      array(
+        'key'     => 'hide_the_filter',
+        'compare_key' => 'LIKE',
+        'compare' => 'NOT EXISTS',
+      ),
+      array(
+        'key'     => 'hide_the_filter',
+        'value'   => '0',
+        'compare' => '!=',
+      ),
+    ),
   ));
 
   $locations_grouped = array();
 
   foreach ($locations as $l) {
+    $hide = get_field('hide_the_filter', $l->ID);
     $name = (get_post_meta($l->ID,'display_name',true))?:$l->post_title;
+
+    if($hide){
+      continue;
+    }
+
     if(!isset($locations_grouped[$name])){
       $locations_grouped[$name] = array(
         'name' => $name,

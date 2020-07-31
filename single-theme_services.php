@@ -41,7 +41,6 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
   if($color){
     ?>
       <style>
-
         .venue-preview__contacts li:before{
           background-color: <?php echo $color; ?>;
         }
@@ -70,9 +69,11 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
         .event-data__icon,
         .featured-program__more,
         .event-data__decoration,
-        .load-more-venues,
-        .event-data__overlay{
+        .load-more-venues{
           background-color: <?php echo $color; ?>;
+        }
+        .event-data__overlay{
+          opacity: 0;
         }
       </style>
     <?php
