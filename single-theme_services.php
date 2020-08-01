@@ -72,9 +72,6 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
         .load-more-venues{
           background-color: <?php echo $color; ?>;
         }
-        .event-data__overlay{
-          opacity: 0;
-        }
       </style>
     <?php
   }
@@ -208,7 +205,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
 
         $args = array(
           'title' => $event->post_title,
-          'image_url'   => wp_get_attachment_image_url( $image_id, 'event_data', false ),
+          'image_url'   => wp_get_attachment_image_url( $image_id, 'fullsize', false ),
           'permalink'   => get_permalink($event),
           'date_start'  =>  $start->format('l, F d, Y'),
           'time_start'  =>  $start->format('h:i a'),

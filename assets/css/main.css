@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.mobile-menu-holder, .go-up-button__inner, .faq-item .marker:before, .faq-item .marker:after, .carousel-ctrl, .event-data__overlay, .event-data__icon svg, .radio-imitation__view:after, .social-share__link img, .icon-label img {
+.mobile-menu-holder, .go-up-button__inner, .faq-item .marker:before, .faq-item .marker:after, .carousel-ctrl, .event-data__icon svg, .radio-imitation__view:after, .social-share__link img, .icon-label img {
   position: absolute;
   left: 0;
   right: 0;
@@ -8484,13 +8484,6 @@ h2,
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-}
-
-.event-data__overlay {
-  position: absolute;
-  background-color: #eee;
-  opacity: .7;
-  z-index: 10;
 }
 
 .event-data__title,

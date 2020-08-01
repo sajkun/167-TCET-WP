@@ -998,8 +998,11 @@ function print_pdf(id){
   var obj = jQuery('#tribe-events-content').clone();
 
   obj.find('.tribe-events-cal-links').remove();
+  obj.find('img').remove();
   obj.find('.social-share').remove();
-  obj.find('.col-lg-8').addClass('col-12').removeClass('col-lg-8').after('<div class="html2pdf__page-break"></div>');
+  obj.find('.events-line').remove();
+  obj.find('form').remove();
+  obj.find('.col-lg-8').addClass('col-12').removeClass('col-lg-8');
   obj.find('.col-lg-4').addClass('col-12').removeClass('col-lg-4');
   obj.find('.tribe-events-address').find('.event-meta-text').remove();
   obj.find('.eligibility-title').closest('.row').after('<div class="html2pdf__page-break"></div>');
