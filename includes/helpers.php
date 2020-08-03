@@ -336,11 +336,11 @@ function print_venu_filter($grid_date = false, $display = 'month'){
 
   foreach ($locations as $l) {
     $hide = get_field('hide_the_filter', $l->ID);
-    $name = (get_post_meta($l->ID,'display_name',true))?:$l->post_title;
+    $name = (trim(get_post_meta($l->ID,'display_name',true)))? trim(get_post_meta($l->ID,'display_name',true)) :$l->post_title;
 
-    if($hide){
-      continue;
-    }
+    // if($hide){
+    //   continue;
+    // }
 
     if(!isset($locations_grouped[$name])){
       $locations_grouped[$name] = array(
@@ -380,6 +380,7 @@ function print_venu_filter($grid_date = false, $display = 'month'){
           <select name="locations_filter" id="locations_filter" onchange='reloadDate(this, event)'>
             <option value="-1">Any location</option>
             <?php foreach ($locations_grouped as $name => $data):
+              if(!$data['name']){continue;}
               printf('<option value="%1$s">%2$s</option>',
                         implode(',',$data['value']),
                         $data['name']

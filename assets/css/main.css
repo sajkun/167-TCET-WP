@@ -6456,8 +6456,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-mobile .logo {
-  width: 45px;
-  height: 40px;
+  width: 100px;
+  height: 20px;
   display: block;
 }
 
