@@ -338,9 +338,9 @@ function print_venu_filter($grid_date = false, $display = 'month'){
     $hide = get_field('hide_the_filter', $l->ID);
     $name = (trim(get_post_meta($l->ID,'display_name',true)))? trim(get_post_meta($l->ID,'display_name',true)) :$l->post_title;
 
-    // if($hide){
-    //   continue;
-    // }
+    if($hide){
+      continue;
+    }
 
     if(!isset($locations_grouped[$name])){
       $locations_grouped[$name] = array(

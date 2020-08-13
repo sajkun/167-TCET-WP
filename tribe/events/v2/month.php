@@ -84,6 +84,15 @@ if ( empty( $disable_event_search ) ) {
 		<?php $this->template( 'components/after' ); ?>
 
 	</div>
+	<style>
+			@media(min-width: 768px){
+		.disclaimer{
+				transform: translateY(-100px);
+			}
+		}
+	</style>
+
+	<p class="text-center disclaimer">To download this schedule see <b><a href="/events/list/">List</a></b> view</p>
 
 </div>
 

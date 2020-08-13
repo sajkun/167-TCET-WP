@@ -55,6 +55,8 @@ class velesh_orgafresh_child{
 
     add_action( 'wp_enqueue_scripts', array($this,'unregister_styles'), PHP_INT_MAX );
 
+    add_action( 'admin_enqueue_scripts', array($this,'admin_scripts'), PHP_INT_MAX );
+
     add_action('wp_head', function(){
       if(orgafresh_get_opt('alus_header_layout') === 'layout_tcet'){
         remove_action( 'orgafresh_after_body_open', 'orgafresh_header_mobile_navigation', 10 );
@@ -67,6 +69,7 @@ class velesh_orgafresh_child{
         add_action('admin_footer', 'exec_clog', PHP_INT_MAX);
      }
 
+
     add_action('admin_init', array($this,'add_reading_settings'));
 
     add_action('admin_menu', array($this,'add_option_pages'));
@@ -74,6 +77,10 @@ class velesh_orgafresh_child{
     add_action('tribe_before_content', 'print_events_header');
 
     add_action( 'admin_menu', array($this,'register_my_import_page' ));
+  }
+
+  public function admin_scripts(){
+    wp_enqueue_style( 'velesh-theme-admin-style', THEME_URL . '/assets/css/admin.css', array());
   }
 
   public function import_services_cb(){

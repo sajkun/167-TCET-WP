@@ -1,0 +1,8 @@
+[name^=recurrence]{
+  min-width:60px;
+}
+.tribe-event-recurrence,
+.select2-dropdown,
+.select2-results{
+  min-width:100px!important;
+}

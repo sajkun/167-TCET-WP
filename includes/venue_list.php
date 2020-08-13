@@ -28,10 +28,14 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
           */
           $address = get_address_for_gmap($venue_id);
 
+          clog($address);
+
           /**
           * @see includes/helpers.php
           */
           $styles = get_styles_for_gmap_static();
+
+          if($address){
 
           $google_map_static_url = sprintf('https://maps.googleapis.com/maps/api/staticmap?center=%1$s&zoom=%2$s&size=%3$s&key=%4$s&%8$s&markers=icon:%5$s|%6$s,%7$s',
             $address,
@@ -43,6 +47,9 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
             get_field('longitude', $venue_id),
             implode('&', $styles)
           );
+          }else{
+            $google_map_static_url = false;
+          }
 
           $multiple_contacts = get_field('multiple_contacts', $venue_id);
 

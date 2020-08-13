@@ -22,8 +22,8 @@ $set_venue_apart = apply_filters( 'tribe_events_single_event_the_meta_group_venu
 
 $EventOrganizerID = get_post_meta($event_id, '_EventOrganizerID', true );
 
-$email = get_post_meta($event_id, 'phone_event', true);
-$phone = get_post_meta($event_id, 'email_event', true);
+$phone = get_post_meta($event_id, 'phone_event', true);
+$email = get_post_meta($event_id, 'email_email', true);
 
 
 ?>
@@ -119,7 +119,38 @@ $message = get_post_meta($event_id, 'message_for_registration', true);
 
 			if($form){
 				$sh = sprintf('[contact-form-7 id="%s" title="%s"]', $form->ID, $form->post_title);
-			  echo do_shortcode($sh);
+
+				$form  = do_shortcode($sh);
+				$event = get_post($event_id);
+
+				$form = str_replace('%event_name%', '<input name="event_name" type="hidden" value="'.$event->post_title.'">', 	$form );
+
+				$text_area = '<textarea class="hidden" name="event_date" type="text">';
+
+				$time_format          = get_option( 'time_format', Tribe__Date_Utils::TIMEFORMAT );
+				$time_range_separator = tribe_get_option( 'timeRangeSeparator', ' - ' );
+				$show_time_zone       = tribe_get_option( 'tribe_events_timezones_show_zone', false );
+				$time_zone_label      = Tribe__Events__Timezones::get_event_timezone_abbr( $event_id );
+
+				$start_datetime = tribe_get_start_date();
+				$start_date     = tribe_get_start_date( null, false, 'F d, Y' );
+				$start_time     = tribe_get_start_date( null, false, $time_format );
+
+				$end_datetime = tribe_get_end_date();
+				$end_date     = tribe_get_display_end_date( null, false,  'F d, Y' );
+				$end_time     = tribe_get_end_date( null, false, $time_format );
+
+				$text_area .= 'Start: ' .$start_date . PHP_EOL;
+				$text_area .= $start_time . PHP_EOL;
+				$text_area .= 'Ends:' . $end_date . PHP_EOL;
+				$text_area .= $end_time ;
+				$text_area .= '</textarea>';
+
+				$form = str_replace('%event_date%', $text_area, $form );
+
+
+
+			  echo $form;
 				}
 		  break;
 	}

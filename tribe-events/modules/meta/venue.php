@@ -15,6 +15,10 @@ if ( ! tribe_get_venue_id() ) {
 $address = str_replace(array(',', ':', PHP_EOL, '\\n'), ' ', trim(strip_tags(tribe_get_full_address())));
 $address = preg_replace('/\s{1,}/', ' ', $address );
 $address = str_replace(' ', '+', $address );
+
+$display_address = tribe_get_full_address();
+$display_address = str_replace('<span class="tribe-postal-cod', '<br><span class="tribe-postal-cod', $display_address );
+
 ?>
 
 <div class="spacer-h-20"></div>
@@ -26,7 +30,7 @@ $address = str_replace(' ', '+', $address );
 		<?php if ( tribe_address_exists() ) : ?>
 			<dd class="tribe-venue-location">
 				<address class="tribe-events-address">
-					<?php echo tribe_get_full_address(); ?>
+					<?php echo $display_address; ?>
 
 					<?php if ( tribe_show_google_map_link() ) : ?>
 						<?php //echo tribe_get_map_link_html(); ?>
