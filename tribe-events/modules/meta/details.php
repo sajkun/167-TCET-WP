@@ -99,41 +99,45 @@ $months = array(
   'November',
   'December',
 );
+      $text = array();
   ?>
+  <div class="event-meta-text">
 
   <?php foreach ($meta['rules'] as $key => $rule): ?>
 
-  <div class="event-meta-text">
     <?php
+    $only_custom = true;
        switch ($rule['custom']['type']) {
          case 'Daily':
+         $only_custom = false;
            if($rule['custom']['interval'] == 1){
-            echo 'An event repeating every day';
+              $text[] = 'This event occurs every day';
            }else{
 
-            echo 'An event repeating every '. $rule['custom']['interval'] .' days <br>';
+              $text[] = 'This event occurs every '. $rule['custom']['interval'] .' days <br>';
            }
 
-           echo ( $rule['custom']['start-time'] )? 'begins: ' . $rule['custom']['start-time']  . ' <br> ' : 'begins: ' . $start_time  . ' <br> ' ;
+             $text[] = ( $rule['custom']['start-time'] )? 'begins: ' . $rule['custom']['start-time']  . ' <br> ' : 'begins: ' . $start_time  . ' <br> ' ;
 
-           echo ($rule['custom']['end-time'])? 'ends: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-time']  : '';
+             $text[] = ($rule['custom']['end-time'])? 'ends: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-time']  : '';
 
            if((int)$rule['custom']['end-day'] > 0){
-             echo '<br>lasts: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-day'] . ' ' ._n('day','days', $rule['custom']['end-day']  );
+               $text[] = '<br>lasts: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-day'] . ' ' ._n('day','days', $rule['custom']['end-day']  );
            }
-           echo'<div class="events-line"></div>';
+
            break;
          case 'Weekly':
+         $only_custom = false;
 
            if($rule['custom']['interval'] == 1){
-            echo 'An event repeating every week';
+              $text[] = 'This event occurs every week ';
            }else{
-            echo 'An event repeating every '. $rule['custom']['interval'] .' weeks <br>';
+              $text[] = 'This event occurs every '. $rule['custom']['interval'] .' weeks <br>';
            }
 
             if( $rule['custom']['week']['day'] && count($rule['custom']['week']['day']) < 12 ){
 
-              echo 'on ';
+                $text[] = 'on ';
 
               $days_ = array();
 
@@ -141,57 +145,56 @@ $months = array(
                  $days_[] = $days[$day];
                }
 
-               echo implode(', ',$days_) . '<br>';
+                 $text[] = implode(', ',$days_) . '<br>';
 
             }else if($rule['custom']['week']['day'] && count($rule['custom']['week']['day']) == 7){
-              echo ' every month <br>';
+                $text[] = ' every month <br>';
             }
 
+              $text[] = ( $rule['custom']['start-time'] )? 'begins: ' . $rule['custom']['start-time']  . ' <br> ' : 'begins: ' . $start_time  . ' <br> ' ;
 
-            echo ( $rule['custom']['start-time'] )? 'begins: ' . $rule['custom']['start-time']  . ' <br> ' : 'begins: ' . $start_time  . ' <br> ' ;
-
-           echo ($rule['custom']['end-time'])? 'ends: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-time']  : '';
+             $text[] = ($rule['custom']['end-time'])? 'ends: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-time']  : '';
 
            if((int)$rule['custom']['end-day'] > 0){
-             echo '<br>lasts: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-day'] . ' ' ._n('day','days', $rule['custom']['end-day']  );
+               $text[] = '<br>lasts: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-day'] . ' ' ._n('day','days', $rule['custom']['end-day']  );
            }
-           echo'<div class="events-line"></div>';
           break;
 
          case "Monthly":
+         $only_custom = false;
              if($rule['custom']['interval'] == 1){
-              echo 'An event repeating every month';
+                $text[] = 'This event occurs every month ';
              }else{
-              echo 'An event repeating every '. $rule['custom']['interval'] .' months <br>';
+                $text[] = 'This event occurs every '. $rule['custom']['interval'] .' months <br>';
              }
 
 
              if(count($rule['custom']['month']) > 0){
 
-              echo (isset($rule['custom']['month']['day']))? 'every ' . $rule['custom']['month']['number'] .' ' : 'every '. (int) $rule['custom']['month']['number']. 'th day  of month <br>';
+                $text[] = (isset($rule['custom']['month']['day']))? 'every ' . $rule['custom']['month']['number'] .' ' : 'every '. (int) $rule['custom']['month']['number']. 'th day  of month <br>';
 
-              echo (isset($rule['custom']['month']['day']))? $days[$rule['custom']['month']['day']] .' <br>' : '';
+                $text[] = (isset($rule['custom']['month']['day']))? $days[$rule['custom']['month']['day']] .' <br>' : '';
 
 
              }else{
-              echo 'every '. (int)tribe_get_start_date( null, false, ' d' ) . 'th day <br>';
+                $text[] = 'every '. (int)tribe_get_start_date( null, false, ' d' ) . 'th day <br>';
              }
 
 
-             echo ( $rule['custom']['start-time'] )? 'begins: ' . $rule['custom']['start-time']  . ' <br> ' : 'begins: ' . $start_time  . ' <br> ' ;
-             echo ($rule['custom']['end-time'])? 'ends: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-time']  : '';
+               $text[] = ( $rule['custom']['start-time'] )? 'begins: ' . $rule['custom']['start-time']  . ' <br> ' : 'begins: ' . $start_time  . ' <br> ' ;
+               $text[] = ($rule['custom']['end-time'])? 'ends: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-time']  : '';
 
              if((int)$rule['custom']['end-day'] > 0){
-               echo '<br>lasts: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-day'] . ' ' ._n('day','days', $rule['custom']['end-day']  );
+                 $text[] = '<br>lasts: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-day'] . ' ' ._n('day','days', $rule['custom']['end-day']  );
              }
-             echo'<div class="events-line"></div>';
            break;
 
          case "Yearly":
+         $only_custom = false;
              if($rule['custom']['interval'] == 1){
-              echo 'An event repeating every year';
+                $text[] = 'This event occurs every year';
              }else{
-              echo 'An event repeating every '. $rule['custom']['interval'] .' years <br>';
+                $text[] = 'This event occurs every '. $rule['custom']['interval'] .' years <br>';
              }
 
 
@@ -201,42 +204,57 @@ $months = array(
                 $year[] =$months[$ind];
               }
 
-              echo 'on '. implode(', ', $year) .'<br>';
+                $text[] = 'on '. implode(', ', $year) .'<br>';
 
 
              }else{
-              echo 'every month <br>';
+                $text[] = 'every month <br>';
              }
 
              if($rule['custom']['year']['same-day'] === 'yes'){
-               echo 'every '. (int)tribe_get_start_date( null, false, ' d' ) . 'th day of month<br>';
+                 $text[] = 'every '. (int)tribe_get_start_date( null, false, ' d' ) . 'th day of month<br>';
              }else{
-              echo (isset($rule['custom']['year']['day']))? 'every ' . $rule['custom']['year']['number'] .' ' : 'every '. (int) $rule['custom']['year']['number']. 'th day  of year <br>';
+                $text[] = (isset($rule['custom']['year']['day']))? 'every ' . $rule['custom']['year']['number'] .' ' : 'every '. (int) $rule['custom']['year']['number']. 'th day  of year <br>';
 
-              echo (isset($rule['custom']['year']['day']))? $days[$rule['custom']['year']['day']] .' <br>' : '';
+                $text[] = (isset($rule['custom']['year']['day']))? $days[$rule['custom']['year']['day']] .' <br>' : '';
              }
 
 
-             echo ( $rule['custom']['start-time'] )? 'begins: ' . $rule['custom']['start-time']  . ' <br> ' : 'begins: ' . $start_time  . ' <br> ' ;
-             echo ($rule['custom']['end-time'])? 'ends: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-time']  : '';
+               $text[] = ( $rule['custom']['start-time'] )? 'begins: ' . $rule['custom']['start-time']  . ' <br> ' : 'begins: ' . $start_time  . ' <br> ' ;
+               $text[] = ($rule['custom']['end-time'])? 'ends: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-time']  : '';
 
              if((int)$rule['custom']['end-day'] > 0){
-               echo '<br>lasts: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-day'] . ' ' ._n('day','days', $rule['custom']['end-day']  );
+                 $text[] = '<br>lasts: &nbsp;&nbsp;&nbsp;' . $rule['custom']['end-day'] . ' ' ._n('day','days', $rule['custom']['end-day']  );
              }
 
-             echo'<div class="events-line"></div>';
            break;
+
+
+          case 'Date':
+             $date = new DateTime( $rule['custom']['date']['date']);
+               $text[] = $date->format('F d');
+               $text[] = ($rule['custom']['same-time'] === 'no')? ' - '. $rule['custom']['start-time']  : ' - '. $start_time;
+               $text[] = ($rule['custom']['same-time'] === 'no' && $rule['custom']['end-time'])? '-'. $rule['custom']['end-time'] . '<br>' : '<br>';
+             break;
 
          default:
            # code...
            break;
        }
+
      ?>
 
+
+  <?php endforeach;
+   if($only_custom ){
+    echo 'Daily start/end times <br>';
+   }
+
+   echo implode('', $text);
+   echo'<div class="events-line"></div>';
+   ?>
+
     </div>
-
-  <?php endforeach ?>
-
 
 
 <?php endif ?>
