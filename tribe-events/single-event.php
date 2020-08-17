@@ -28,8 +28,14 @@ if($terms){
 	$secondary_color = count($terms) > 0 ?  get_term_meta($terms[0]->term_id, 'secondary_color', true) : '#fff';
 }
 
+$programm_id = get_post_meta($event_id, 'related_programm', true);
 
-$elegibility = get_post_meta( $event_id,'eligibility', true );
+if($programm_id){
+	$elegibility = get_post_meta( $programm_id,'eligibility', true );
+}else{
+	$elegibility = get_post_meta( $event_id,'eligibility', true );
+}
+
 $is_invitation_only = get_post_meta( $event_id,'is_invitation_only', true );
 $invitation_only_text = get_post_meta( $event_id,'invitation_only_text', true );
 

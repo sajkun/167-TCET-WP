@@ -45,10 +45,6 @@ $cost    = tribe_get_formatted_cost();
 $website = tribe_get_event_website_link();
 
 $meta = get_post_meta($event_id, '_EventRecurrence', true );
-
-clog($meta);
-
-
 ?>
 
 
@@ -72,33 +68,33 @@ clog($meta);
 
 <div class="events-line"></div>
 
-<?php if ($meta):
-$days = array(
-  'none',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
-);
+<?php if ($meta && isset($meta->rules) && count($meta->rules) > 0 ):
+  $days = array(
+    'none',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday',
+  );
 
-$months = array(
-  'none',
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-);
+  $months = array(
+    'none',
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  );
       $text = array();
   ?>
   <div class="event-meta-text">
@@ -251,10 +247,10 @@ $months = array(
    }
 
    echo implode('', $text);
-   echo'<div class="events-line"></div>';
+    echo'<div class="events-line"></div>';
    ?>
 
-    </div>
+   </div>
 
 
 <?php endif ?>

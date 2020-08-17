@@ -90,3 +90,59 @@ function tribe_events_ical_single_event_links_filter($links){
   $links = str_replace('</div>', $html.'</div>', $links);
   return $links;
 }
+
+
+
+add_filter('the_title', 'filter_event_related_title', 10 , 2);
+
+function filter_event_related_title($title, $post_id){
+
+
+  $meta = get_post_meta($post_id, 'related_programm', true);
+
+  if($meta){
+    $program = get_post($meta);
+    return $program->post_title;
+  }
+
+  return $title;
+}
+
+
+add_filter('tribe_get_event', 'filter_event_related_content', 100 ,3);
+
+
+function filter_event_related_content($post, $output,$filter){
+
+
+  $programm_id = get_post_meta($post->ID, 'related_programm', true);
+
+  if($programm_id){
+    $programm = get_post($programm_id);
+
+    if($programm){
+      $limit = 320;
+      $post->post_content = $programm->post_content;
+      $text  = strip_tags(strip_shortcodes($programm->post_content));
+      $after = strlen($text) > $limit ? '...' : '';
+      $post->excerpt = ($programm->excerpt)? $programm->excerpt : '<p>'. substr($text, 0 , $limit) . $after . '</p>';
+    }
+  }
+  return $post;
+}
+
+
+add_action('wp_head', 'filter_tribe_events_content');
+
+function filter_tribe_events_content(){
+  global $post;
+
+  if($post->post_type === 'tribe_events' && is_single()){
+    $programm_id = get_post_meta($post->ID, 'related_programm', true);
+    $programm = get_post($programm_id);
+
+    if($programm){
+      $post->post_content = strip_shortcodes($programm->post_content);
+    }
+  }
+}
