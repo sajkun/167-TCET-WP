@@ -823,9 +823,12 @@ var selected_services = [];
 
 function change_filter_checkbox(name, val, obj){
 
+  locations_selected = {}
+
   if('undefined' == typeof(locations_selected[name])){
     locations_selected[name] = [];
   }
+
 
   var state = jQuery(obj).prop('checked');
 

@@ -42,6 +42,37 @@ class theme_content_output{
         <a href="http://twitter.com/share?text=<?php echo $text ?>&url=<?php echo esc_url( $url ) ?>" title="<?php _e('Share in Twitter'); ?>" onclick="open_window(this.href, this.title); return false" target="_parent" class="social-share__link youth">
           <img src="<?php echo THEME_URL ?>/assets/images/icons/twitter.svg" alt="">
         </a>
+
+
+        <a href="https://www.linkedin.com/shareArticle?url=<?php echo esc_url( $url ) ?>" title="<?php _e('Share in Linked In'); ?>" onclick="open_window(this.href, this.title); return false" target="_parent" class="social-share__link new">
+          <img src="<?php echo THEME_URL ?>/assets/images/icons/linkedin.svg" alt="">
+        </a>
+
+        <?php
+          $phone = get_post_meta($object->ID, 'phone_event', true);
+          $email = get_post_meta($object->ID, 'email_email', true);
+
+          $text =strip_tags(strip_shortcodes(  $object->post_content )).' %0d%0a';
+          $text .=  ($phone )? 'phone: '. $phone . ' %0d%0a': '';
+          $text .=  ($email )? 'email: '. $email . ' %0d%0a': '';
+          $address = str_replace(array(',', ':', PHP_EOL, '\\n'), ' ', trim(strip_tags(tribe_get_full_address())));
+          $address = preg_replace('/\s{1,}/', ' ', $address );
+          // $address = str_replace(' ', '+', $address );
+          $text .=  $address . ' %0d%0a' ;
+
+          $start_datetime = tribe_get_start_date();
+          $start_date = tribe_get_start_date( null, false, 'F d, Y' );
+
+          $end_datetime = tribe_get_end_date();
+          $end_date     = tribe_get_display_end_date( null, false,  'F d, Y' );
+
+           $text .= $start_date . ' - ' .$end_date
+
+         ?>
+
+        <a href="mailto:?subject=<?php echo esc_url( $object->post_title ) ?>&body=<?php echo $text; ?>" title="<?php _e('Share Via Email'); ?>" class="social-share__link employment">
+          <img src="<?php echo THEME_URL ?>/assets/images/icons/email.svg" alt="">
+        </a>
       </div>
     <?php
   }

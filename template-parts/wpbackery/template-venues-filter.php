@@ -50,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
          ?>
         <li>
           <label class="radio-imitation">
-            <input type="checkbox" name="title" value="<?php echo $name ?>" onchange="change_filter_checkbox('title', '<?php echo $name ?>', this)">
+            <input type="radio" name="title" value="<?php echo $name ?>" onchange="change_filter_checkbox('title', '<?php echo $name ?>', this)">
             <span class="radio-imitation__view"></span>
             <span class="radio-imitation__text"><?php echo $name ?></span>
           </label>
@@ -71,7 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <li>
           <label class="radio-imitation" >
-            <input type="checkbox" name="category" value="<?php echo $name ?>"  onchange="change_filter_checkbox('category', '<?php echo $name ?>', this)">
+            <input type="radio" name="category" value="<?php echo $name ?>"  onchange="change_filter_checkbox('category', '<?php echo $name ?>', this)">
             <span class="radio-imitation__view"></span>
             <span class="radio-imitation__text"><?php echo $name ?></span>
           </label>

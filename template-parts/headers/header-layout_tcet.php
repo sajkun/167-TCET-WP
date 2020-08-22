@@ -4,6 +4,14 @@
  *
  */
 ?>
+
+      <?php
+              ob_start();
+              orgafresh_search_by_category();
+              $search_html = ob_get_contents();
+              ob_get_clean();
+
+       ?>
 <div class="header-alus <?php echo (wp_is_mobile())? 'header-mobile' : ''; ?> header-<?php echo esc_attr(orgafresh_get_opt('alus_header_layout')); ?>">
   <?php if( orgafresh_get_opt('alus_header_top_bar') ) : ?>
     <div class="site-header__top-row">
@@ -36,7 +44,7 @@
           <div class="search-container">
             <div class="icon-hide-search">×</div>
             <div class="alus-header-search">
-              <?php orgafresh_search_by_category(); ?>
+              <?php echo str_replace('for post', '' , $search_html );?>
             </div>
           </div>
         <?php endif; ?>
@@ -75,11 +83,17 @@
         </div>
       </div>
 
+
       <?php if( orgafresh_get_opt('alus_enable_search') && wp_is_mobile()): ?>
         <div class="search-container-mobile">
           <div class="icon-hide-search">×</div>
           <div class="alus-header-search">
-            <?php orgafresh_search_by_category(); ?>
+            <?php
+
+
+
+              echo str_replace('for post', '' , $search_html );
+            ?>
           </div>
         </div>
       <?php endif; ?>
@@ -100,7 +114,7 @@
 
 
   <?php if( orgafresh_get_opt('alus_enable_search') ): ?>
-     <?php orgafresh_search_by_category(); ?>
+     <?php echo str_replace('for post', '' , $search_html ); ?>
   <?php endif; ?>
 
   <?php

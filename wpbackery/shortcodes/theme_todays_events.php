@@ -54,7 +54,7 @@ class WPBakeryShortCode_theme_todays_events extends WPBakeryShortCode {
     $events_archive_base = tribe_get_option( 'eventsSlug', 'events' );
     $url_events = home_url( '/' . $events_archive_base . '/' );
           ?>
-          <p class="text-center">No scheduled events at this time, <a <?php echo 'style="text-decoration: underline;"'?> href="<?php echo $url_events; ?>">view all events </a> for more</p>
+          <div class="text-center"> <a <?php echo 'style="text-decoration: underline;"'?> class="event-list__more" href="<?php echo $url_events; ?>">View Our Calendar</a></div>
           <?php
         }else{
 
