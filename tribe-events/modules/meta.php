@@ -102,7 +102,12 @@ $message = get_post_meta($event_id, 'message_for_registration', true);
 
 	$reg_mode = get_post_meta($event_id, 'register_mode', true);
 
+
 	switch ($reg_mode) {
+		case 'event is full':
+			echo'<div class="events-line" data-raofz="16"></div>';
+			echo '<div class="single-event-meta-title">Event is full</div>';
+			break;
 		case 'message':
 			echo $message;
 			break;
