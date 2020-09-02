@@ -4,5 +4,70 @@
 .tribe-event-recurrence,
 .select2-dropdown,
 .select2-results{
-  min-width:100px!important;
+  //min-width:100px!important;
+}
+
+.term-block{
+  display: flex;
+  flex-flow: row wrap;
+
+
+}
+.image-settings{
+  flex-basis: 150px;
+  margin: 0 5px 10px;
+}
+
+.image-settings .remove{
+  display: block;
+  color: #f00;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.term-img-block{
+  border: 1px solid #eee;
+  margin: 0 0 10px;
+  background: #fff;
+  padding: 30px;
+}
+
+.img-cont{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background: #eee;
+  padding: 10px;
+}
+
+.img-cont label{
+  flex-basis: 49%;
+  margin-bottom: 2%;
+}
+
+
+.img-cont .mark-img{
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #ccc;
+  height: auto;
+  border: 2px solid transparent
+}
+
+.img-cont .mark-img img{
+  max-width: 100%;
+  display: block;
+}
+
+.img-cont :checked ~ .mark-img{
+  border: 2px solid rgba(0, 113, 161, 1);
+  box-shadow: 0 0 15px rgba(0, 113, 161, .2);
+}
+
+.img-cont input[type=radio]{
+  display: none;
+}
+
+.hidden{
+  display: none !important;
 }

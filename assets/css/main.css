@@ -7407,10 +7407,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.site-footer__social a[href*=twitter] {
-  background-image: url(../images/social_icons/twitter.svg);
-}
-
 @media (min-width: 480px) and (max-width: 767px) {
   .site-footer__social a[href*=twitter] {
     background-size: 33px 30px;
@@ -7444,6 +7440,17 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 480px) and (max-width: 767px) {
   .site-footer__social a[href*=linked] {
+    background-size: 36px 36px;
+  }
+}
+
+.site-footer__social a[href*=pinterest] {
+  background-image: url(../images/social_icons/pinterest.svg);
+  background-size: 19px 19px;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .site-footer__social a[href*=pinterest] {
     background-size: 36px 36px;
   }
 }
@@ -7569,10 +7576,12 @@ p {
   color: #fff;
 }
 
+.button-ctrl2.v2 a,
 .button-ctrl2.v2 button {
-  background: #776e64;
+  background: #776e64 !important;
 }
 
+.button-ctrl2.v2 a:hover,
 .button-ctrl2.v2 button:hover {
   background-color: #5b544d !important;
   color: #fff;
@@ -7908,6 +7917,10 @@ h2,
   font-family: "Muli", sans-serif;
   font-size: 20px;
   font-weight: 300;
+}
+
+.faq-item__body a {
+  color: blue !important;
 }
 
 @media (min-width: 552px) {
@@ -9029,6 +9042,12 @@ h2,
   display: block;
   margin: 0 auto;
   padding: 15px;
+  position: relative;
+}
+
+.location-item.has-parking {
+  height: calc(100% - 30px);
+  padding-bottom: 44px !important;
 }
 
 .location-item__more {
@@ -9044,6 +9063,9 @@ h2,
   line-height: 20px;
   margin-top: 5px;
   text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
 }
 
 .location-item__more:hover {
@@ -10597,6 +10619,10 @@ body.wpb-js-composer .vc_general.vc_tta-tabs.vc_tta.vc_tta-tabs-position-left .v
 
 .sinle-event__sideinfo {
   background-color: #f5fbfa;
+}
+
+.sinle-event__sideinfo .ctct-form input[type=email], .sinle-event__sideinfo .ctct-form input[type=number], .sinle-event__sideinfo .ctct-form input[type=tel], .sinle-event__sideinfo .ctct-form input[type=text], .sinle-event__sideinfo .wpcf7-form input[type=email], .sinle-event__sideinfo .wpcf7-form input[type=number], .sinle-event__sideinfo .wpcf7-form input[type=tel], .sinle-event__sideinfo .wpcf7-form input[type=text] {
+  border-color: #7f8080 !important;
 }
 
 .single-event-meta-title {

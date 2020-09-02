@@ -77,10 +77,17 @@ class velesh_orgafresh_child{
     add_action('tribe_before_content', 'print_events_header');
 
     add_action( 'admin_menu', array($this,'register_my_import_page' ));
+
+    add_filter( 'admin_init', array($this,'remove_events_post_content'), 10 );
+  }
+
+  public static function remove_events_post_content(){
+    remove_post_type_support('tribe_events', 'editor');
   }
 
   public function admin_scripts(){
     wp_enqueue_style( 'velesh-theme-admin-style', THEME_URL . '/assets/css/admin.css', array());
+    wp_enqueue_script('velesh-theme-admin', THEME_URL.'/assets/script/admin.js', array('jquery'), '1.0', true);
   }
 
   public function import_services_cb(){

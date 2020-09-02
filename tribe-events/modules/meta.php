@@ -9,6 +9,8 @@
  *
  * @package TribeEventsCalendar
  */
+
+
 $phone   = tribe_get_phone();
 $website = tribe_get_venue_website_link();
 $event_id = get_the_ID();
@@ -153,6 +155,16 @@ $message = get_post_meta($event_id, 'message_for_registration', true);
 
 				$form = str_replace('%event_date%', $text_area, $form );
 
+
+				if ($email ) {
+					?>
+							<script>
+								jQuery(document).ready(function(){
+									jQuery('[name=event_contact_data]').val('<?php echo $email ?>')
+								})
+							</script>
+					<?php
+				}
 
 
 			  echo $form;

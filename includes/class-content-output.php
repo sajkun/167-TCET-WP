@@ -18,7 +18,6 @@ class theme_content_output{
           popupWindow.focus(); return false;
           }
         </script>
-
       <div class="spacer-h-30"></div>
       <div class="social-share">
         <span class="social-share__title"><?php _e('Share This Event','theme-translations');?> !</span>

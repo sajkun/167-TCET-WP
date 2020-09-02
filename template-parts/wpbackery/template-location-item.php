@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="location-item" data-lat="<?php echo $lat;?>" data-lng="<?php echo $lng;?>" data-category="<?php echo $category;?>" data-title="<?php echo $title_data;?>" data-search="<?php echo $search;?>">
+<div class="location-item <?php echo ($parking_url && $show_parkings)? 'has-parking': ''; ?>" data-lat="<?php echo $lat;?>" data-lng="<?php echo $lng;?>" data-category="<?php echo $category;?>" data-title="<?php echo $title_data;?>" data-search="<?php echo $search;?>">
   <div class="location-item__image" title="click to show on map">
     <img src="<?php echo $image_url;?>" alt="" class="map">
     <div class="location-item__marker">

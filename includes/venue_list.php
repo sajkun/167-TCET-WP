@@ -28,7 +28,11 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
           */
           $address = get_address_for_gmap($venue_id);
 
-          clog($address);
+          $address = str_replace('+–+', '+', $address);
+
+          // clog('address of '. $venu ->post_title .': ' .$address);
+          clog( $venu ->post_title .': ' );
+          clog(($marker_url_term && function_exists('get_field')) ? $marker_url_term : get_field('marker_google_map_venue', $venue_id));
 
           /**
           * @see includes/helpers.php

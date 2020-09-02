@@ -238,7 +238,7 @@ if( !is_active_sidebar( orgafresh_get_opt('alus_blog_details_left_sidebar') ) ||
       ?>
         <section class="fullwidth-title">
           <div class="container">
-            <?php _e('Locations','theme-translations');?>
+            <?php _e('Contact Us','theme-translations');?>
           </div>
         </section>
         <div class="spacer-h-50"></div>

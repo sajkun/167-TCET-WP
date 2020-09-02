@@ -26,8 +26,9 @@ class WPBakeryShortCode_faq_accorderon extends WPBakeryShortCode {
     foreach ($faqs as $key => $f) {
       $args = array(
         'question' => $f->post_title,
-        'answer' => $f->post_content,
+        'answer' => apply_filters('the_content',$f->post_content),
       );
+
       echo print_theme_template_part('faq-item', 'wpbackery', $args);
     }
 
