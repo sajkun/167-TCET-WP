@@ -101,11 +101,14 @@ class WPBakeryShortCode_theme_locations_list extends WPBakeryShortCode {
       */
       $styles = get_styles_for_gmap_static();
 
-      $google_map_static_url = sprintf('https://maps.googleapis.com/maps/api/staticmap?center=%1$s&zoom=%2$s&size=%3$s&key=%4$s&%5$s',
+      $google_map_static_url = sprintf('https://maps.googleapis.com/maps/api/staticmap?center=%1$s&zoom=%2$s&size=%3$s&key=%4$s&markers=icon:%5$s|%6$s,%7$s&%8$s',
         $address,
         15,
         '243x211',
         tribe_get_option('google_maps_js_api_key'),
+        THEME_URL.'/assets/images/marker_emp2.png',
+        get_field('latitude', $venue->ID),
+        get_field('longitude', $venue->ID),
         implode('&', $styles)
       );
 

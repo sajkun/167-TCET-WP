@@ -30,10 +30,6 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
 
           $address = str_replace('+–+', '+', $address);
 
-          // clog('address of '. $venu ->post_title .': ' .$address);
-          clog( $venu ->post_title .': ' );
-          clog(($marker_url_term && function_exists('get_field')) ? $marker_url_term : get_field('marker_google_map_venue', $venue_id));
-
           /**
           * @see includes/helpers.php
           */
@@ -41,7 +37,7 @@ function show_venu_list($venues, $link_id = "venues", $limit = 6){
 
           if($address){
 
-          $google_map_static_url = sprintf('https://maps.googleapis.com/maps/api/staticmap?center=%1$s&zoom=%2$s&size=%3$s&key=%4$s&%8$s&markers=icon:%5$s|%6$s,%7$s',
+          $google_map_static_url = sprintf('https://maps.googleapis.com/maps/api/staticmap?center=%1$s&zoom=%2$s&size=%3$s&key=%4$s&markers=icon:%5$s|%6$s,%7$s&%8$s',
             $address,
             15,
             '558x300',

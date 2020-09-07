@@ -1,7 +1,9 @@
 <?php
 add_filter( 'manage_tribe_events_posts_columns', 'set_audience_to_event', 10 );
+add_filter( 'manage_theme_services_posts_columns', 'set_audience_to_event', 10 );
 
 add_action( 'manage_tribe_events_posts_custom_column' , 'custom_audience_category', 3, 2 );
+add_action( 'manage_theme_services_posts_custom_column' , 'custom_audience_category', 3, 2 );
 
 function set_audience_to_event($columns) {
     $columns['audience'] = __( 'Audience', 'theme-translations' );
@@ -36,3 +38,4 @@ function sortable_custom_columns( $columns ) {
     return $columns;
 }
 add_filter( 'manage_edit-tribe_events_sortable_columns', 'sortable_custom_columns' );
+add_filter( 'manage_edit-theme_services_sortable_columns', 'sortable_custom_columns' );
