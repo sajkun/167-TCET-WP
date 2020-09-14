@@ -43,6 +43,11 @@ class WPBakeryShortCode_theme_todays_events extends WPBakeryShortCode {
 
           $event->color = count($terms) > 0 ?  get_term_meta($terms[0]->term_id, 'events_color', true) : '#eee';
 
+          $related_program_id = get_field('related_programm',$event->ID );
+          $related_program = get_post( $related_program_id );
+
+          $event->post_title = $related_program? $related_program->post_title:  $event->post_title;
+
           $events_formatted[] = $event;
          }
 

@@ -42,10 +42,13 @@ class WPBakeryShortCode_event_count_down extends WPBakeryShortCode {
     $events_archive_base = tribe_get_option( 'eventsSlug', 'events' );
     $url_events = home_url( '/' . $events_archive_base . '/' );
 
+    $related_program_id = get_field('related_programm',$event->ID );
+    $related_program = get_post( $related_program_id );
+
     $args = array(
       'diff' => $diff,
       'organizer' => $organizer->post_title,
-      'title' => $event->post_title,
+      'title' =>  $related_program ?  $related_program ->post_title : $event->post_title,
       'venue' => $venue->post_title,
       'url'   => get_permalink($event),
       'url_events'   => $url_events,
