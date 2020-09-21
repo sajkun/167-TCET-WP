@@ -187,6 +187,8 @@ class velesh_orgafresh_child{
 
     wp_enqueue_script('velesh-theme-pdf-print', 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js', array('jquery'), '1.0', true);
 
+    wp_enqueue_script('velesh-theme-printing', THEME_URL.'/assets/script/print_pdf.js', array('jquery'), '1.0', true);
+
     wp_enqueue_script('velesh-theme-script', THEME_URL.'/assets/script/main.js', array('jquery'), '1.0', true);
 
 
