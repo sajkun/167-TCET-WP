@@ -40,7 +40,7 @@
             </div>
           </div>
         </div>
-        <?php if( orgafresh_get_opt('alus_enable_search') ): ?>
+        <?php if( orgafresh_get_opt('alus_enable_search') && !wp_is_mobile() ): ?>
           <div class="search-container">
             <div class="icon-hide-search">×</div>
             <div class="alus-header-search">
@@ -89,9 +89,6 @@
           <div class="icon-hide-search">×</div>
           <div class="alus-header-search">
             <?php
-
-
-
               echo str_replace('for post', '' , $search_html );
             ?>
           </div>
@@ -113,9 +110,9 @@
   <div class="mobile-menu-holder__scroll">
 
 
-  <?php if( orgafresh_get_opt('alus_enable_search') ): ?>
+  <?php /* if( orgafresh_get_opt('alus_enable_search') ): ?>
      <?php echo str_replace('for post', '' , $search_html ); ?>
-  <?php endif; ?>
+  <?php endif; */ ?>
 
   <?php
     wp_nav_menu( array(
