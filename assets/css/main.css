@@ -6384,6 +6384,7 @@ html {
   margin: 0;
   padding: 0;
   transform: translateY(-100%);
+  min-width: 220px;
 }
 
 .menu-holder.shown {
@@ -6951,6 +6952,10 @@ section.sell-block {
   }
 }
 
+.lg .product__title {
+  background-color: #065095;
+}
+
 @media (min-width: 992px) {
   .lg .product__title {
     padding: 28px 0 32px;
@@ -6989,6 +6994,10 @@ section.sell-block {
   margin: auto;
   box-sizing: border-box;
   padding-top: 30px;
+}
+
+.lg .product__title .arrow {
+  background-color: #065095;
 }
 
 .product__price-data {

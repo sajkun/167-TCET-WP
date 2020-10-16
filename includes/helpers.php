@@ -317,27 +317,27 @@ function print_venu_filter($grid_date = false, $display = 'month'){
     'posts_per_page' => -1,
     'post_type' => 'tribe_venue',
 
-    'meta_query' => array(
-      'relation' => 'OR',
-      array(
-        'key'     => 'hide_the_filter',
-        'compare_key' => 'LIKE',
-        'compare' => 'NOT EXISTS',
-      ),
-      array(
-        'key'     => 'hide_the_filter',
-        'value'   => '0',
-        'compare' => '!=',
-      ),
-    ),
+    // 'meta_query' => array(
+    //   'relation' => 'OR',
+    //   array(
+    //     'key'     => 'hide_the_filter',
+    //     'compare_key' => 'LIKE',
+    //     'compare' => 'NOT EXISTS',
+    //   ),
+    //   array(
+    //     'key'     => 'hide_the_filter',
+    //     'value'   => '0',
+    //     'compare' => '!=',
+    //   ),
+    // ),
   ));
+
 
   $locations_grouped = array();
 
   foreach ($locations as $l) {
-    $hide = get_field('hide_the_filter', $l->ID);
+    $hide = get_post_meta($l->ID, 'hide_the_filter', true);
     $name = (trim(get_post_meta($l->ID,'display_name',true)))? trim(get_post_meta($l->ID,'display_name',true)) :$l->post_title;
-
     if($hide){
       continue;
     }
@@ -391,7 +391,7 @@ function print_venu_filter($grid_date = false, $display = 'month'){
         <div class="col-12 col-md-4">
           <label for="services_term">Service</label>
 
-          <select name="services_term" id="services_term" onchange='reloadDate(this, event)'>
+          <select name="services_term" id="services_term1" onchange='reloadDate(this, event)'>
              <option value="none">Any service</option>
             <?php foreach ($terms as $t):
               printf('<option value="%1$s" %2$s>%3$s</option>',
